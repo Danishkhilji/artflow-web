@@ -1,10 +1,11 @@
-import classes from "./MobileHeader.module.css";
-import { RxHamburgerMenu } from "react-icons/rx";
+import clsx from "clsx";
 import { useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { Logo } from "../../../constant";
 import DrawerSkeleton from "../../Drawer";
-import clsx from "clsx";
+import classes from "./MobileHeader.module.css";
 const MobileHeader = () => {
+ 
   const [showDrawer, setShowDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -25,7 +26,18 @@ const MobileHeader = () => {
       `}</style>
 
       <header className={classes.header}>
-        <Logo className={classes.logo} />
+        <span
+          className={classes.logo}
+          onClick={() => {
+            window.open(
+              "https://oyepackaging.com",
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}
+        >
+          <Logo />
+        </span>
         <span
           className={classes.cta}
           onClick={() => {

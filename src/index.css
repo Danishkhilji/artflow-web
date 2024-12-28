@@ -71,7 +71,14 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+.disabled {
+  cursor: not-allowed !important;
+  color: var(--secondary-color) !important;
+}
+.disable:focus,
+.disable:hover {
+  color: var(--secondary-color) !important;
+}
 ul,
 ol {
   list-style: none;

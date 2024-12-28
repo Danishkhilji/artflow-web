@@ -1,13 +1,22 @@
-import classes from "./DesktopHeader.module.css";
+import clsx from "clsx";
 import { Button } from "primereact/button";
 import { Logo } from "../../../constant";
-import clsx from "clsx";
-
+import classes from "./DesktopHeader.module.css";
 const DesktopHeader = () => {
+  // const navigate = useNavigate();
   return (
     <header className={classes.header}>
-      <span className={classes.logo}>
-        <Logo className={clsx("img-fluid", classes.logo)} />
+      <span
+        className={classes.logo}
+        onClick={() => {
+          window.open(
+            "https://oyepackaging.com",
+            "_blank",
+            "noopener,noreferrer"
+          );
+        }}
+      >
+        <Logo className={clsx("img-fluid")} />
       </span>
       <nav className={classes.navbar}>
         <span>PRODUCTS</span>

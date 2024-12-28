@@ -6,6 +6,9 @@
 .cta {
   cursor: pointer;
 }
-.logo {
+.logo svg {
   width: 84px;
+}
+.logo {
+  cursor: pointer;
 }

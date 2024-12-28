@@ -84,12 +84,31 @@ const reviewsData = [
 ];
 
 const socialMediaIcon = [
-
-  { id: "2", icon: <AeroPlaneIcon size={19} /> },
-  { id: "3", icon: <FaFacebookF size={19} /> },
-  { id: "1", icon: <IoLogoInstagram size={19} /> },
-  { id: "4", icon: <FaLinkedinIn size={19} /> },
-  { id: "5", icon: <IoLogoWhatsapp size={19} /> },
+  {
+    id: "2",
+    icon: <AeroPlaneIcon size={19} />,
+    href: "https://t.me/hellooyepackagingbot",
+  },
+  {
+    id: "3",
+    icon: <FaFacebookF size={19} />,
+    href: "https://www.facebook.com/oyepackaging/",
+  },
+  {
+    id: "1",
+    icon: <IoLogoInstagram size={19} />,
+    href: "https://www.instagram.com/oye_packaging_eu/",
+  },
+  {
+    id: "4",
+    icon: <FaLinkedinIn size={19} />,
+    href: "https://www.linkedin.com/company/hello-oye-packaging",
+  },
+  {
+    id: "5",
+    icon: <IoLogoWhatsapp size={19} />,
+    href: " https://wa.me/+3197010280877",
+  },
 ];
 
 const ourFeatures = [
