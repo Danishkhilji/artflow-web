@@ -11,6 +11,7 @@ import ShortAboutUs from "../../components/ShortAboutUs";
 import { bg1, heroBg, banner1_mobile } from "../../constant";
 import classes from "./Home.module.css";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
+import { redirectTo } from "../../helpers";
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
   useMobileViewHook(setIsMobile, 500);
@@ -46,20 +47,27 @@ const Home = () => {
           <CommonContainer className={classes.quickCardsWrapper}>
             <div className="grid">
               <div className="md:col-6 col-12">
-                <QuickCard category="packaging" />
+                <QuickCard category="packaging" title="Coffee packaging" />
               </div>
 
               <div className="md:col-6 col-12">
-                <QuickCard category="services" />
+                <QuickCard category="services" title="coffee Services" />
               </div>
             </div>
           </CommonContainer>
 
           <Banner
             title="Try it out!"
-            ctaTitle="Learn more"
+            ctaTitle="Order Sample kit"
             className={classes.banner1}
             bg={isMobile ? banner1_mobile : bg1}
+            onClick={() =>
+              window.open(
+                "https://oyepackaging.com/order",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
           />
 
           {/* <CommonContainer> */}
@@ -74,6 +82,9 @@ const Home = () => {
 
           <ReviewSection />
           <Banner
+            onClick={() => {
+              redirectTo("https://oyepackaging.com/call");
+            }}
             title="Any questions left?"
             ctaTitle="Book a call"
             className={classes.banner1}

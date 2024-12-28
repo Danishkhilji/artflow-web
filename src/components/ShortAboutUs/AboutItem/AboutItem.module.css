@@ -15,8 +15,7 @@
   flex-direction: row-reverse;
   border-radius: 0;
 }
-.accordionItem:first-child > a {
-}
+
 .accordionItem:first-child a {
   border-top: initial;
 }
@@ -35,6 +34,7 @@
   font-size: 30px;
   line-height: 39px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 /* remove border and background color */
 .accordionItem :global(.p-accordion-header-link) {

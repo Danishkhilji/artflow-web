@@ -27,7 +27,7 @@ const DesktopHeader = () => {
           label="configure packagING"
           className="transparent-btn primary-btn"
         />
-        <Button label="SIGN IN" className="transparent-btn bg-primary" />
+        {/* <Button label="SIGN IN" className="transparent-btn bg-primary" /> */}
       </div>
     </header>
   );

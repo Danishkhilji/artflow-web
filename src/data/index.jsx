@@ -1,29 +1,28 @@
 import {
-  demoReview1,
   AeroPlaneIcon,
   Customize,
+  Delivery,
+  Europe,
   Return,
   Sustain,
-  Europe,
-  Delivery,
   //png imports
   about1,
-  about2,
+  // about2,
   about3,
   about5,
+  demoReview1,
 } from "../constant";
 
-import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import { IoLogoWhatsapp, IoLogoInstagram } from "react-icons/io5";
-
+import { FaFacebookF } from "react-icons/fa6";
+import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io5";
 const shortAboutUs = [
   {
     id: "1",
     title: "Packaging configurator",
     description:
       "Design the packaging that suits your brand perfectly with our intuitive, step-by-step configurator. Enjoy complete freedom in selecting materials, print options, finishes, and add-ons, while controlling a price tailored to your needs.",
-    link: "/",
+    link: "",
     cta: "SIGN UP",
     img: about1,
   },
@@ -34,14 +33,14 @@ const shortAboutUs = [
       "Want to test your design before ordering? We’ve got you covered! We'll print it and deliver it to your doorstep within 10 days so you can review and adjust it before placing your final order.",
     link: "/",
     cta: "SIGN UP",
-    img: about2,
+    img: about5,
   },
   {
     id: "3",
     title: "3D previews",
     description:
       "Need pictures of your new designer bags? We’ve got you covered! Simply upload your design to our design service and receive a 3D model that can be used for any purpose.",
-    link: "/",
+    link: "https://oyepackaging.com/contact",
     cta: "LEARN MORE",
     img: about3,
   },
@@ -158,4 +157,4 @@ const ourFeatures = [
   },
 ];
 
-export { shortAboutUs, reviewsData, socialMediaIcon, ourFeatures };
+export { ourFeatures, reviewsData, shortAboutUs, socialMediaIcon };

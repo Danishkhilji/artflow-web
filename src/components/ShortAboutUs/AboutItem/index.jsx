@@ -6,7 +6,7 @@ import { useState } from "react";
 import { shortAboutUs } from "../../../data";
 import { useMobileViewHook } from "../../../hooks/useMobileViewHook";
 import classes from "./AboutItem.module.css";
-
+import { redirectTo } from "../../../helpers";
 const AboutItem = ({ activeTab, setActiveTab }) => {
   const [isMobile, setIsMobile] = useState(false);
   // Track active tab
@@ -17,7 +17,7 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
     // if (!e.index) return;
     setActiveTab((current) => {
       if (typeof e?.index == "number") return e?.index;
-      return current; 
+      return current;
     }); // Update state on tab click
   };
 
@@ -37,6 +37,9 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
             <div className={classes.bg}>
               <p className={clsx(classes.description)}>{element.description}</p>
               <Button
+                onClick={() => {
+                  element?.link && redirectTo(element?.link);
+                }}
                 label={element.cta}
                 className={clsx("transparent-btn primary-btn", classes.cta)}
               />

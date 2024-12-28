@@ -16,6 +16,13 @@
   color: #fff;
   text-transform: uppercase;
 }
+.cta {
+  text-transform: uppercase;
+  font-family: "Inter-medium";
+  line-height: 22px;
+  font-size: 18px;
+  letter-spacing: 2%;
+}
 .cta:hover {
   color: var(--text-color) !important;
 

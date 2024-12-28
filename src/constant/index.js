@@ -24,3 +24,6 @@ export { default as about3 } from "../assets/images/about3.png";
 export { default as about5 } from "../assets/images/about5.png";
 export { default as heroBg } from "../assets/images/hero_bg.png";
 export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
+export { default as designPattern2 } from "../assets/images/design-pattern2.png";
+export { default as designCard1 } from "../assets/images/design-card1.png";
+export { default as designCard2 } from "../assets/images/design-card2.png";
