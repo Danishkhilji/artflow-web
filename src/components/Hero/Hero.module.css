@@ -1,0 +1,37 @@
+.wrapper {
+  padding-top: 28px;
+
+  height: 200vh;
+}
+.text {
+  color: var(--text-color);
+  font-size: 20px;
+  line-height: 32px;
+}
+.contentWrapper {
+  max-width: 600px;
+}
+.mainHeading {
+  padding-top: 3px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+.quickCardsWrapper {
+  padding-top: 51px;
+}
+.aboutWrapper {
+  margin-top: 15px;
+}
+.aboutTitle {
+  padding-top: 70px;
+  font-family: "Inter-semiBold";
+  font-size: 44px;
+  line-height: 49px;
+  padding-bottom: 30px;
+}
+@media (max-width: 992px) {
+  .mainHeading {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}

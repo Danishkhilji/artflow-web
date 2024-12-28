@@ -1,0 +1,134 @@
+.content,
+.contentWrapper p {
+  font-family: "Inter-regular";
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 20px;
+}
+.contentWrapper h2 {
+  color: var(--text-color);
+  font-family: "Inter-semiBold";
+}
+.contentWrapper p {
+  margin-top: 7px;
+}
+.dull {
+  color: var(--secondary-color);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 37px;
+  /* margin: auto; */
+}
+.navbar span {
+  color: var(--text-color);
+  font-family: "Inter-medium";
+  line-height: 30px;
+  font-size: 14px;
+}
+.socialIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.socialIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.iconBox {
+  border: 1px solid var(--blue-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  cursor: pointer;
+}
+.iconBox svg {
+  fill: var(--primary-color);
+}
+.iconBox:hover {
+  background-color: var(--primary-color);
+}
+.iconBox:hover svg {
+  fill: #fff !important;
+}
+.iconBox:hover path {
+  fill: #fff;
+}
+.socialIconWrapper {
+  display: flex;
+  align-items: center;
+}
+.bottomDetails {
+  margin-top: 20px;
+  border-top: 1px solid #e1dfe5;
+  padding-top: 16px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between; /* Center wrapped rows vertically */
+  gap: 10px; /* Optional: Adds spacing between items */
+}
+.navbar span {
+  cursor: pointer;
+}
+.navbar span:hover {
+  color: var(--primary-color);
+}
+.contentWrapper p {
+  cursor: pointer;
+}
+
+.contentWrapper p:hover {
+  color: var(--primary-color);
+}
+.logoWrapper span {
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .contentWrapper h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575px) {
+  .fixInMob > .contentWrapper h2,
+  .fixInMob > .contentWrapper p {
+    width: fit-content;
+  }
+  .fixInMob > .contentWrapper {
+    width: fit-content;
+
+    margin-left: auto;
+    min-width: 145px;
+  }
+}
+
+@media (max-width: 938px) {
+  .bottomDetails {
+    justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .navbar {
+    gap: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .navbar {
+    gap: 15px;
+  }
+  .navbar {
+    flex-wrap: wrap;
+  }
+  .navbar span {
+    font-size: 13px;
+    gap: 8px;
+  }
+}

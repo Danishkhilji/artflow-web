@@ -1,0 +1,54 @@
+.reviews {
+  display: flex;
+  gap: 20px;
+  max-height: 100%; /* Ensures wrapper takes full height */
+  overflow-x: scroll; /* Enables vertical scrolling */
+  scrollbar-width: none; /* Firefox - hides scrollbar */
+  -ms-overflow-style: none; /* IE/Edge - hides scrollbar */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.reviews::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
+}
+
+.title {
+  padding-top: 70px;
+  font-family: "Inter-semiBold";
+  font-size: 44px;
+  line-height: 49px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.wrapper h2 {
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  max-width: 1440px; /* Max width of the container */
+  margin: 0 auto; /* Center the container */
+  padding-left: 100px;
+
+  width: 100%; /* Full width until max-width */
+  box-sizing: border-box; /* Padding included in width */
+}
+
+@media (max-width: 1100px) {
+  .wrapper {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 776px) {
+  .wrapper {
+    padding-left: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -2%;
+  }
+}

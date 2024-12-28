@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 20px 17px;
+  height: 100%;
+  padding-right: 10px;
+}
+.mainDrawer {
+  height: 100vh;
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 20px 10px;
+    height: 100%;
+  }
+}

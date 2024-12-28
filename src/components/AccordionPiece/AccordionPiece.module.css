@@ -1,0 +1,26 @@
+
+/* accordion tab styling */
+.accordionItem > a {
+  flex-direction: row-reverse;
+}
+.accordionItem :global(a.p-accordion-header-link:focus-visible) {
+  box-shadow: initial;
+}
+.accordionItem :global(.p-accordion-header-text) {
+  color: var(--text-color);
+  font-family: "Inter-medium";
+  font-size: 30px;
+  line-height: 39px;
+  font-weight: 500;
+}
+/* remove border and background color */
+.accordionItem :global(.p-accordion-header-link) {
+  border: initial;
+  background: initial;
+}
+.accordionItem :global(.p-accordion-content) {
+  border: initial;
+}
+.accordionItem > a :global(svg.p-accordion-toggle-icon) {
+  fill: var(--text-color) !important;
+}

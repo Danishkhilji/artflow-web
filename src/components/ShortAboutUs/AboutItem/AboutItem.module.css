@@ -1,0 +1,75 @@
+.description {
+  margin-top: 22px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 22px;
+}
+.cta {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* accordion tab styling */
+.accordionItem > a {
+  padding-block: 20px;
+  flex-direction: row-reverse;
+  border-radius: 0;
+}
+.accordionItem:first-child > a {
+}
+.accordionItem:first-child a {
+  border-top: initial;
+}
+.aboutContainer :global(.p-accordion-tab) .accordionItem:first-child > a {
+  border-top: 1px solid rgba(16, 16, 20, 0.3);
+}
+.aboutContainer :global(.p-accordion-tab):first-child .accordionItem > a {
+  border-top: initial;
+}
+.accordionItem :global(a.p-accordion-header-link:focus-visible) {
+  box-shadow: initial;
+}
+.accordionItem :global(.p-accordion-header-text) {
+  color: var(--text-color);
+  font-family: "Inter-medium";
+  font-size: 30px;
+  line-height: 39px;
+  font-weight: 500;
+}
+/* remove border and background color */
+.accordionItem :global(.p-accordion-header-link) {
+  border: initial;
+  background: initial;
+}
+.accordionItem :global(.p-accordion-content) {
+  border: initial;
+}
+.accordionItem > a :global(svg.p-accordion-toggle-icon) {
+  fill: var(--text-color) !important;
+}
+.bg {
+  background-color: var(--tertiary-color);
+}
+/* accordion tab styling end */
+
+/* image render in mobile */
+/* .imageWrapper {
+  display: none;
+} */
+@media (max-width: 767px) {
+  .accordionItem :global(.p-accordion-header-text) {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .imageWrapper {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imageWrapper svg {
+    max-width: 251px !important;
+  }
+}

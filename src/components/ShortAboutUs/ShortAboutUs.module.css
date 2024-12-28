@@ -1,0 +1,34 @@
+.bg {
+  background-color: red;
+  border: 1px solid;
+}
+
+.wrapper {
+  padding: 60px 40px;
+  background-color: var(--tertiary-color);
+  border-radius: 20px;
+}
+.accordionsTab {
+  max-width: 641px;
+}
+
+.topIcon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.imgWrapper {
+  z-index: 999;
+  position: relative;
+}
+.imgWrapper {
+  padding-left: 41px;
+}
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 16px;
+    padding-top: 30px;
+
+    background-color: var(--tertiary-color);
+  }
+}
