@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 
 function App() {
   const Home = lazy(() => import("./pages/Home"));
+  const ZoomParallax = lazy(() => import("./pages/ZoomParallax"));
   return (
     <>
       <BrowserRouter>

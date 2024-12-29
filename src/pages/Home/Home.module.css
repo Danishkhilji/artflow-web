@@ -3,6 +3,10 @@
 
   height: 200vh;
 }
+.expandWrapper {
+  overflow: hidden;
+  transform-origin: left;
+}
 .text {
   color: var(--text-color);
   font-size: 20px;

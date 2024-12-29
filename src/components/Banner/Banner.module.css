@@ -3,9 +3,10 @@
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-
+  padding: 100px;
   margin-block: 70px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  overflow: hidden;
 }
 .content {
   display: flex;
@@ -22,6 +23,7 @@
   line-height: 22px;
   font-size: 18px;
   letter-spacing: 2%;
+  margin-top: 30px;
 }
 .cta:hover {
   color: var(--text-color) !important;
@@ -31,6 +33,46 @@
 
 .cta:hover span {
   color: var(--text-color) !important;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  border-radius: 20px;
+  top: 0;
+  height: 384px;
+}
+/* Take 100% height and width of container */
+.el {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageContainer {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  height: 384px;
+  left: 0;
+}
+
+.imageContainer img {
+  height: 100%;
+  object-fit: cover;
+}
+.mainContent {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
+  position: absolute;
+  z-index: 8;
 }
 @media (max-width: 506px) {
   .wrapper {

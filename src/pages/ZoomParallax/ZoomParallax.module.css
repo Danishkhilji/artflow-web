@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  border: 2px solid red;
+  top: 0;
+  height: 100vh;
+  background-color: orange;
+}
+/* Take 100% height and width of container */
+.el {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageContainer {
+  width: 25vw;
+  height: 25vw;
+  position: relative;
+}
+
+.imageContainer img {
+  object-fit: cover;
+}

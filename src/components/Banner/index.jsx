@@ -1,31 +1,50 @@
+import { useRef } from "react";
 import classes from "./Banner.module.css";
-import CommonContainer from "../CommonContainer";
 import clsx from "clsx";
 import { Button } from "primereact/button";
 import PropTypes from "prop-types";
-const Banner = ({ bg, className, title, ctaTitle, onClick }) => {
+import { useTransform, useScroll, motion } from "framer-motion";
+import { bg1 } from "../../constant";
+import CommonContainer from "../CommonContainer";
+const Banner = ({ className, title, ctaTitle, onClick }) => {
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
   return (
-    <CommonContainer>
-      <section
-        className={clsx(classes.wrapper, className)} // Apply external className
-        style={{ background: `url(${bg})` }}
-      >
-        <div className={classes.content}>
-          <h2 className={clsx("semiBold-heading", classes.title)}>{title}</h2>
-          <Button
-            className={clsx("transparent-btn", classes.cta)}
-            onClick={() => {
-              onClick();
-            }}
-            label={ctaTitle}
-          />
+    <section
+      className={clsx(classes.wrapper, className)} // Apply external className
+    >
+      <CommonContainer className={clsx(classes.content, classes.sticky)}>
+        <div className={classes.el}>
+          <motion.div
+            style={{ scale: scale }}
+            className={classes.imageContainer}
+          >
+            <img src={bg1} alt="" />
+            <div className={classes.mainContent}>
+              <h2 className={clsx("semiBold-heading", classes.title)}>
+                {title}
+              </h2>
+              <Button
+                className={clsx("transparent-btn", classes.cta)}
+                onClick={() => {
+                  onClick();
+                }}
+                label={ctaTitle}
+              />
+            </div>
+          </motion.div>
         </div>
-      </section>
-    </CommonContainer>
+      </CommonContainer>
+    </section>
   );
 };
 Banner.propTypes = {
-  bg: PropTypes.string.isRequired, // Background image URL (required)
   className: PropTypes.string, // Additional className (optional)
   title: PropTypes.string.isRequired, // Title text (required)
   ctaTitle: PropTypes.string.isRequired, // CTA button label (required)
@@ -33,7 +52,6 @@ Banner.propTypes = {
 };
 
 Banner.defaultProps = {
-  bg: "",
   className: "", // Empty by default if no className is passed
 };
 
