@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 import { useTransform, useScroll, motion } from "framer-motion";
 import { bg1 } from "../../constant";
 import CommonContainer from "../CommonContainer";
-const Banner = ({ className, title, ctaTitle, onClick }) => {
+
+const Banner = ({ className, title, ctaTitle, onClick, uniqueKey }) => {
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -14,13 +15,15 @@ const Banner = ({ className, title, ctaTitle, onClick }) => {
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
+
   return (
     <section
       className={clsx(classes.wrapper, className)} // Apply external className
+      key={uniqueKey} // Ensure that each instance gets a unique key to remount
     >
       <CommonContainer className={clsx(classes.content, classes.sticky)}>
-        <div className={classes.el}>
+        <div ref={container} className={classes.el}>
           <motion.div
             style={{ scale: scale }}
             className={classes.imageContainer}
@@ -44,11 +47,13 @@ const Banner = ({ className, title, ctaTitle, onClick }) => {
     </section>
   );
 };
+
 Banner.propTypes = {
   className: PropTypes.string, // Additional className (optional)
   title: PropTypes.string.isRequired, // Title text (required)
   ctaTitle: PropTypes.string.isRequired, // CTA button label (required)
   onClick: PropTypes.func.isRequired, // Function for button click (required)
+  uniqueKey: PropTypes.string.isRequired, // Unique key to force remount
 };
 
 Banner.defaultProps = {

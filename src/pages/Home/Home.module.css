@@ -45,7 +45,7 @@
 .gridWrapper > div:last-child {
   position: relative;
   margin-left: -88px;
-  margin-top: -40px;
+  /* margin-top: -15px; */
 }
 .heroImgWrapper {
   flex-shrink: 0;

@@ -3,25 +3,44 @@ import { Dialog } from "primereact/dialog";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import classes from "./ModalSkeleton.module.css";
+
 export default function ModalSkeleton({ children, show, setShow, className }) {
   useEffect(() => {
+    // Disable body scroll when modal is open
     if (show) {
-      document.body.classList.add("modal-open");
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
     }
 
+    // Cleanup on component unmount or when modal is closed
     return () => {
-      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
     };
   }, [show]);
+
   return (
     <>
       <style>
         {`
+       
+
+
+.p-dialog-content::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Webkit browsers */
+}
+
+/* For Firefox (since Firefox has its own scrollbar styling) */
+.p-dialog-content{
+  scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
+.p-dialog-content:last-of-type {
+border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
         .p-dialog .p-dialog-header {
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
         }
         `}
       </style>
