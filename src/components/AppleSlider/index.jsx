@@ -6,6 +6,7 @@ import LeftArrow from "../../assets/images/left-arrow.svg?react";
 import FeatureModal from "../../modal/FeatureModal";
 import classes from "./AppleSlider.module.css";
 import { ourFeatures } from "../../data";
+import { div } from "framer-motion/client";
 const AppleSlider = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showFeatureModal, setShowFeatureModal] = useState(false);
@@ -41,41 +42,50 @@ const AppleSlider = () => {
   };
 
   return (
-    <div className={clsx(classes.sliderContainer, classes.wrapper)}>
-      <h2 className={classes.aboutTitle}>why ÖYE is your packaging partner</h2>
-      <Slider {...settings} className={classes.slider}>
-        {ourFeatures.map((slide, index) => (
-          <div key={index} className={classes.slide}>
-            <div className={classes.slideContent}>
-              <span className={classes.icon}>{slide.icon}</span>
-              <div className={classes.contentArea}>
-                <h3 className={classes.slideTitle}>{slide.title}</h3>
-                <p className={classes.slideDescription}>{slide.description}</p>
-              </div>
-              <div
-                className={clsx("flex justify-content-end", classes.ctaWrapper)}
-              >
-                <button
-                  className={classes.plusButton}
-                  onClick={() => {
-                    setShowFeatureModal(true);
-                    setSelectedItem(slide);
-                  }}
+    <div className={classes.container}>
+      <div className={clsx(classes.sliderContainer, classes.wrapper)}>
+        <h2 className={classes.aboutTitle}>
+          why ÖYE is your packaging partner
+        </h2>
+        <Slider {...settings} className={classes.slider}>
+          {ourFeatures.map((slide, index) => (
+            <div key={index} className={classes.slide}>
+              <div className={classes.slideContent}>
+                <span className={classes.icon}>{slide.icon}</span>
+                <div className={classes.contentArea}>
+                  <h3 className={classes.slideTitle}>{slide.title}</h3>
+                  <p className={classes.slideDescription}>
+                    {slide.description}
+                  </p>
+                </div>
+                <div
+                  className={clsx(
+                    "flex justify-content-end",
+                    classes.ctaWrapper
+                  )}
                 >
-                  +
-                </button>
+                  <button
+                    className={classes.plusButton}
+                    onClick={() => {
+                      setShowFeatureModal(true);
+                      setSelectedItem(slide);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-      {showFeatureModal && (
-        <FeatureModal
-          show={showFeatureModal}
-          setShow={setShowFeatureModal}
-          data={selectedItem}
-        />
-      )}
+          ))}
+        </Slider>
+        {showFeatureModal && (
+          <FeatureModal
+            show={showFeatureModal}
+            setShow={setShowFeatureModal}
+            data={selectedItem}
+          />
+        )}
+      </div>
     </div>
   );
 };

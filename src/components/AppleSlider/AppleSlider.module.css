@@ -1,8 +1,10 @@
-.sliderContainer {
-  /* background-color: #fbfbfc; */
+.container {
   background: linear-gradient(360.62deg, #efeff2 32.27%, #ffffff 65.46%);
   background-color: #fff;
   padding-bottom: 48px;
+}
+.sliderContainer {
+  /* background-color: #fbfbfc; */
 }
 
 .aboutTitle {

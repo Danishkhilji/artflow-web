@@ -15,7 +15,7 @@
 .contentWrapper {
   max-width: 600px;
   position: relative;
-  z-index: 9999;
+  z-index: 1;
 }
 .mainHeading {
   padding-top: 3px;
@@ -66,6 +66,12 @@
 .banner1 {
   margin-block: 22px !important;
 }
+.img {
+  position: relative;
+
+  z-index: 999 !important;
+}
+
 @media (max-width: 992px) {
   .heroImgWrapper {
     display: none;
