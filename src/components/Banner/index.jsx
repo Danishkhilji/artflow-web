@@ -16,7 +16,7 @@ const Banner = React.forwardRef(
       offset: ["start start", "end end"],
     });
 
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
 
     return (
       <section
@@ -35,7 +35,7 @@ const Banner = React.forwardRef(
                 damping: 20, // Higher damping to reduce bounce
                 mass: 1, // Normal mass for natural movement
                 restDelta: 0.001, // Ensures animation comes to a smooth stop
-                delay: 0.1, // Subtle entrance delay
+                delay: 0.3, // Subtle entrance delay
               }}
             >
               <img src={bg1} alt="Banner background" />
