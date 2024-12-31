@@ -183,6 +183,10 @@ div.modal-open {
 .slick-list {
   height: auto !important;
 }
+
+.p-dialog-mask {
+  z-index: 99999 !important;
+}
 @media (max-width: 424px) {
   .slick-track {
     display: flex !important;

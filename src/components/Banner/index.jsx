@@ -15,11 +15,14 @@ const Banner = React.forwardRef(
       offset: ["start end", "end start"],
     });
 
-    const scale = useTransform(
-      scrollYProgress,
-      [0, 0.5, 1], // Scroll progress
-      [1, 1.4, 1] // Start default, grow slightly, return to default
-    );
+    // Clamp the scale to ensure it smoothly returns to 1
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.4, 1]);
+
+    scale.onChange(() => {
+      if (scrollYProgress.get() === 1) {
+        scale.set(1);
+      }
+    });
 
     return (
       <section
@@ -34,11 +37,11 @@ const Banner = React.forwardRef(
               className={classes.imageContainer}
               transition={{
                 type: "spring",
-                stiffness: 80, // Lower stiffness for smoother spring
-                damping: 15, // Higher damping to reduce bounce
-                mass: 1, // Normal mass for natural movement
-                restDelta: 0.001, // Ensures animation comes to a smooth stop
-                delay: 0.4, // Subtle entrance delay
+                stiffness: 80,
+                damping: 15,
+                mass: 1,
+                restDelta: 0.001,
+                delay: 0.4,
               }}
             >
               <img src={bg1} alt="Banner background" />
