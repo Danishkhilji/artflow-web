@@ -1,6 +1,5 @@
-.wrapper {
+div.wrapper {
   border-radius: 20px;
-  border: 1px solid var(--text-color);
   padding: 10px;
   /* border: 1px solid rgba(255, 255, 255, 0.3); */
   border-top: 1px solid rgba(16, 16, 20, 0.3) !important;
@@ -9,7 +8,7 @@
   border-left: 2px solid rgba(16, 16, 20, 0.3) !important;
   display: flex;
   padding: 10px;
-  padding-right: 30px;
+  padding-right: 25px;
   gap: 20px;
   width: fit-content;
   flex-shrink: 0;
