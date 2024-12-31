@@ -1,24 +1,28 @@
-import { useState } from "react";
-// Assuming the CSS is in this file
+
+import PropTypes from "prop-types";
 import classes from "./Hamburger.module.css";
 import clsx from "clsx";
-const Hamburger = () => {
-  const [active, setActive] = useState(false);
 
+const Hamburger = ({ value, setter }) => {
   const handleClick = () => {
-    setActive(!active);
+    setter(!value);
   };
 
   return (
     <button
-      className={clsx(classes.effect1, {
-        [classes.active]: active,
+      className={clsx(classes.button, classes.effect1, {
+        [classes.active]: value,
       })}
       onClick={handleClick}
     >
-      <span className={clsx({ [classes.active]: active })}></span>
+      <span className={clsx({ [classes.active]: value })}></span>
     </button>
   );
+};
+
+Hamburger.propTypes = {
+  value: PropTypes.bool.isRequired,
+  setter: PropTypes.func.isRequired,
 };
 
 export default Hamburger;

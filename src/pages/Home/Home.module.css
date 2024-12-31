@@ -4,6 +4,8 @@
   height: 200vh;
 }
 .expandWrapper {
+  position: relative;
+  z-index: 99 !important;
   overflow: hidden;
   transform-origin: left;
 }
@@ -15,7 +17,8 @@
 .contentWrapper {
   max-width: 600px;
   position: relative;
-  z-index: 1;
+  z-index: 99 !important;
+  transform: translateX(0) !important;
 }
 .mainHeading {
   padding-top: 3px;
@@ -52,9 +55,11 @@
   height: 100%;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 .heroImgWrapper img {
   min-width: 420px !important;
+  max-width: 600px;
   min-height: 250px;
 }
 .innerWrapper {
@@ -71,7 +76,9 @@
 
   z-index: 999 !important;
 }
-
+.mainContent{
+  
+}
 @media (max-width: 992px) {
   .heroImgWrapper {
     display: none;

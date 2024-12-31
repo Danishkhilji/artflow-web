@@ -1,16 +1,9 @@
-import clsx from "clsx";
 import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { Logo } from "../../../constant";
-import DrawerSkeleton from "../../Drawer";
+import clsx from "clsx";
 import classes from "./MobileHeader.module.css";
-import Hamburger from "../../Hamburger";
+import { Logo } from "../../../constant";
 const MobileHeader = () => {
-  const [showDrawer, setShowDrawer] = useState(false);
-
-  const toggleDrawer = () => {
-    setShowDrawer((current) => !current);
-  };
+  const [active, setActive] = useState(false);
 
   return (
     <>
@@ -25,30 +18,50 @@ const MobileHeader = () => {
         }
       `}</style>
 
-      <header className={classes.header}>
-        <span
-          className={classes.logo}
-          onClick={() => {
-            window.open(
-              "https://oyepackaging.com",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}
-        >
-          <Logo />
-        </span>
-        <span
-          className={classes.cta}
-          onClick={() => {
-            toggleDrawer();
-          }}
-        >
-          <Hamburger />
-          {/* <RxHamburgerMenu size={23} color="var(--primary-color)" /> */}
-        </span>
+      <header
+        className={clsx(classes.header, {
+          [classes.menu]: active,
+        })}
+      >
+        <nav className={classes.navContainer}>
+          <span
+            className={classes.logo}
+            onClick={() => {
+              window.open(
+                "https://oyepackaging.com",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+          >
+            <Logo />
+          </span>
+          <span
+            className={classes.cta}
+            onClick={() => {
+              setActive((prev) => !prev);
+            }}
+          >
+            <span
+              className={clsx(classes.mobileMenu, {
+                [classes.active]: active,
+              })}
+            >
+              <span className={clsx(classes.line, classes["line-top"])}></span>
+              <span
+                className={clsx(classes.line, classes["line-bottom"], {
+                  [classes.active]: active,
+                })}
+              ></span>
+            </span>
+          </span>
+        </nav>
+        <div className={clsx(classes.nav)}>
+          <h2>Product</h2>
+          <h2>Services</h2>
+          <h2>About</h2>
+        </div>
       </header>
-      <div className={clsx(classes.mobileWrapper)} id={"navMobileHeader"}></div>
     </>
   );
 };

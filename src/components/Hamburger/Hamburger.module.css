@@ -1,4 +1,4 @@
-button {
+.button {
   width: 45px;
   background: transparent;
   border: none;
@@ -7,7 +7,7 @@ button {
   overflow: hidden;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
@@ -39,7 +39,7 @@ button:focus {
   /* bottom: 10px; */
 }
 
-button.effect1:hover span:after {
+.button.effect1:hover span:after {
   left: -5px;
 }
 
@@ -47,24 +47,24 @@ button.effect1:hover span:before {
   left: 5px;
 }
 
-button.effect1 span.active {
+.button.effect1 span.active {
   background: #fff;
 }
 
-button.effect1 span.active:after,
-button.effect1 span.active:before {
+.button.effect1 span.active:after,
+.button.effect1 span.active:before {
   top: 0px;
   left: 0px;
 }
 
-button.effect1 span.active:after {
+.button.effect1 span.active:after {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
 }
 
-button.effect1 span.active:before {
+.button.effect1 span.active:before {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
