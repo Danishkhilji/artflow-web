@@ -222,11 +222,12 @@ span#signIn {
   border-radius: 20px !important;
   opacity: 1;
   transition-delay: initial;
+  box-shadow: initial !important;
 }
 span#signIn:hover {
   background-color: #fff !important;
   color: var(--primary-color) !important;
-  border: 1px solid #fff !important;
+  border: 2px solid var(--primary-color) !important;
 }
 span#config:hover {
   color: #fff !important;
@@ -260,7 +261,7 @@ span#config:hover {
   transition-delay: 0.6s;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
   span#signIn,
   span#config {
     min-width: 100%;
