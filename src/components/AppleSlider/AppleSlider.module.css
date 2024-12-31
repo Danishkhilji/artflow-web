@@ -1,7 +1,8 @@
 .container {
   background: linear-gradient(360.62deg, #efeff2 32.27%, #ffffff 65.46%);
   background-color: #fff;
-  padding-bottom: 48px;
+  padding-bottom: 86px;
+  position: relative;
 }
 .sliderContainer {
   /* background-color: #fbfbfc; */
@@ -28,7 +29,7 @@
 }
 .slider {
   /* border: 1px solid red; */
-  min-height: 400px;
+  /* min-height: 400px; */
 }
 
 .slider :global(.slick-slide > div) {
@@ -36,16 +37,18 @@
 }
 .slide {
   border-radius: 20px;
-  padding: 30px;
-  min-width: 300px;
+  padding: 14px 27px;
+  padding-top: 30px;
+  /* min-width: 300px; */
   min-height: 292px;
-  max-height: 303px;
+  /* max-height: 303px; */
   background: #fff;
   background-color: #fff;
   transition: 0.3s ease-in-out;
   border: 1px solid #e5e5e5;
   display: flex !important;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .slide:hover {
@@ -76,7 +79,7 @@
   height: 34px;
   border-radius: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -45px;
   right: 0;
   display: flex;
   justify-content: center;
@@ -95,6 +98,8 @@
   font-family: "Inter-medium";
   line-height: 39px;
   color: var(--text-color);
+  white-space: wrap !important;
+  word-wrap: break-word;
 }
 .slideDescription {
   color: var(--text-color);

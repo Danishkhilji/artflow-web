@@ -23,7 +23,7 @@ const AppleSlider = () => {
       {
         breakpoint: 1300,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         },
       },
       {

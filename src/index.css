@@ -180,6 +180,9 @@ div.modal-open {
   display: flex !important;
   gap: 1px;
 }
+.slick-list {
+  height: auto !important;
+}
 @media (max-width: 424px) {
   .slick-track {
     display: flex !important;

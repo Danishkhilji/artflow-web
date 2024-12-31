@@ -180,6 +180,7 @@
 .header.menu .nav span:hover {
   box-shadow: 0px 5px 16px -1px #00000026;
   color: var(--primary-color) !important;
+  cursor: pointer;
   border-radius: 10px;
 }
 
@@ -207,6 +208,8 @@ span#config {
   font-family: "Inter-medium";
   min-width: 320px;
   text-align: center;
+  opacity: 1;
+  transition-delay: initial !important;
 }
 span#signIn {
   margin-top: 20px;
@@ -216,7 +219,20 @@ span#signIn {
   margin-bottom: 84px;
   min-width: 320px;
   text-align: center;
+  border-radius: 20px !important;
+  opacity: 1;
+  transition-delay: initial;
 }
+span#signIn:hover {
+  background-color: #fff !important;
+  color: var(--primary-color) !important;
+  border: 1px solid #fff !important;
+}
+span#config:hover {
+  color: #fff !important;
+  background-color: var(--primary-color) !important;
+}
+
 .config:hover {
   border-radius: 40px !important;
 }

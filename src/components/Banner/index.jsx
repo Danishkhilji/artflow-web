@@ -10,13 +10,16 @@ import CommonContainer from "../CommonContainer";
 const Banner = React.forwardRef(
   ({ className, title, ctaTitle, onClick, uniqueKey }, ref) => {
     const container = useRef(null);
-
     const { scrollYProgress } = useScroll({
       target: container,
-      offset: ["start start", "end end"],
+      offset: ["start end", "end start"],
     });
 
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+    const scale = useTransform(
+      scrollYProgress,
+      [0, 0.5, 1], // Scroll progress
+      [1, 1.4, 1] // Start default, grow slightly, return to default
+    );
 
     return (
       <section
@@ -32,10 +35,10 @@ const Banner = React.forwardRef(
               transition={{
                 type: "spring",
                 stiffness: 80, // Lower stiffness for smoother spring
-                damping: 20, // Higher damping to reduce bounce
+                damping: 15, // Higher damping to reduce bounce
                 mass: 1, // Normal mass for natural movement
                 restDelta: 0.001, // Ensures animation comes to a smooth stop
-                delay: 0.3, // Subtle entrance delay
+                delay: 0.4, // Subtle entrance delay
               }}
             >
               <img src={bg1} alt="Banner background" />
