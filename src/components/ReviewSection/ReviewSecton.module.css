@@ -5,6 +5,13 @@
   overflow-x: scroll; /* Enables vertical scrolling */
   scrollbar-width: none; /* Firefox - hides scrollbar */
   -ms-overflow-style: none; /* IE/Edge - hides scrollbar */
+
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px; /* Add padding to avoid cut-off */
+  box-sizing: border-box;
 }
 
 /* For WebKit browsers (Chrome, Safari) */
@@ -52,4 +59,3 @@
     letter-spacing: -2%;
   }
 }
-

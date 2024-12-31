@@ -14,10 +14,12 @@ const ReviewSection = () => {
 
     const scroll = () => {
       if (scrollContainer && !isPaused) {
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        if (
+          scrollContainer.scrollLeft >=
+          scrollContainer.scrollWidth / 2 - scrollContainer.clientWidth
+        ) {
           scrollContainer.scrollLeft = 0;
         }
-        // Increase scrollLeft based on scrollSpeed
         scrollContainer.scrollLeft += scrollSpeed;
       }
       animationFrame = requestAnimationFrame(scroll);

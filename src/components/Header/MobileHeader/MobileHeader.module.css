@@ -12,7 +12,7 @@
   flex-direction: column;
   background: #fff;
   backdrop-filter: blur(2rem);
-  transition: height 310ms cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+  transition: all 330ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
 }
 
 .header.menu {
@@ -69,7 +69,7 @@
 /* Mobile Menu Button */
 .mobileMenu {
   position: relative;
-  z-index: 18000;
+  z-index: 999999;
   width: 100%;
   height: 100%;
   display: flex;
@@ -108,7 +108,7 @@
 
 /* Fullscreen Menu */
 .menu {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: #fff;
@@ -116,62 +116,137 @@
 
 .nav {
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: -10px;
   width: 100%;
   visibility: hidden;
   flex: 1;
   background: inherit;
   z-index: 1700;
-  transition: opacity 0.2s ease-in, transform 0.5s ease-in-out;
+  transition: all 0.2s ease-in, transform 0.5s ease-in-out;
   padding: 16px;
   padding-top: 4.8rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.nav {
+  overflow-y: scroll;
+  height: 100vh; /* Adjust height as needed */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+.nav::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Optional: Hide scrollbar for Firefox */
+.nav {
+  scrollbar-width: none;
+}
+
+/* Optional: Hide scrollbar for IE and older Edge */
+.nav {
+  -ms-overflow-style: none;
 }
 
 .header.menu .nav {
   opacity: 1;
   visibility: visible;
 }
-.nav h2 {
+.nav span {
   padding: 21px;
   font-family: "Inter-semiBold";
   font-size: 18px;
   line-height: 21.78px;
+  display: block;
 }
 
-.nav > h2 {
+.nav > span {
   color: #fff !important;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.6s ease-in-out, opacity 0.4s ease-in;
 }
 
-.header.menu .nav > h2 {
+.header.menu .nav > span {
   color: var(--text-color) !important;
   transform: translateY(0);
   opacity: 1;
   transition-delay: 0.4s;
 }
 
-.nav > h2 {
+.header.menu .nav span:hover {
+  box-shadow: 0px 5px 16px -1px #00000026;
+  color: var(--primary-color) !important;
+  border-radius: 10px;
+}
+
+.nav > span,
+.nav button,
+.nav button > span {
   color: transparent; /* Initially hidden */
   transform: translateY(-10px); /* Slight move up */
   opacity: 0;
   transition: color 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
 }
 
-.header.menu .nav > h2 {
+.header.menu .nav > span,
+.nav button {
   color: #000; /* Target color after menu opens */
   transform: translateY(0); /* Move back to normal */
   opacity: 1;
 }
 
-.header.menu .nav > h2:nth-child(1) {
+span#config {
+  display: inline-block;
+  margin-top: auto;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color) !important;
+  font-family: "Inter-medium";
+  min-width: 320px;
+  text-align: center;
+}
+span#signIn {
+  margin-top: 20px;
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+  font-family: "Inter-medium";
+  margin-bottom: 84px;
+  min-width: 320px;
+  text-align: center;
+}
+.config:hover {
+  border-radius: 40px !important;
+}
+.header.menu .nav > span:nth-child(1) {
   transition-delay: 0.1s; /* Staggered delay for first item */
 }
-.header.menu .nav > h2:nth-child(2) {
+.header.menu .nav > span:nth-child(2) {
   transition-delay: 0.2s; /* Second item */
 }
-.header.menu .nav > h2:nth-child(3) {
+.header.menu .nav > span:nth-child(3) {
   transition-delay: 0.3s; /* Third item */
+}
+.header.menu .config {
+  transition-delay: 0.4s !important;
+}
+
+.header.menu .nav div {
+  opacity: 1;
+}
+.header.menu .nav button:nth-child(1) {
+  transition-delay: 0.5s;
+}
+
+.header.menu .nav button:nth-child(2) {
+  transition-delay: 0.6s;
+}
+
+@media (max-width: 390px) {
+  span#signIn,
+  span#config {
+    min-width: 100%;
+  }
 }

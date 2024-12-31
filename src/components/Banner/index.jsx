@@ -9,30 +9,33 @@ import CommonContainer from "../CommonContainer";
 
 const Banner = React.forwardRef(
   ({ className, title, ctaTitle, onClick, uniqueKey }, ref) => {
-
+    const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
-      target: ref,
+      target: container,
       offset: ["start start", "end end"],
     });
 
-    // Apply a delay to the scale transformation
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.233]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
 
     return (
       <section
         className={clsx(classes.wrapper, className)}
-        key={uniqueKey} // Ensure each Banner has a unique key for remounting
-        ref={ref} // Forwarding the ref to the section element
+        key={uniqueKey}
+        ref={ref}
       >
         <CommonContainer className={clsx(classes.content, classes.sticky)}>
-          <div ref={ref} className={classes.el}>
+          <div ref={container} className={classes.el}>
             <motion.div
               style={{ scale }}
               className={classes.imageContainer}
               transition={{
-                duration: 0.5, // Adjusts the animation duration
-                delay: 0.2, // Adds delay to the animation (in seconds)
+                type: "spring",
+                stiffness: 80, // Lower stiffness for smoother spring
+                damping: 20, // Higher damping to reduce bounce
+                mass: 1, // Normal mass for natural movement
+                restDelta: 0.001, // Ensures animation comes to a smooth stop
+                delay: 0.1, // Subtle entrance delay
               }}
             >
               <img src={bg1} alt="Banner background" />
@@ -54,19 +57,18 @@ const Banner = React.forwardRef(
   }
 );
 
-// Set displayName to improve debugging in DevTools
 Banner.displayName = "Banner";
 
 Banner.propTypes = {
-  className: PropTypes.string, // Additional className (optional)
-  title: PropTypes.string.isRequired, // Title text (required)
-  ctaTitle: PropTypes.string.isRequired, // CTA button label (required)
-  onClick: PropTypes.func.isRequired, // Function for button click (required)
-  uniqueKey: PropTypes.string.isRequired, // Unique key to force remount
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  ctaTitle: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  uniqueKey: PropTypes.string.isRequired,
 };
 
 Banner.defaultProps = {
-  className: "", // Empty by default if no className is passed
+  className: "",
 };
 
 export default Banner;

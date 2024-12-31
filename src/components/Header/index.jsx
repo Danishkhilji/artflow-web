@@ -7,9 +7,9 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   useMobileViewHook(setIsMobile, 767);
   return (
-    <CommonContainer>
+    <>
       {isMobile ? <MobileHeader /> : <DesktopHeader />}
-    </CommonContainer>
+    </>
   );
 };
 

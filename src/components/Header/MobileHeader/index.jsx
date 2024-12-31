@@ -2,6 +2,8 @@ import { useState } from "react";
 import clsx from "clsx";
 import classes from "./MobileHeader.module.css";
 import { Logo } from "../../../constant";
+import CommonContainer from "../../CommonContainer";
+import { Button } from "primereact/button";
 const MobileHeader = () => {
   const [active, setActive] = useState(false);
 
@@ -23,43 +25,60 @@ const MobileHeader = () => {
           [classes.menu]: active,
         })}
       >
-        <nav className={classes.navContainer}>
-          <span
-            className={classes.logo}
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            <Logo />
-          </span>
-          <span
-            className={classes.cta}
-            onClick={() => {
-              setActive((prev) => !prev);
-            }}
-          >
+        <CommonContainer className={classes.p0}>
+          <nav className={classes.navContainer}>
             <span
-              className={clsx(classes.mobileMenu, {
-                [classes.active]: active,
-              })}
+              className={classes.logo}
+              onClick={() => {
+                window.open(
+                  "https://oyepackaging.com",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
             >
-              <span className={clsx(classes.line, classes["line-top"])}></span>
+              <Logo />
+            </span>
+            <span
+              className={classes.cta}
+              onClick={() => {
+                setActive((prev) => !prev);
+              }}
+            >
               <span
-                className={clsx(classes.line, classes["line-bottom"], {
+                className={clsx(classes.mobileMenu, {
                   [classes.active]: active,
                 })}
-              ></span>
+              >
+                <span
+                  className={clsx(classes.line, classes["line-top"])}
+                ></span>
+                <span
+                  className={clsx(classes.line, classes["line-bottom"], {
+                    [classes.active]: active,
+                  })}
+                ></span>
+              </span>
             </span>
-          </span>
-        </nav>
+          </nav>
+        </CommonContainer>
         <div className={clsx(classes.nav)}>
-          <h2>Product</h2>
-          <h2>Services</h2>
-          <h2>About</h2>
+          <span>Product</span>
+          <span>Services</span>
+       
+
+          <span
+            id={classes.config}
+            className={clsx("transparent-btn primary-btn", classes.config)}
+          >
+            Configure Packaging
+          </span>
+          <span
+            id={classes.signIn}
+            className={clsx("transparent-btn primary-btn", classes.signIn)}
+          >
+            SIGN IN
+          </span>
         </div>
       </header>
     </>
