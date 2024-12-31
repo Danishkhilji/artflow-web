@@ -17,7 +17,7 @@
 .contentWrapper {
   max-width: 600px;
   position: relative;
-  z-index: 99 !important;
+  z-index: 999 !important;
   transform: translateX(0) !important;
 }
 .mainHeading {
@@ -47,7 +47,7 @@
 }
 .gridWrapper > div:last-child {
   position: relative;
-  margin-left: -88px;
+
   /* margin-top: -15px; */
 }
 .heroImgWrapper {
@@ -56,10 +56,11 @@
   display: flex;
   align-items: center;
   z-index: 1;
+  margin-left: -75px;
 }
 .heroImgWrapper img {
   min-width: 420px !important;
-  max-width: 600px;
+
   min-height: 250px;
 }
 .innerWrapper {
@@ -71,14 +72,40 @@
 .banner1 {
   margin-block: 22px !important;
 }
+.imageSection {
+  margin-left: -75px;
+}
 .img {
   position: relative;
 
   z-index: 999 !important;
 }
-.mainContent{
-  
+.mainContent {
+  position: relative;
+  z-index: 9999 !important;
 }
+
+.gridWrapper {
+  display: flex;
+  position: relative;
+}
+
+.mainContent {
+  position: relative;
+  z-index: 10; /* Higher z-index to stay above image */
+}
+
+.heroImgWrapper {
+  position: relative;
+  z-index: 1; /* Lower z-index */
+}
+
+.heroImgWrapper img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
 @media (max-width: 992px) {
   .heroImgWrapper {
     display: none;

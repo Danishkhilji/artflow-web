@@ -12,7 +12,7 @@
   flex-direction: column;
   background: #fff;
   backdrop-filter: blur(2rem);
-  transition: height 281ms cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+  transition: height 310ms cubic-bezier(0.4, 0, 0.6, 1) 80ms;
 }
 
 .header.menu {
@@ -26,6 +26,7 @@
   justify-content: space-between;
   width: 90%;
   margin-inline: auto;
+  position: relative;
 }
 
 /* Call-to-action and Logo Styling */
@@ -116,7 +117,7 @@
 .nav {
   opacity: 0;
   position: absolute;
-  top: 0;
+  top: -10px;
   width: 100%;
   visibility: hidden;
   flex: 1;
@@ -130,7 +131,6 @@
 .header.menu .nav {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.3s;
 }
 .nav h2 {
   padding: 21px;
@@ -150,7 +150,7 @@
   color: var(--text-color) !important;
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 
 .nav > h2 {

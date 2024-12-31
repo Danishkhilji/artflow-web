@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import classes from "./Banner.module.css";
 import clsx from "clsx";
 import { Button } from "primereact/button";
@@ -7,46 +7,55 @@ import { useTransform, useScroll, motion } from "framer-motion";
 import { bg1 } from "../../constant";
 import CommonContainer from "../CommonContainer";
 
-const Banner = ({ className, title, ctaTitle, onClick, uniqueKey }) => {
-  const container = useRef(null);
+const Banner = React.forwardRef(
+  ({ className, title, ctaTitle, onClick, uniqueKey }, ref) => {
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
+    const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["start start", "end end"],
+    });
 
-  return (
-    <section
-      className={clsx(classes.wrapper, className)} // Apply external className
-      key={uniqueKey} // Ensure that each instance gets a unique key to remount
-    >
-      <CommonContainer className={clsx(classes.content, classes.sticky)}>
-        <div ref={container} className={classes.el}>
-          <motion.div
-            style={{ scale: scale }}
-            className={classes.imageContainer}
-          >
-            <img src={bg1} alt="" />
-            <div className={classes.mainContent}>
-              <h2 className={clsx("semiBold-heading", classes.title)}>
-                {title}
-              </h2>
-              <Button
-                className={clsx("transparent-btn", classes.cta)}
-                onClick={() => {
-                  onClick();
-                }}
-                label={ctaTitle}
-              />
-            </div>
-          </motion.div>
-        </div>
-      </CommonContainer>
-    </section>
-  );
-};
+    // Apply a delay to the scale transformation
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.233]);
+
+    return (
+      <section
+        className={clsx(classes.wrapper, className)}
+        key={uniqueKey} // Ensure each Banner has a unique key for remounting
+        ref={ref} // Forwarding the ref to the section element
+      >
+        <CommonContainer className={clsx(classes.content, classes.sticky)}>
+          <div ref={ref} className={classes.el}>
+            <motion.div
+              style={{ scale }}
+              className={classes.imageContainer}
+              transition={{
+                duration: 0.5, // Adjusts the animation duration
+                delay: 0.2, // Adds delay to the animation (in seconds)
+              }}
+            >
+              <img src={bg1} alt="Banner background" />
+              <div className={classes.mainContent}>
+                <h2 className={clsx("semiBold-heading", classes.title)}>
+                  {title}
+                </h2>
+                <Button
+                  className={clsx("transparent-btn", classes.cta)}
+                  onClick={onClick}
+                  label={ctaTitle}
+                />
+              </div>
+            </motion.div>
+          </div>
+        </CommonContainer>
+      </section>
+    );
+  }
+);
+
+// Set displayName to improve debugging in DevTools
+Banner.displayName = "Banner";
 
 Banner.propTypes = {
   className: PropTypes.string, // Additional className (optional)
