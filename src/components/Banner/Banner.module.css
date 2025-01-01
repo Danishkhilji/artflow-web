@@ -8,16 +8,19 @@
   /* border-radius: 20px; */
   overflow: hidden;
 }
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 .title {
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
 }
+
 .cta {
   text-transform: uppercase;
   font-family: "Inter-medium";
@@ -26,6 +29,7 @@
   letter-spacing: 2%;
   margin-top: 30px;
 }
+
 .cta:hover {
   color: var(--text-color) !important;
 
@@ -46,6 +50,7 @@
   top: 0;
   height: 384px;
 }
+
 /* Take 100% height and width of container */
 .el {
   height: 100%;
@@ -56,12 +61,34 @@
   align-items: center;
   justify-content: center;
 }
-.imageContainer {
-  /* width: 100%;
-  height: 100%; */
+
+/* .imageContainer {
   position: relative;
   height: 384px;
   left: 0;
+} */
+.mainContent {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: left;
+  /* Ensure content aligns properly */
+  width: 100%;
+  /* Optionally limit this to a max width for better control */
+  max-width: 600px;
+  /* Optional, adjust based on your design */
+  padding: 0 1rem;
+  /* Add some padding for smaller screens */
+}
+
+.imageContainer {
+  position: absolute;
+  /* width: 100%; */
+  height: 100%;
+  z-index: 1;
+  /* Ensure it stays below the content */
 }
 
 .imageContainer img {
@@ -69,41 +96,56 @@
   height: 100%;
   object-fit: cover;
 }
-.mainContent {
+
+/* .mainContent {
   top: calc(50% - 82.5px);
   transform: translate(-50%);
-  left: 50%;
+  left: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   position: absolute;
   z-index: 8;
   width: 80%;
   max-width: 600px;
 
-}
+} */
+
 @media (max-width: 506px) {
   .wrapper {
     min-height: 550px;
     padding: 90px 44px;
     display: flex;
   }
+
   .content {
     margin-top: auto;
     flex: 1;
   }
+
   .cta {
     display: block;
     margin: auto;
     margin-top: 15px;
     white-space: nowrap;
   }
+
   .title {
     font-size: 30px;
     line-height: 39px;
+    text-align: left;
+  }
+
+  .mainContent {
+    left: 50%;
     text-align: center;
   }
+
+  .title {
+    text-align: center;
+  }
+
   .mainContent {
     /* top: initial;
     transform: translateX(-50%);
@@ -118,10 +160,29 @@
   .wrapper {
     padding-inline: 50px;
   }
+
+  .mainContent {
+    left: 50%;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
 }
 
 @media (max-width: 776px) {
   .wrapper {
     padding-inline: 16px;
   }
+
+  .mainContent {
+    left: 50%;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
 }

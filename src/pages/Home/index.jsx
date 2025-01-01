@@ -34,60 +34,67 @@ const Home = () => {
           <CommonContainer>
             <motion.div
               className={classes.mainContainer}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{
-                duration: 2,
+                duration: 1,
                 ease: "easeInOut",
               }}
               style={{
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
               }}
             >
-              {/* Text Section with Opacity Transition */}
+              {/* Text Section */}
               <motion.div
                 className={clsx(classes.textSection, {
                   [classes.expanded]: expanded,
                 })}
-                initial={{ opacity: 0, x: "100%" }}
+                initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
                 animate={{
-                  opacity: isTextVisible ? 1 : 0.3, // Opacity starts low and increases
-                  x: expanded ? "0%" : "-100%",
+                  opacity: 1,
+                  x: "0%", // Move to its position on the left
                 }}
                 transition={{
-                  delay: 1,
-                  duration: 1.5, // Longer duration for opacity transition
-                  ease: "easeOut", // Smooth easing for opacity transition
+                  delay: 1.3, // Start after the image animation
+                  duration: 0.75,
+                  ease: "easeOut",
                 }}
                 style={{
-                  zIndex: isTextVisible ? 3 : 1,
+                  zIndex: 3,
                   position: "relative",
                 }}
-                onAnimationComplete={() => setIsTextVisible(true)} // Set z-index after animation completes
               >
                 <h1 className={classes.mediumHeading}>We are ÖYE!</h1>
                 <h2 className={clsx("large-heading", classes.mainHeading)}>
                   Packaging
                 </h2>
                 <p className={classes.text}>
-                  We support the growth of coffee roasting companies by
-                  providing fully customized packaging solutions and unique
-                  filling services.
+                  We support the growth of coffee roasting companies by providing
+                  <b> fully customized</b> packaging solutions and <b>unique filling services.</b>
                 </p>
               </motion.div>
 
               {/* Image Section */}
               <motion.div
                 className={classes.imageSection}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
+                initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
+                animate={{
+                  opacity: 1,
+                  scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
+                  x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
+                }}
+                transition={{
+                  duration: 2, // Total animation time
+                  times: [0, 0.5, 1], // Define keyframes: grow, pause, move
+                  ease: "easeInOut",
+                }}
                 style={{
                   zIndex: 2,
                   position: "relative",
+                  overflow: "visible", // Ensure image is always visible
                 }}
               >
                 <img

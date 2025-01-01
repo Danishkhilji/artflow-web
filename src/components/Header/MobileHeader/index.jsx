@@ -1,9 +1,98 @@
+// import { useState } from "react";
+// import clsx from "clsx";
+// import classes from "./MobileHeader.module.css";
+// import { Logo } from "../../../constant";
+// import CommonContainer from "../../CommonContainer";
+// import { Button } from "primereact/button";
+// import { menuIcon, menuClose } from "../../../constant";
+// const MobileHeader = () => {
+//   const [active, setActive] = useState(false);
+
+//   return (
+//     <>
+//       <style>{`
+//         .mobile-drawer > div {
+//           padding-inline: 20px;
+//         }
+//         @media (max-width: 515px) {
+//           .mobile-drawer {
+//             width: 300px !important;
+//           }
+//         }
+//       `}</style>
+
+//       <header
+//         className={clsx(classes.header, {
+//           [classes.menu]: active,
+//         })}
+//       >
+//         <CommonContainer className={classes.p0}>
+//           <nav className={classes.navContainer}>
+//             <span
+//               className={classes.logo}
+//               onClick={() => {
+//                 window.open(
+//                   "https://oyepackaging.com",
+//                   "_blank",
+//                   "noopener,noreferrer"
+//                 );
+//               }}
+//             >
+//               <Logo />
+//             </span>
+//             <span
+//               className={classes.cta}
+//               onClick={() => {
+//                 setActive((prev) => !prev);
+//               }}
+//             >
+//               <span
+//                 className={clsx(classes.mobileMenu, {
+//                   [classes.active]: active,
+//                 })}
+//               >
+//                 <img
+//                   src={active ? menuClose : menuIcon} // Toggle between close and menu icons
+//                   alt="menu"
+//                   className={clsx(classes.icon, { [classes.closeIcon]: active, [classes.menuIcon]: !active })}
+//                 />
+//               </span>
+//             </span>
+//           </nav>
+//         </CommonContainer>
+//         <div className={clsx(classes.nav)}>
+//           <span>Product</span>
+//           <span>Services</span>
+
+
+//           <span
+//             id={classes.config}
+//             className={clsx("transparent-btn primary-btn", classes.config)}
+//           >
+//             Configure Packaging
+//           </span>
+//           <span
+//             id={classes.signIn}
+//             className={clsx("transparent-btn primary-btn", classes.signIn)}
+//           >
+//             SIGN IN
+//           </span>
+//         </div>
+//       </header>
+//     </>
+//   );
+// };
+
+// export default MobileHeader;
+
 import { useState } from "react";
 import clsx from "clsx";
 import classes from "./MobileHeader.module.css";
 import { Logo } from "../../../constant";
 import CommonContainer from "../../CommonContainer";
 import { Button } from "primereact/button";
+import { menuIcon, menuClose } from "../../../constant";
+
 const MobileHeader = () => {
   const [active, setActive] = useState(false);
 
@@ -50,23 +139,18 @@ const MobileHeader = () => {
                   [classes.active]: active,
                 })}
               >
-                <span
-                  className={clsx(classes.line, classes["line-top"])}
-                ></span>
-                <span
-                  className={clsx(classes.line, classes["line-bottom"], {
-                    [classes.active]: active,
-                  })}
-                ></span>
+                <img
+                  src={active ? menuClose : menuIcon} // Toggle between close and menu icons
+                  alt="menu"
+                  className={clsx(classes.icon, { [classes.closeIcon]: active, [classes.menuIcon]: !active })}
+                />
               </span>
             </span>
           </nav>
         </CommonContainer>
-        <div className={clsx(classes.nav)}>
+        <div className={clsx(classes.nav)} style={{ display: active ? "flex" : "none" }}>
           <span>Product</span>
           <span>Services</span>
-       
-
           <span
             id={classes.config}
             className={clsx("transparent-btn primary-btn", classes.config)}

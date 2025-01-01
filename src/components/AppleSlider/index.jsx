@@ -27,7 +27,7 @@ const AppleSlider = () => {
         },
       },
       {
-        breakpoint: 767,
+        breakpoint: 1100,
         settings: {
           slidesToShow: 2,
         },

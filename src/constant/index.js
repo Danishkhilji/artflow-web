@@ -27,3 +27,6 @@ export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
 export { default as designPattern2 } from "../assets/images/design-pattern2.png";
 export { default as designCard1 } from "../assets/images/design-card1.png";
 export { default as designCard2 } from "../assets/images/design-card2.png";
+
+export { default as menuIcon } from "../assets/images/menu-icon.svg";
+export { default as menuClose } from "../assets/images/menu-close.svg";

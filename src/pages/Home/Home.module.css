@@ -3,34 +3,43 @@
 
   height: 200vh;
 }
+
 .expandWrapper {
   position: relative;
   z-index: 99 !important;
   overflow: hidden;
   transform-origin: left;
 }
+
 .text {
   color: var(--text-color);
-  font-size: 20px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 22px;
   line-height: 32px;
 }
+
 .contentWrapper {
   max-width: 600px;
   position: relative;
   z-index: 999 !important;
   transform: translateX(0) !important;
 }
+
 .mainHeading {
   padding-top: 3px;
   padding-bottom: 20px;
   text-transform: uppercase;
 }
+
 .quickCardsWrapper {
   padding-top: 24px;
 }
+
 .aboutWrapper {
   margin-top: 15px;
 }
+
 .aboutTitle {
   padding-top: 70px;
   font-family: "Inter-semiBold";
@@ -38,18 +47,21 @@
   line-height: 49px;
   padding-bottom: 30px;
 }
+
 .gridWrapper {
   display: flex;
 }
 
-.gridWrapper > div {
+.gridWrapper>div {
   flex: 1;
 }
-.gridWrapper > div:last-child {
+
+.gridWrapper>div:last-child {
   position: relative;
 
   /* margin-top: -15px; */
 }
+
 .heroImgWrapper {
   flex-shrink: 0;
   height: 100%;
@@ -58,28 +70,35 @@
   z-index: 1;
   margin-left: -75px;
 }
+
 .heroImgWrapper img {
   min-width: 420px !important;
 
   min-height: 250px;
 }
+
 .innerWrapper {
   padding-top: 94px;
 }
+
 .quickCardsWrapper {
   padding-top: 50px;
 }
+
 .banner1 {
   margin-block: 22px !important;
 }
+
 .imageSection {
   margin-left: -75px;
 }
+
 .img {
   position: relative;
 
   z-index: 999 !important;
 }
+
 .mainContent {
   position: relative;
   z-index: 9999 !important;
@@ -92,12 +111,14 @@
 
 .mainContent {
   position: relative;
-  z-index: 10; /* Higher z-index to stay above image */
+  z-index: 10;
+  /* Higher z-index to stay above image */
 }
 
 .heroImgWrapper {
   position: relative;
-  z-index: 1; /* Lower z-index */
+  z-index: 1;
+  /* Lower z-index */
 }
 
 .heroImgWrapper img {
@@ -116,10 +137,12 @@
   .heroImgWrapper {
     display: none;
   }
+
   .mainHeading {
     font-size: 50px;
     line-height: 50px;
   }
+
   .innerWrapper {
     padding-top: 31px;
   }

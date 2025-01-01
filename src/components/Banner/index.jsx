@@ -1,9 +1,10 @@
+
 import React, { useRef } from "react";
 import classes from "./Banner.module.css";
 import clsx from "clsx";
 import { Button } from "primereact/button";
 import PropTypes from "prop-types";
-import { useTransform, useScroll, motion } from "framer-motion";
+import { useTransform, useScroll, useSpring, motion } from "framer-motion";
 import { bg1 } from "../../constant";
 import CommonContainer from "../CommonContainer";
 
@@ -15,12 +16,18 @@ const Banner = React.forwardRef(
       offset: ["start end", "end start"],
     });
 
-    // Clamp the scale to ensure it smoothly returns to 1
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.4, 1]);
+    // Scale effect for the background image
+    const rawScale = useTransform(scrollYProgress, [0, 0.35, 1.25], [1, 1.25, 1]);
+    const scale = useSpring(rawScale, {
+      stiffness: 100,
+      damping: 20,
+      mass: 1,
+    });
 
-    scale.onChange(() => {
-      if (scrollYProgress.get() === 1) {
-        scale.set(1);
+    // Clamp the scale to a minimum of 1
+    scale.onChange((value) => {
+      if (value < 1) {
+        scale.set(1); // Reset the scale to 1 if it goes below
       }
     });
 
@@ -32,6 +39,7 @@ const Banner = React.forwardRef(
       >
         <CommonContainer className={clsx(classes.content, classes.sticky)}>
           <div ref={container} className={classes.el}>
+            {/* Background Image with scale effect */}
             <motion.div
               style={{ scale }}
               className={classes.imageContainer}
@@ -45,17 +53,19 @@ const Banner = React.forwardRef(
               }}
             >
               <img src={bg1} alt="Banner background" />
-              <div className={classes.mainContent}>
-                <h2 className={clsx("semiBold-heading", classes.title)}>
-                  {title}
-                </h2>
-                <Button
-                  className={clsx("transparent-btn", classes.cta)}
-                  onClick={onClick}
-                  label={ctaTitle}
-                />
-              </div>
             </motion.div>
+
+            {/* Content stays fixed */}
+            <div className={classes.mainContent}>
+              <h2 className={clsx("semiBold-heading", classes.title)}>
+                {title}
+              </h2>
+              <Button
+                className={clsx("transparent-btn", classes.cta)}
+                onClick={onClick}
+                label={ctaTitle}
+              />
+            </div>
           </div>
         </CommonContainer>
       </section>
