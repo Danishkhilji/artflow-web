@@ -13,15 +13,16 @@ import classes from "./Home.module.css";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
 import { redirectTo } from "../../helpers";
 import { motion } from "framer-motion";
+
 const Home = () => {
   const [expanded, setExpanded] = useState(false);
+  const [mobileHeroSection, setIsMobileHeroSection] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
-  const [isTextVisible, setIsTextVisible] = useState(false);
 
   const banner1 = useRef();
   const banner2 = useRef();
-  useMobileViewHook(setIsMobile, 500);
+  useMobileViewHook(setIsMobile, 400);
+  useMobileViewHook(setIsMobileHeroSection, 767);
   console.log("isMobile", isMobile);
   useEffect(() => {
     setTimeout(() => setExpanded(true), 200); // Delay for smoother effect
@@ -31,80 +32,101 @@ const Home = () => {
       <>
         <Header />
         <div className={classes.innerWrapper}>
-          <CommonContainer>
-            <motion.div
-              className={classes.mainContainer}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 1,
-                ease: "easeInOut",
-              }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-              }}
-            >
-              {/* Text Section */}
-              <motion.div
-                className={clsx(classes.textSection, {
-                  [classes.expanded]: expanded,
-                })}
-                initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
-                animate={{
-                  opacity: 1,
-                  x: "0%", // Move to its position on the left
-                }}
-                transition={{
-                  delay: 1.3, // Start after the image animation
-                  duration: 0.75,
-                  ease: "easeOut",
-                }}
-                style={{
-                  zIndex: 3,
-                  position: "relative",
-                }}
-              >
+          {!mobileHeroSection ? (
+            <>
+              <CommonContainer>
+                <motion.div
+                  className={classes.mainContainer}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                  }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "relative",
+                  }}
+                >
+                  {/* Text Section */}
+                  <motion.div
+                    className={clsx(classes.textSection, {
+                      [classes.expanded]: expanded,
+                    })}
+                    initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
+                    animate={{
+                      opacity: 1,
+                      x: "0%", // Move to its position on the left
+                    }}
+                    transition={{
+                      delay: 1.3, // Start after the image animation
+                      duration: 0.75,
+                      ease: "easeOut",
+                    }}
+                    style={{
+                      zIndex: 3,
+                      position: "relative",
+                    }}
+                  >
+                    <h1 className={classes.mediumHeading}>We are ÖYE!</h1>
+                    <h2 className={clsx("large-heading", classes.mainHeading)}>
+                      Packaging
+                    </h2>
+                    <p className={classes.text}>
+                      We support the growth of coffee roasting companies by
+                      providing
+                      <b> fully customized</b> packaging solutions and{" "}
+                      <b>unique filling services.</b>
+                    </p>
+                  </motion.div>
+
+                  {/* Image Section */}
+                  <motion.div
+                    className={classes.imageSection}
+                    initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
+                    animate={{
+                      opacity: 1,
+                      scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
+                      x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
+                    }}
+                    transition={{
+                      duration: 2, // Total animation time
+                      times: [0, 0.5, 1], // Define keyframes: grow, pause, move
+                      ease: "easeInOut",
+                    }}
+                    style={{
+                      zIndex: 2,
+                      position: "relative",
+                      overflow: "visible", // Ensure image is always visible
+                    }}
+                  >
+                    <img
+                      src={heroBg}
+                      alt="hero img"
+                      className={clsx("img-fluid", classes.img)}
+                    />
+                  </motion.div>
+                </motion.div>
+              </CommonContainer>
+            </>
+          ) : (
+            <CommonContainer>
+              <div className={classes.innerWrapper}>
                 <h1 className={classes.mediumHeading}>We are ÖYE!</h1>
                 <h2 className={clsx("large-heading", classes.mainHeading)}>
                   Packaging
                 </h2>
                 <p className={classes.text}>
-                  We support the growth of coffee roasting companies by providing
-                  <b> fully customized</b> packaging solutions and <b>unique filling services.</b>
+                  We support the growth of coffee roasting companies by
+                  providing
+                  <b> fully customized</b> packaging solutions and{" "}
+                  <b>unique filling services.</b>
                 </p>
-              </motion.div>
-
-              {/* Image Section */}
-              <motion.div
-                className={classes.imageSection}
-                initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
-                animate={{
-                  opacity: 1,
-                  scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
-                  x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
-                }}
-                transition={{
-                  duration: 2, // Total animation time
-                  times: [0, 0.5, 1], // Define keyframes: grow, pause, move
-                  ease: "easeInOut",
-                }}
-                style={{
-                  zIndex: 2,
-                  position: "relative",
-                  overflow: "visible", // Ensure image is always visible
-                }}
-              >
-                <img
-                  src={heroBg}
-                  alt="hero img"
-                  className={clsx("img-fluid", classes.img)}
-                />
-              </motion.div>
-            </motion.div>
-          </CommonContainer>
+              </div>
+            </CommonContainer>
+          )}
           <CommonContainer className={classes.quickCardsWrapper}>
             <div className="grid">
               <div className="md:col-6 col-12">

@@ -1,15 +1,13 @@
-
-import React, { useRef } from "react";
-import classes from "./Banner.module.css";
 import clsx from "clsx";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Button } from "primereact/button";
 import PropTypes from "prop-types";
-import { useTransform, useScroll, useSpring, motion } from "framer-motion";
-import { bg1 } from "../../constant";
+import React, { useRef } from "react";
 import CommonContainer from "../CommonContainer";
+import classes from "./Banner.module.css";
 
 const Banner = React.forwardRef(
-  ({ className, title, ctaTitle, onClick, uniqueKey }, ref) => {
+  ({ className, bg, title, ctaTitle, onClick, uniqueKey }, ref) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
       target: container,
@@ -17,7 +15,11 @@ const Banner = React.forwardRef(
     });
 
     // Scale effect for the background image
-    const rawScale = useTransform(scrollYProgress, [0, 0.35, 1.25], [1, 1.25, 1]);
+    const rawScale = useTransform(
+      scrollYProgress,
+      [0, 0.35, 1.25],
+      [1, 1.25, 1]
+    );
     const scale = useSpring(rawScale, {
       stiffness: 100,
       damping: 20,
@@ -52,7 +54,7 @@ const Banner = React.forwardRef(
                 delay: 0.4,
               }}
             >
-              <img src={bg1} alt="Banner background" />
+              <img src={bg} alt="Banner background" />
             </motion.div>
 
             {/* Content stays fixed */}
@@ -73,10 +75,13 @@ const Banner = React.forwardRef(
   }
 );
 
+export default Banner;
+
 Banner.displayName = "Banner";
 
 Banner.propTypes = {
   className: PropTypes.string,
+  bg: PropTypes.string.isRequired, // Ensure bg is a required string
   title: PropTypes.string.isRequired,
   ctaTitle: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
@@ -85,6 +90,5 @@ Banner.propTypes = {
 
 Banner.defaultProps = {
   className: "",
+  ctaTitle: "Learn More", // Default CTA text
 };
-
-export default Banner;
