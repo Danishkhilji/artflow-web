@@ -15,7 +15,7 @@ const Hero = () => {
       <main className={classes.wrapper}>
         <CommonContainer>
           <div className={clsx(classes.contentWrapper)}>
-            <h1 className={classes["medium-heading"]}>We are ÖYE!</h1>
+            <h1 className={classes["medium-heading"]}>WE ARE ÖYE!</h1>
             <h2 className={clsx("large-heading", classes.mainHeading)}>
               packaging
             </h2>

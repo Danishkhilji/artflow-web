@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import ModalSkeleton from "../../components/ModalSkeleton";
 import classes from "./FeatureModal.module.css";
 const FeatureModal = ({ show, setShow, data }) => {
-  console.log("Feature Modal", data);
   return (
     <ModalSkeleton show={show} setShow={setShow}>
       <div className={classes.wrapper}>

@@ -8,12 +8,13 @@
   left: 0;
   z-index: 1400;
   width: 100%;
-  height: 4rem;
+  height: 4.8rem;
   flex-direction: column;
   background: #fff;
   backdrop-filter: blur(2rem);
-  transition: all 330ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
+  transition: all 1000ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
 }
+
 
 .header.menu {
   height: 100vh;
@@ -81,18 +82,14 @@
 .icon {
   width: 27px;
   height: 19.3px;
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
 }
 
-.active .mobileMenu {
-  transform: rotateY(180deg);
-  /* Flip the icon on Y-axis when active */
+.active .closeIcon {
+  transform: rotateX(180deg);
+  transition: transform 1s ease;
 }
 
-.active .icon {
-  transform: rotateY(180deg);
-  /* Flip the icon itself */
-}
 
 .menuIcon {
   width: 27px;
@@ -103,6 +100,7 @@
   width: 27px;
   height: 27px;
 }
+
 
 /* Fullscreen Menu */
 .menu {
@@ -121,7 +119,7 @@
   flex: 1;
   background: inherit;
   z-index: 1700;
-  transition: all 0.2s ease-in, transform 0.5s ease-in-out;
+  transition: all 1s ease-in, transform 0.5s ease-in-out;
   padding: 16px;
   padding-top: 4.8rem;
   overflow-y: scroll;
@@ -164,14 +162,14 @@
   display: block;
 }
 
-.nav > span {
+.nav>span {
   color: #fff !important;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.6s ease-in-out, opacity 0.4s ease-in;
 }
 
-.header.menu .nav > span {
+.header.menu .nav>span {
   color: var(--text-color) !important;
   transform: translateY(0);
   opacity: 1;
@@ -185,9 +183,9 @@
   border-radius: 10px;
 }
 
-.nav > span,
+.nav>span,
 .nav button,
-.nav button > span {
+.nav button>span {
   color: transparent;
   /* Initially hidden */
   transform: translateY(-10px);
@@ -196,7 +194,7 @@
   transition: color 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
 }
 
-.header.menu .nav > span,
+.header.menu .nav>span,
 .nav button {
   color: #000;
   /* Target color after menu opens */
@@ -213,8 +211,8 @@ span#config {
   font-family: "Inter-medium";
   min-width: 320px;
   text-align: center;
-  opacity: 1;
-  transition-delay: initial !important;
+  /* opacity: 1; */
+  /* transition-delay: initial !important; */
 }
 
 span#signIn {
@@ -226,8 +224,8 @@ span#signIn {
   min-width: 320px;
   text-align: center;
   border-radius: 20px !important;
-  opacity: 1;
-  transition-delay: initial;
+  /* opacity: 1;
+  transition-delay: initial; */
   box-shadow: initial !important;
 }
 
@@ -244,19 +242,21 @@ span#config:hover {
 
 .config:hover {
   border-radius: 40px !important;
+  color: #fff !important;
+  background-color: var(--primary-color) !important;
 }
 
-.header.menu .nav > span:nth-child(1) {
+.header.menu .nav>span:nth-child(1) {
   transition-delay: 0.1s;
   /* Staggered delay for first item */
 }
 
-.header.menu .nav > span:nth-child(2) {
+.header.menu .nav>span:nth-child(2) {
   transition-delay: 0.2s;
   /* Second item */
 }
 
-.header.menu .nav > span:nth-child(3) {
+.header.menu .nav>span:nth-child(3) {
   transition-delay: 0.3s;
   /* Third item */
 }
@@ -278,6 +278,7 @@ span#config:hover {
 }
 
 @media (max-width: 500px) {
+
   span#signIn,
   span#config {
     min-width: 100%;

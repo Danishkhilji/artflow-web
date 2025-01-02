@@ -7,7 +7,6 @@ import classes from "./ShortAboutUs.module.css";
 export default function ShortAboutUs() {
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  console.log("short About us", shortAboutUs);
 
   useMobileViewHook(setIsMobile, 576);
   return (
@@ -23,13 +22,13 @@ export default function ShortAboutUs() {
             <div className={classes.imgWrapper}>
               {shortAboutUs[activeTab] &&
                 typeof activeTab ===
-                  "number"?(
-                    <img
-                      className={"img-fluid"}
-                      src={shortAboutUs[activeTab].img}
-                      alt={shortAboutUs[activeTab].title}
-                    />
-                  ):null}
+                "number" ? (
+                <img
+                  className={"img-fluid"}
+                  src={shortAboutUs[activeTab].img}
+                  alt={shortAboutUs[activeTab].title}
+                />
+              ) : null}
             </div>
           </div>
         )}

@@ -13,7 +13,6 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
   useMobileViewHook(setIsMobile, 576);
 
   const handleTabChange = (e) => {
-    console.log("eee", e);
     // if (!e.index) return;
     setActiveTab((current) => {
       if (typeof e?.index == "number") return e?.index;

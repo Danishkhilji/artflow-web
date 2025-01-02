@@ -30,3 +30,4 @@ export { default as designCard2 } from "../assets/images/design-card2.png";
 
 export { default as menuIcon } from "../assets/images/menu-icon.svg";
 export { default as menuClose } from "../assets/images/menu-close.svg";
+export { default as plusIcon } from "../assets/images/plus-Icon.svg";

@@ -7,7 +7,7 @@ import CommonContainer from "../CommonContainer";
 import classes from "./Banner.module.css";
 
 const Banner = React.forwardRef(
-  ({ className, bg, title, ctaTitle, onClick, uniqueKey }, ref) => {
+  ({ className, bg, title, ctaTitle, onClick, uniqueKey, isMobile }, ref) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
       target: container,
@@ -18,7 +18,7 @@ const Banner = React.forwardRef(
     const rawScale = useTransform(
       scrollYProgress,
       [0, 0.35, 1.25],
-      [1, 1.25, 1]
+      [isMobile ? 1.3 : 1, isMobile ? 2 : 1.25, 1]
     );
     const scale = useSpring(rawScale, {
       stiffness: 100,
@@ -41,7 +41,6 @@ const Banner = React.forwardRef(
       >
         <CommonContainer className={clsx(classes.content, classes.sticky)}>
           <div ref={container} className={classes.el}>
-            {/* Background Image with scale effect */}
             <motion.div
               style={{ scale }}
               className={classes.imageContainer}
@@ -86,6 +85,7 @@ Banner.propTypes = {
   ctaTitle: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   uniqueKey: PropTypes.string.isRequired,
+  isMobile: PropTypes.string.isRequired,
 };
 
 Banner.defaultProps = {

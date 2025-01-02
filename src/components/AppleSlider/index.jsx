@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Slider from "react-slick";
 import LeftArrow from "../../assets/images/left-arrow.svg?react";
+import { plusIcon } from "../../constant";
 import FeatureModal from "../../modal/FeatureModal";
 import classes from "./AppleSlider.module.css";
 import { ourFeatures } from "../../data";
@@ -71,7 +72,7 @@ const AppleSlider = () => {
                       setSelectedItem(slide);
                     }}
                   >
-                    +
+                    <img src={plusIcon} alt="modal open" />
                   </button>
                 </div>
               </div>

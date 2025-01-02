@@ -78,7 +78,7 @@
 }
 
 .innerWrapper {
-  padding-top: 94px;
+  padding-top: 50px;
 }
 
 .quickCardsWrapper {
@@ -130,6 +130,10 @@
 @media (max-width: 767px) {
   .imageSection {
     display: none;
+  }
+
+  .innerWrapper {
+    margin-top: 10px;
   }
 }
 

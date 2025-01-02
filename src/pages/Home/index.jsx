@@ -17,13 +17,32 @@ import { motion } from "framer-motion";
 const Home = () => {
   const [expanded, setExpanded] = useState(false);
   const [mobileHeroSection, setIsMobileHeroSection] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const banner1 = useRef();
   const banner2 = useRef();
-  useMobileViewHook(setIsMobile, 400);
+
+
+
+  // useMobileViewHook(setIsMobile, 600);
   useMobileViewHook(setIsMobileHeroSection, 767);
-  console.log("isMobile", isMobile);
+
+
+
+
+
   useEffect(() => {
     setTimeout(() => setExpanded(true), 200); // Delay for smoother effect
   }, []);
@@ -70,14 +89,13 @@ const Home = () => {
                       position: "relative",
                     }}
                   >
-                    <h1 className={classes.mediumHeading}>We are ÖYE!</h1>
+                    <h1 className={classes.mediumHeading}>WE ARE ÖYE!</h1>
                     <h2 className={clsx("large-heading", classes.mainHeading)}>
-                      Packaging
+                      packaging
                     </h2>
                     <p className={classes.text}>
-                      We support the growth of coffee roasting companies by
-                      providing
-                      <b> fully customized</b> packaging solutions and{" "}
+                      We support the growth of coffee roasting companies <br /> by
+                      providing<b> fully customized</b> packaging solutions and{" "}
                       <b>unique filling services.</b>
                     </p>
                   </motion.div>
@@ -114,7 +132,7 @@ const Home = () => {
           ) : (
             <CommonContainer>
               <div className={classes.innerWrapper}>
-                <h1 className={classes.mediumHeading}>We are ÖYE!</h1>
+                <h1 className={classes.mediumHeading}>WE ARE ÖYE!</h1>
                 <h2 className={clsx("large-heading", classes.mainHeading)}>
                   Packaging
                 </h2>
@@ -130,11 +148,11 @@ const Home = () => {
           <CommonContainer className={classes.quickCardsWrapper}>
             <div className="grid">
               <div className="md:col-6 col-12">
-                <QuickCard category="packaging" title="Coffee packaging" />
+                <QuickCard category="packaging" title="Coffee packaging" BlockLink="https://oyepackaging.com/products" />
               </div>
 
               <div className="md:col-6 col-12">
-                <QuickCard category="services" title="coffee Services" />
+                <QuickCard category="services" title="coffee Services" BlockLink="https://oyepackaging.com/services" />
               </div>
             </div>
           </CommonContainer>
@@ -152,6 +170,7 @@ const Home = () => {
                 "noopener,noreferrer"
               )
             }
+            isMobile={isMobile}
           />
           {/* <CommonContainer> */}
           <AppleSlider />
@@ -173,6 +192,7 @@ const Home = () => {
             ctaTitle="Book a call"
             className={classes.banner1}
             bg={isMobile ? banner1_mobile : bg1}
+            isMobile={isMobile}
           />
           <Footer />
         </div>
