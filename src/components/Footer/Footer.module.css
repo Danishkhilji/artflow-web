@@ -8,6 +8,7 @@
 .contentWrapper h2 {
   color: var(--text-color);
   font-family: "Inter-semiBold";
+  font-size: 18px;
 }
 .contentWrapper p {
   margin-top: 7px;
@@ -91,7 +92,24 @@
 .logoWrapper span {
   cursor: pointer;
 }
+.mlAuto > .contentWrapper h2,
+.mlAuto > .contentWrapper p {
+  width: fit-content !important;
+}
+.mlAuto > .contentWrapper {
+  width: fit-content !important;
 
+  margin-left: auto;
+}
+.mlAuto > .contentWrapper > div {
+  width: fit-content !important;
+}
+
+@media (min-width: 992px) {
+  .pe30 {
+    padding-right: 40px !important;
+  }
+}
 @media (max-width: 991px) {
   .contentWrapper h2 {
     font-size: 18px;
@@ -106,7 +124,10 @@
     width: fit-content;
 
     margin-left: auto;
-    min-width: 145px;
+    /* min-width: 145px; */
+  }
+  .fixInMob > .contentWrapper > div {
+    width: fit-content !important;
   }
 }
 

@@ -32,6 +32,7 @@
   font-family: "Inter-extraBold";
   src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
 }
+
 .px-100 {
   padding-inline: 100px !important;
 }
@@ -187,6 +188,27 @@ div.modal-open {
 .p-dialog-mask {
   z-index: 99999 !important;
 }
+
+.p-dialog-header-icon:focus-visible {
+  outline: none !important;
+  box-shadow: initial !important;
+}
+
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
+.accordion .collapse {
+  transition: height 0.4s ease !important; /* Adjust duration (default is 0.35s) */
+}
+
+.accordion .collapsing {
+  transition: height 0.4s ease !important; /* Speed up collapsing */
+}
+
 @media (max-width: 424px) {
   .slick-track {
     display: flex !important;

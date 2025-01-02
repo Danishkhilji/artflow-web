@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-  padding: 60px 40px;
+  padding: 44px 24px;
   background-color: var(--tertiary-color);
   border-radius: 20px;
 }
@@ -24,9 +24,10 @@
 .imgWrapper {
   padding-left: 41px;
 }
+
 @media (max-width: 576px) {
   .wrapper {
-    padding: 16px;
+    padding: 0px;
     padding-top: 30px;
 
     background-color: var(--tertiary-color);

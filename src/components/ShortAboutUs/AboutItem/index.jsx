@@ -1,65 +1,78 @@
 import clsx from "clsx";
-import { Accordion, AccordionTab } from "primereact/accordion";
 import { Button } from "primereact/button";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { Accordion } from "react-bootstrap";
 import { shortAboutUs } from "../../../data";
+import { redirectTo } from "../../../helpers";
 import { useMobileViewHook } from "../../../hooks/useMobileViewHook";
 import classes from "./AboutItem.module.css";
-import { redirectTo } from "../../../helpers";
+
 const AboutItem = ({ activeTab, setActiveTab }) => {
   const [isMobile, setIsMobile] = useState(false);
-  // Track active tab
-  useMobileViewHook(setIsMobile, 576);
 
-  const handleTabChange = (e) => {
-    // if (!e.index) return;
-    setActiveTab((current) => {
-      if (typeof e?.index == "number") return e?.index;
-      return current;
-    }); // Update state on tab click
-  };
+  useMobileViewHook(setIsMobile, 767);
 
   return (
     <div className={classes.aboutContainer}>
       <Accordion
-        multiple={false}
-        activeIndex={activeTab}
-        onTabChange={handleTabChange}
+        activeKey={activeTab.toString()}
+        alwaysOpen={true}
+        onSelect={(eventKey) => {
+          if (eventKey !== null) {
+            setActiveTab(parseInt(eventKey));
+          }
+        }}
       >
-        {shortAboutUs?.map((element) => (
-          <AccordionTab
+        {shortAboutUs?.map((element, index) => (
+          <Accordion.Item
+            eventKey={index.toString()}
             key={element.id}
-            header={element.title}
             className={classes.accordionItem}
           >
-            <div className={classes.bg}>
-              <p className={clsx(classes.description)}>{element.description}</p>
-              <Button
-                onClick={() => {
-                  element?.link && redirectTo(element?.link);
-                }}
-                label={element.cta}
-                className={clsx("transparent-btn primary-btn", classes.cta)}
-              />
-              {isMobile && (
-                <div className={classes.imageWrapper}>
-                  {shortAboutUs[activeTab] && (
-                    <img
-                      className={"img-fluid"}
-                      src={shortAboutUs[activeTab].img}
-                      alt={shortAboutUs[activeTab].title}
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </AccordionTab>
+            <Accordion.Header
+              onClick={(e) => {
+                // If clicking on the active tab, prevent default behavior
+                if (activeTab === index) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }
+              }}
+            >
+              {element?.title}
+            </Accordion.Header>
+            <Accordion.Body>
+              <div className={classes.bg}>
+                <p className={clsx(classes.description)}>
+                  {element.description}
+                </p>
+                <Button
+                  onClick={() => {
+                    element?.link && redirectTo(element?.link);
+                  }}
+                  label={element.cta}
+                  className={clsx("transparent-btn primary-btn", classes.cta)}
+                />
+                {isMobile && (
+                  <div className={classes.imageWrapper}>
+                    {shortAboutUs[activeTab] && (
+                      <img
+                        className="img-fluid"
+                        src={shortAboutUs[activeTab].img}
+                        alt={shortAboutUs[activeTab].title}
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
         ))}
       </Accordion>
     </div>
   );
 };
+
 AboutItem.propTypes = {
   activeTab: PropTypes.number.isRequired,
   setActiveTab: PropTypes.func.isRequired,
