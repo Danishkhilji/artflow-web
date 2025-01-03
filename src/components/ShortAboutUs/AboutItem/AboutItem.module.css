@@ -4,13 +4,14 @@
   font-size: 18px;
   line-height: 22px;
 }
+
 .cta {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
 /* accordion tab styling */
-.accordionItem > a {
+.accordionItem>a {
   padding-block: 20px;
   flex-direction: row-reverse;
   border-radius: 0;
@@ -41,12 +42,15 @@
   border: initial;
   background: initial;
 }
+
 .accordionItem :global(.p-accordion-content) {
   border: initial;
 }
-.accordionItem > a :global(svg.p-accordion-toggle-icon) {
+
+.accordionItem>a :global(svg.p-accordion-toggle-icon) {
   fill: var(--text-color) !important;
 }
+
 .bg,
 .aboutContainer {
   background-color: var(--tertiary-color);
@@ -62,7 +66,8 @@
 .accordionItem {
   border: 1px solid var(--secondary-gray-color);
 }
-.accordionItem > h2 button {
+
+.accordionItem>h2 button {
   color: var(--heading-color);
   font-family: "Inter-medium";
   font-size: 30px;
@@ -71,15 +76,18 @@
   padding: 16px !important;
   text-transform: uppercase;
 }
+
 .accordionItem button:focus {
   box-shadow: initial;
   color: var(--text-color);
 }
+
 .accordionItem button:not(.collapsed) {
   background-color: var(--tertiary-color);
   box-shadow: initial !important;
   color: var(--text-color) !important;
 }
+
 .accordionItem button::after {
   width: 18px;
   height: 12px;
@@ -89,6 +97,7 @@
   background-repeat: no-repeat;
   display: inline-block;
 }
+
 .accordionItem :global(.accordion-button:not(.collapsed)::after) {
   width: 18px;
   height: 12px;
@@ -99,6 +108,7 @@
   display: inline-block;
   transform: rotate(-180deg) !important;
 }
+
 .accordionItem :global(.accordion-body) {
   padding-top: 4px !important;
   background-color: var(--tertiary-color);
@@ -114,6 +124,17 @@
   padding: 1rem;
 }
 
+.divider {
+  height: 1px;
+  background-color: #d9d9d9;
+  width: 95%;
+  height: 1.5px;
+  /* Light grey color */
+  margin: 16px 0;
+  margin-left: 15px;
+  /* Add spacing around the divider */
+}
+
 @media (max-width: 767px) {
   .imageWrapper {
     margin-top: 30px;
@@ -122,10 +143,12 @@
     justify-content: center;
     margin-bottom: 20px;
   }
+
   .imageWrapper img {
     max-width: 382px !important;
     width: 100%;
   }
+
   .accordionItem :global(.p-accordion-header-text) {
     font-size: 22px;
   }

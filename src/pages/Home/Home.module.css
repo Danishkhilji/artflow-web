@@ -13,10 +13,19 @@
 
 .text {
   color: var(--text-color);
-  font-family: "Inter";
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: 22px;
   line-height: 32px;
+}
+
+.textSemiBold {
+  font-family: "Inter-SemiBold";
+  font-size: 22px;
+}
+
+.mediumHeading {
+  font-family: "inter-medium";
+  font-size: 44px;
 }
 
 .contentWrapper {
@@ -30,7 +39,8 @@
   padding-top: 3px;
   padding-bottom: 20px;
   text-transform: uppercase;
-  font-family: "Inter-medium";
+  font-family: "Inter-semiBold";
+  font-size: 100px;
 }
 
 .quickCardsWrapper {
@@ -53,11 +63,11 @@
   display: flex;
 }
 
-.gridWrapper > div {
+.gridWrapper>div {
   flex: 1;
 }
 
-.gridWrapper > div:last-child {
+.gridWrapper>div:last-child {
   position: relative;
 
   /* margin-top: -15px; */

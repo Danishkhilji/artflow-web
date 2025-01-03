@@ -7,7 +7,7 @@ import {
   Sustain,
   //png imports
   about1,
-  // about2,
+  about2,
   about3,
   about5,
   demoReview1,
@@ -51,7 +51,7 @@ const shortAboutUs = [
       "Struggling with design preparation for printing? Don't worry! Our design team is ready to support you every step of the way. Just reach out to us. ",
     link: "/",
     cta: "CONTACT US",
-    img: about5,
+    img: about2,
   },
 ];
 

@@ -14,6 +14,7 @@ import { useMobileViewHook } from "../../hooks/useMobileViewHook";
 import { redirectTo } from "../../helpers";
 import { motion } from "framer-motion";
 
+import { Container, Row, Col } from "react-bootstrap";
 const Home = () => {
   const [expanded, setExpanded] = useState(false);
   const [mobileHeroSection, setIsMobileHeroSection] = useState(false);
@@ -139,22 +140,32 @@ const Home = () => {
                 <p className={classes.text}>
                   We support the growth of coffee roasting companies by
                   providing
-                  <b> fully customized</b> packaging solutions and{" "}
-                  <b>unique filling services.</b>
+                  <span className={classes.textSemiBold}> fully customized</span> packaging solutions and{" "}
+                  <span className={classes.textSemiBold}>unique filling services.</span>
                 </p>
               </div>
             </CommonContainer>
           )}
           <CommonContainer className={classes.quickCardsWrapper}>
-            <div className="grid">
-              <div className="md:col-6 col-12">
-                <QuickCard category="packaging" title="Coffee packaging" BlockLink="https://oyepackaging.com/products" />
-              </div>
-
-              <div className="md:col-6 col-12">
-                <QuickCard category="services" title="coffee Services" BlockLink="https://oyepackaging.com/services" />
-              </div>
-            </div>
+            <Container>
+              <Row>
+                {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
+                <Col md={6} xs={12}>
+                  <QuickCard
+                    category="packaging"
+                    title="Coffee Packaging"
+                    BlockLink="https://oyepackaging.com/products"
+                  />
+                </Col>
+                <Col md={6} xs={12}>
+                  <QuickCard
+                    category="services"
+                    title="Coffee Services"
+                    BlockLink="https://oyepackaging.com/services"
+                  />
+                </Col>
+              </Row>
+            </Container>
           </CommonContainer>
           <Banner
             ref={banner1}

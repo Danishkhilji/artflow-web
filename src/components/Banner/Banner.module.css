@@ -1,9 +1,9 @@
 .wrapper {
-  padding: 125px 40px;
+  padding: 10px 40px;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  padding: 100px;
+  /* padding: 100px; */
   margin-block: 70px;
   /* border-radius: 20px; */
   overflow: hidden;
@@ -19,6 +19,8 @@
   color: #fff;
   text-transform: uppercase;
   text-align: left;
+  font-family: "inter-SemiBold";
+  font-size: 44px;
 }
 
 .cta {

@@ -9,7 +9,7 @@ export default function ShortAboutUs() {
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  useMobileViewHook(setIsMobile, 576);
+  useMobileViewHook(setIsMobile, 767);
   return (
     <div className={classes.wrapper}>
       <Row>
@@ -19,13 +19,18 @@ export default function ShortAboutUs() {
           </div>
         </Col>
         {!isMobile && (
-          <Col sm={5}>
+          <Col sm={5} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <div className={classes.imgWrapper}>
               {shortAboutUs[activeTab] && typeof activeTab === "number" ? (
                 <img
                   className={"img-fluid"}
                   src={shortAboutUs[activeTab].img}
                   alt={shortAboutUs[activeTab].title}
+                  style={{
+                    width: "100%", // Increase width
+                    height: "auto", // Maintain aspect ratio
+                    maxWidth: "451px", // Prevent overflow
+                  }}
                 />
               ) : null}
             </div>

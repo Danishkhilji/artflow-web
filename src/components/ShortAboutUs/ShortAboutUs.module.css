@@ -8,6 +8,7 @@
   background-color: var(--tertiary-color);
   border-radius: 20px;
 }
+
 .accordionsTab {
   max-width: 641px;
 }
@@ -17,19 +18,39 @@
   top: 0px;
   left: 0px;
 }
+
 .imgWrapper {
   z-index: 999;
   position: relative;
 }
+
 .imgWrapper {
   padding-left: 41px;
 }
 
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Ensure the column height matches */
+}
+
+.imgWrapper img {
+  width: 100%;
+  /* Set to fill the container width */
+  max-width: 451px;
+  /* Maximum size for large screens */
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: cover;
+  /* Ensure it fills its container appropriately */
+}
+
 @media (max-width: 576px) {
   .wrapper {
-    padding: 0px;
+    padding-left: 0px;
     padding-top: 30px;
-
     background-color: var(--tertiary-color);
   }
 }
