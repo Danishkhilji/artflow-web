@@ -7,6 +7,7 @@
   padding: 44px 24px;
   background-color: var(--tertiary-color);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .accordionsTab {
@@ -45,6 +46,86 @@
   /* Maintain aspect ratio */
   object-fit: cover;
   /* Ensure it fills its container appropriately */
+}
+.originalState {
+  overflow: hidden;
+  position: relative;
+}
+
+/* .imgWrapper {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.slideIn {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.imageCol {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 400px; /* Set a fixed height or adjust based on your design */
+}
+
+.imgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slideInNext {
+  transform: translateX(100%);
+}
+
+.slideInCurrent {
+  transform: translateX(0%);
+}
+
+.slideOut {
+  transform: translateX(100%);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 576px) {

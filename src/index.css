@@ -209,6 +209,46 @@ button {
   transition: height 0.4s ease !important; /* Speed up collapsing */
 }
 
+.accordion-header {
+  background-color: var(--tertiary-color);
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgContainer {
+  position: relative;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.imgContainer.exit {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.imgContainer.enter {
+  animation: slideFromRight 300ms ease-in-out forwards;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 @media (max-width: 424px) {
   .slick-track {
     display: flex !important;
