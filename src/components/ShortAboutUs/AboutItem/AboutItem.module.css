@@ -3,15 +3,16 @@
   color: var(--text-color);
   font-size: 18px;
   line-height: 22px;
+  margin-bottom: 0;
 }
 
 .cta {
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
 }
 
 /* accordion tab styling */
-.accordionItem>a {
+.accordionItem > a {
   padding-block: 20px;
   flex-direction: row-reverse;
   border-radius: 0;
@@ -47,7 +48,7 @@
   border: initial;
 }
 
-.accordionItem>a :global(svg.p-accordion-toggle-icon) {
+.accordionItem > a :global(svg.p-accordion-toggle-icon) {
   fill: var(--text-color) !important;
 }
 
@@ -67,13 +68,13 @@
   border: 1px solid var(--secondary-gray-color);
 }
 
-.accordionItem>h2 button {
+.accordionItem > h2 button {
   color: var(--heading-color);
   font-family: "Inter-medium";
   font-size: 30px;
   line-height: 39px;
   border-radius: 8px !important;
-  padding: 16px !important;
+  padding: 10px !important;
   text-transform: uppercase;
 }
 
@@ -124,24 +125,26 @@
   padding: 1rem;
 }
 
-.divider {
-  height: 1px;
-  background-color: #d9d9d9;
+div.divider {
+  border: 1.5px solid #d9d9d9;
   width: 95%;
-  height: 1.5px;
   /* Light grey color */
-  margin: 16px 0;
+  margin: 4px 0;
+
   margin-left: 15px;
   /* Add spacing around the divider */
 }
 
 @media (max-width: 767px) {
+  .divider {
+    width: 100%;
+  }
   .imageWrapper {
     margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .imageWrapper img {
@@ -157,5 +160,11 @@
 @media (max-width: 576px) {
   .imageWrapper svg {
     max-width: 251px !important;
+  }
+}
+
+@media (max-width: 352px) {
+  .accordionItem > h2 button {
+    font-size: 26px;
   }
 }

@@ -32,7 +32,7 @@
   max-width: 600px;
   position: relative;
   z-index: 999 !important;
-  transform: translateX(0) !important;
+  transform: translate(0, -50%) !important;
 }
 
 .mainHeading {
@@ -48,7 +48,7 @@
 }
 
 .aboutWrapper {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .aboutTitle {
@@ -57,6 +57,7 @@
   font-size: 44px;
   line-height: 49px;
   padding-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .gridWrapper {

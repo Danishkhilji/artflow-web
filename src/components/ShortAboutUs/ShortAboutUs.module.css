@@ -11,7 +11,7 @@
 }
 
 .accordionsTab {
-  max-width: 641px;
+  max-width: 605px;
 }
 
 .topIcon {
@@ -98,24 +98,27 @@
 .imgWrapper {
   position: relative;
   overflow: hidden;
-  height: 400px; /* Set a fixed height or adjust based on your design */
+  height: 460px; /* Set a fixed height or adjust based on your design */
 }
 
 .imgContainer {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: calc(-50% + 175px);
+  right: 0;
+  /* left: 41px; */
   width: 100%;
   height: 100%;
   transition: transform 0.1s ease-in-out;
 }
-
+.imgContainer img {
+  max-width: 420px;
+}
 .slideInNext {
   transform: translateX(100%);
 }
 
 .slideInCurrent {
-  transform: translateX(0%);
+  transform: translate(0%);
 }
 
 .slideOut {
@@ -127,11 +130,36 @@ img {
   height: 100%;
   object-fit: cover;
 }
+.wrapper {
+  padding-right: 75px !important;
+}
 
+@media (max-width: 767px) {
+  .accordionsTab {
+    max-width: initial;
+  }
+  .wrapper {
+    padding-right: 24px !important;
+  }
+}
 @media (max-width: 576px) {
   .wrapper {
-    padding-left: 0px;
-    padding-top: 30px;
+    padding: 44px 6px !important;
+  }
+  .imgWrapper {
+    padding-left: 0;
+  }
+  .imgWrapper img {
+    max-width: 382px;
+  }
+  .imgContainer {
+    bottom: calc(-50% + 150px);
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    padding-bottom: 28px !important;
+    padding-top: 12px !important;
     background-color: var(--tertiary-color);
   }
 }

@@ -33,8 +33,8 @@ export default function ShortAboutUs() {
 
   return (
     <div className={classes.wrapper}>
-      <Row>
-        <Col md={7} sm={12}>
+      <Row className="justify-content-between">
+        <Col md={6} sm={12} className="pe-md-0">
           <div className={classes.accordionsTab}>
             <AboutItem activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>

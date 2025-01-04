@@ -4,10 +4,9 @@ import { useState } from "react";
 import Slider from "react-slick";
 import LeftArrow from "../../assets/images/left-arrow.svg?react";
 import { plusIcon } from "../../constant";
+import { ourFeatures } from "../../data";
 import FeatureModal from "../../modal/FeatureModal";
 import classes from "./AppleSlider.module.css";
-import { ourFeatures } from "../../data";
-import { div } from "framer-motion/client";
 const AppleSlider = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showFeatureModal, setShowFeatureModal] = useState(false);
