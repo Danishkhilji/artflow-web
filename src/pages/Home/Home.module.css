@@ -1,7 +1,7 @@
 .wrapper {
   padding-top: 0px;
-
-  height: 200vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .expandWrapper {
@@ -63,11 +63,11 @@
   display: flex;
 }
 
-.gridWrapper>div {
+.gridWrapper > div {
   flex: 1;
 }
 
-.gridWrapper>div:last-child {
+.gridWrapper > div:last-child {
   position: relative;
 
   /* margin-top: -15px; */
