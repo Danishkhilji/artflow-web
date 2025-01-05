@@ -80,7 +80,6 @@
 
 // export default AboutItem;
 
-
 import clsx from "clsx";
 import { Button } from "primereact/button";
 import PropTypes from "prop-types";
@@ -90,6 +89,7 @@ import { shortAboutUs } from "../../../data";
 import { redirectTo } from "../../../helpers";
 import { useMobileViewHook } from "../../../hooks/useMobileViewHook";
 import classes from "./AboutItem.module.css";
+import { div } from "framer-motion/client";
 
 const AboutItem = ({ activeTab, setActiveTab }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -132,19 +132,20 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                       element?.link && redirectTo(element?.link);
                     }}
                     label={element.cta}
-                    className={clsx(
-                      "transparent-btn primary-btn",
-                      classes.cta
-                    )}
+                    className={clsx("transparent-btn primary-btn", classes.cta)}
                   />
                   {isMobile && (
                     <div className={classes.imageWrapper}>
                       {shortAboutUs[activeTab] && (
-                        <img
-                          className="img-fluid"
-                          src={shortAboutUs[activeTab].img}
-                          alt={shortAboutUs[activeTab].title}
-                        />
+                        <>
+                          <div>
+                            <img
+                              className="img-fluid"
+                              src={shortAboutUs[activeTab].img}
+                              alt={shortAboutUs[activeTab].title}
+                            />
+                          </div>
+                        </>
                       )}
                     </div>
                   )}

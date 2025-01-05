@@ -27,7 +27,11 @@ export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
 export { default as designPattern2 } from "../assets/images/design-pattern2.png";
 export { default as designCard1 } from "../assets/images/design-card1.png";
 export { default as designCard2 } from "../assets/images/design-card2.png";
-
+export { default as customerService } from "../assets/images/customer-service.png";
+export { default as brush } from "../assets/images/brush.png";
+export { default as packagingConfigurator } from "../assets/images/packaging-configurator.png";
+export { default as testPrint } from "../assets/images/test-print.png";
+// ************************************
 export { default as menuIcon } from "../assets/images/menu-icon.svg";
 export { default as menuClose } from "../assets/images/menu-close.svg";
 export { default as plusIcon } from "../assets/images/plus-Icon.svg";

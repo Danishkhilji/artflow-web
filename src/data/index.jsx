@@ -11,6 +11,10 @@ import {
   about3,
   about5,
   demoReview1,
+  customerService,
+  brush,
+  packagingConfigurator,
+  testPrint,
 } from "../constant";
 
 import { FaLinkedinIn } from "react-icons/fa";
@@ -24,7 +28,8 @@ const shortAboutUs = [
       "Design the packaging that suits your brand perfectly with our intuitive, step-by-step configurator. Enjoy complete freedom in selecting materials, print options, finishes, and add-ons, while controlling a price tailored to your needs.",
     link: "",
     cta: "SIGN UP",
-    img: about1,
+    img: packagingConfigurator,
+    circle: brush,
   },
   {
     id: "2",
@@ -33,7 +38,8 @@ const shortAboutUs = [
       "Want to test your design before ordering? We’ve got you covered! We'll print it and deliver it to your doorstep within 10 days so you can review and adjust it before placing your final order.",
     link: "/",
     cta: "SIGN UP",
-    img: about5,
+    img: testPrint,
+    circle: customerService,
   },
   {
     id: "3",
@@ -43,6 +49,7 @@ const shortAboutUs = [
     link: "https://oyepackaging.com/contact",
     cta: "LEARN MORE",
     img: about3,
+    circle: customerService,
   },
   {
     id: "4",
@@ -52,6 +59,7 @@ const shortAboutUs = [
     link: "/",
     cta: "CONTACT US",
     img: about2,
+    circle: customerService,
   },
 ];
 

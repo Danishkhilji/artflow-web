@@ -6,65 +6,64 @@ import { Row, Col } from "react-bootstrap";
 import classes from "./ShortAboutUs.module.css";
 import clsx from "clsx";
 
+const animationEffects = ["scaleEffect", "slideEffect", "rotateEffect"];
+
 export default function ShortAboutUs() {
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [currentImage, setCurrentImage] = useState(shortAboutUs[0]);
-  const [nextImage, setNextImage] = useState(null);
-  const [isSliding, setIsSliding] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
 
   useMobileViewHook(setIsMobile, 767);
 
   useEffect(() => {
     if (activeTab !== shortAboutUs.indexOf(currentImage)) {
-      setNextImage(shortAboutUs[activeTab]);
-      setIsSliding(true);
+      setAnimationKey((prevKey) => prevKey + 1);
 
-      // After animation ends, switch images and reset sliding
-      const timer = setTimeout(() => {
+      const imageTimer = setTimeout(() => {
         setCurrentImage(shortAboutUs[activeTab]);
-        setNextImage(null); // Remove next image to avoid overlap
-        setIsSliding(false);
-      }, 500); // Match the CSS duration
+      }, 300);
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(imageTimer);
     }
   }, [activeTab]);
 
   return (
     <div className={classes.wrapper}>
-      <Row className="justify-content-between">
-        <Col md={6} sm={12} className="pe-md-0">
+      <Row>
+        <Col md={7} sm={12} className="pe-md-0">
           <div className={classes.accordionsTab}>
             <AboutItem activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
         </Col>
         {!isMobile && (
-          <Col sm={5} className={classes.imgWrapper}>
-            {nextImage && (
+          <Col sm={5}>
+            <div className={classes.imgWrapper}>
               <div
-                className={clsx(classes.imgContainer, {
-                  [classes.slideInNext]: isSliding,
-                })}
+                key={animationKey} // Force re-render for animation
+                className={clsx(
+                  classes.sequentialCircleFrame,
+                  classes.animate,
+                  classes[animationEffects[activeTab % animationEffects.length]]
+                )}
               >
+                <span className={classes.firstCircle}>
+                  <img
+                    src={currentImage?.circle}
+                    alt="circle"
+                    className="img-fluid"
+                  />
+                </span>
+                <span className={classes.secondCircle}></span>
+                <span className={classes.thirdCircle}></span>
+              </div>
+              <div className={classes.imgContainer}>
                 <img
                   className="img-fluid"
-                  src={nextImage.img}
-                  alt={nextImage.title}
+                  src={currentImage.img}
+                  alt={currentImage.title}
                 />
               </div>
-            )}
-            <div
-              className={clsx(classes.imgContainer, {
-                [classes.slideOut]: isSliding,
-                [classes.slideInCurrent]: !isSliding,
-              })}
-            >
-              <img
-                className="img-fluid"
-                src={currentImage.img}
-                alt={currentImage.title}
-              />
             </div>
           </Col>
         )}

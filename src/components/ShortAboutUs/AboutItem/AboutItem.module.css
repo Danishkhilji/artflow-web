@@ -17,6 +17,12 @@
   flex-direction: row-reverse;
   border-radius: 0;
 }
+.firstCircle {
+  width: 122px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
 
 /* .accordionItem:first-child a {
   border-top: initial;
