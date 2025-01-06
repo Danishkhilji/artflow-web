@@ -18,10 +18,10 @@ export { default as Sustain } from "../assets/images/sustainable.svg?react";
 // export png here
 export { default as bg1 } from "../../src/assets/images/banner1.png";
 export { default as demoReview1 } from "../../src/assets/images/review-demo1.png";
-export { default as about1 } from "..//assets/images/about1.png";
-export { default as about2 } from "../assets/images/about2.png";
-export { default as about3 } from "../assets/images/about3.png";
-export { default as about5 } from "../assets/images/about5.png";
+export { default as coffeeBag } from "..//assets/images/coffee_bag.png";
+export { default as testPrint } from "../assets/images/test-print.png";
+export { default as Preview3D } from "../assets/images/3d-preview.png";
+export { default as designSupport } from "../assets/images/design-support.png";
 export { default as heroBg } from "../assets/images/hero_bg.png";
 export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
 export { default as designPattern2 } from "../assets/images/design-pattern2.png";
@@ -31,3 +31,14 @@ export { default as designCard2 } from "../assets/images/design-card2.png";
 export { default as menuIcon } from "../assets/images/menu-icon.svg";
 export { default as menuClose } from "../assets/images/menu-close.svg";
 export { default as plusIcon } from "../assets/images/plus-Icon.svg";
+
+
+
+export { default as supprotIcon } from "../assets/images/supprotIcon.png";
+
+export { default as testPrintIcon } from "../assets/images/testPrintIcon.png";
+
+export { default as configIcon } from "../assets/images/configIcon.png";
+
+export { default as Preview3DIcon } from "../assets/images/preview3DIcon.png";
+

@@ -6,11 +6,15 @@ import {
   Return,
   Sustain,
   //png imports
-  about1,
-  about2,
-  about3,
-  about5,
+  coffeeBag,
+  testPrint,
+  Preview3D,
+  designSupport,
   demoReview1,
+  supprotIcon,
+  testPrintIcon,
+  Preview3DIcon,
+  configIcon
 } from "../constant";
 
 import { FaLinkedinIn } from "react-icons/fa";
@@ -24,7 +28,8 @@ const shortAboutUs = [
       "Design the packaging that suits your brand perfectly with our intuitive, step-by-step configurator. Enjoy complete freedom in selecting materials, print options, finishes, and add-ons, while controlling a price tailored to your needs.",
     link: "",
     cta: "SIGN UP",
-    img: about1,
+    img: coffeeBag,
+    icon: configIcon
   },
   {
     id: "2",
@@ -33,7 +38,8 @@ const shortAboutUs = [
       "Want to test your design before ordering? We’ve got you covered! We'll print it and deliver it to your doorstep within 10 days so you can review and adjust it before placing your final order.",
     link: "/",
     cta: "SIGN UP",
-    img: about5,
+    img: testPrint,
+    icon: testPrintIcon
   },
   {
     id: "3",
@@ -42,7 +48,8 @@ const shortAboutUs = [
       "Need pictures of your new designer bags? We’ve got you covered! Simply upload your design to our design service and receive a 3D model that can be used for any purpose.",
     link: "https://oyepackaging.com/contact",
     cta: "LEARN MORE",
-    img: about3,
+    img: Preview3D,
+    icon: Preview3DIcon
   },
   {
     id: "4",
@@ -51,7 +58,8 @@ const shortAboutUs = [
       "Struggling with design preparation for printing? Don't worry! Our design team is ready to support you every step of the way. Just reach out to us. ",
     link: "/",
     cta: "CONTACT US",
-    img: about2,
+    img: designSupport,
+    icon: supprotIcon
   },
 ];
 
