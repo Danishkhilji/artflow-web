@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { shortAboutUs } from "../../data";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
@@ -7,9 +6,27 @@ import { Row, Col } from "react-bootstrap";
 import classes from "./ShortAboutUs.module.css";
 import { FaHeart } from "react-icons/fa";
 import clsx from "clsx";
-import { AnimatePresence, motion } from 'framer-motion';
-
-
+import { AnimatePresence, motion } from "framer-motion";
+const positions = {
+  smallCircle: {
+    x: 130,
+    y: 140,
+    size: { width: 20, height: 20 },
+    zIndex: 11,
+  },
+  middleCircle: {
+    x: 85,
+    y: 95,
+    size: { width: 55, height: 52 },
+    zIndex: 22, // Middle circle
+  },
+  largeCircle: {
+    x: 20,
+    y: 30,
+    size: { width: 122, height: 120 },
+    zIndex: 33,
+  },
+};
 function ShortAboutUs() {
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -19,7 +36,6 @@ function ShortAboutUs() {
 
   useEffect(() => {
     if (activeTab !== shortAboutUs.indexOf(currentImage)) {
-
       const timer = setTimeout(() => {
         setCurrentImage(shortAboutUs[activeTab]);
       }, 500);
@@ -28,25 +44,24 @@ function ShortAboutUs() {
     }
   }, [activeTab]);
 
-  console.log(currentImage)
+  console.log(currentImage);
   const [showFirst, setShowFirst] = useState(false);
   const [showSecond, setShowSecond] = useState(false);
   const [showThird, setShowThird] = useState(false);
 
-
-
-
   useEffect(() => {
     const resetAnimations = () => {
+      // Reset the circles' visibility
       setShowFirst(false);
       setShowSecond(false);
       setShowThird(false);
 
+      // Start by animating the image first
       setTimeout(() => {
         setShowFirst(true);
-        setTimeout(() => setShowSecond(true), 100);
-        setTimeout(() => setShowThird(true), 200);
-      }, 100);
+        setTimeout(() => setShowSecond(true), 150);
+        setTimeout(() => setShowThird(true), 300);
+      }, 300); // Delay for the image animation to complete
     };
 
     resetAnimations();
@@ -55,28 +70,6 @@ function ShortAboutUs() {
       clearTimeout();
     };
   }, [activeTab]);
-
-  const positions = {
-    smallCircle: {
-      x: 130,
-      y: 140,
-      size: { width: 20, height: 20 },
-      zIndex: 11,
-    },
-    middleCircle: {
-      x: 85,
-      y: 95,
-      size: { width: 55, height: 52 },
-      zIndex: 22, // Middle circle
-    },
-    largeCircle: {
-      x: 20,
-      y: 30,
-      size: { width: 122, height: 120 },
-      zIndex: 33,
-    },
-
-  };
 
   return (
     <div className={classes.wrapper}>
@@ -87,11 +80,44 @@ function ShortAboutUs() {
           </div>
         </Col>
         {!isMobile && (
-          <Col sm={5} className={classes.imgWrapper}>
+          <Col md={12} lg={5} className={classes.imgWrapper}>
+            <div className={clsx(classes.imgContainer, {})}>
+              <AnimatePresence>
+                <motion.div
+                  className={classes.imageSection}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  }}
+                  style={{
+                    zIndex: 2,
+                    position: "relative",
+                    overflow: "visible",
+                  }}
+                  key={currentImage.img}
+                >
+                  <img
+                    className={clsx(
+                      currentImage.img.includes("coffee_bag")
+                        ? classes.coffee_bag
+                        : currentImage.img.includes("3d-preview")
+                        ? classes.preview3D
+                        : classes.commonImage,
+                      "image-transition img-fluid"
+                    )}
+                    src={currentImage.img}
+                    alt={currentImage.title}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
             <AnimatePresence>
               {showFirst && (
                 <motion.div
+                  className={classes.smallCircle}
                   key="smallCircle"
                   style={{
                     ...circleStyle,
@@ -101,12 +127,11 @@ function ShortAboutUs() {
                     top: `${positions.smallCircle.y}px`,
                     zIndex: positions.smallCircle.zIndex,
                   }}
-                  initial={{ opacity: 1, scale: 0 }}
+                  initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,
                     ease: "easeInOut",
-                    delay: 0.2,
                   }}
                 />
               )}
@@ -114,6 +139,7 @@ function ShortAboutUs() {
               {showSecond && (
                 <motion.div
                   key="mediumCircle"
+                  className={classes.mediumCircle}
                   style={{
                     ...circleStyle,
                     width: `${positions.middleCircle.size.width}px`,
@@ -122,12 +148,11 @@ function ShortAboutUs() {
                     top: `${positions.middleCircle.y}px`,
                     zIndex: positions.middleCircle.zIndex,
                   }}
-                  initial={{ opacity: 1, scale: 0 }}
+                  initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,
                     ease: "easeInOut",
-                    delay: 0.2,
                   }}
                 />
               )}
@@ -141,87 +166,31 @@ function ShortAboutUs() {
                     height: `${positions.largeCircle.size.height}px`,
                     left: `${positions.largeCircle.x}px`,
                     top: `${positions.largeCircle.y}px`,
-
-                    display: showThird ? 'flex' : 'none',
+                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     zIndex: positions.largeCircle.zIndex,
                   }}
-
-                  initial={{ opacity: 1, scale: 0 }}
-                  animate={showThird ? { opacity: 1, scale: 1 } : {}}
+                  className={classes.bigCircle}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,
                     ease: "easeInOut",
-                    delay: 0.2,
                   }}
                 >
                   <img
+                    className={classes.icon}
                     src={currentImage.icon}
                     alt={currentImage.title}
-                  // style={width}
                   />
-
                 </motion.div>
               )}
             </AnimatePresence>
-
-
-            <div
-              className={clsx(classes.imgContainer, {
-              })}
-            >
-              <div>
-
-                <AnimatePresence>
-                  <motion.div
-                    className={classes.imageSection}
-                    initial={{ opacity: 1, scale: 0.1, x: "0%" }}
-                    animate={{
-                      opacity: 1,
-                      scale: [0.1, 1],
-                    }}
-                    transition={{
-                      duration: 0.2,
-                      times: [0, 1],
-                      ease: "easeInOut",
-                    }}
-                    style={{
-                      zIndex: 2,
-                      position: "relative",
-                      overflow: "visible",
-                    }}
-                    key={currentImage.img}
-                  >
-                    {currentImage.img.includes("coffee_bag") ? (
-                      <img
-                        className={clsx(classes.coffee_bag, "image-transition img-fluid")}
-                        src={currentImage.img}
-                        alt={currentImage.title}
-                      />
-                    ) : currentImage.img.includes("3d-preview") ? (
-                      <img
-                        className={clsx(classes.preview3D, "image-transition img-fluid")}
-                        src={currentImage.img}
-                        alt={currentImage.title}
-                      />
-                    ) : (
-                      <img
-                        className={clsx(classes.commonImage, "image-transition img-fluid")}
-                        src={currentImage.img}
-                        alt={currentImage.title}
-                      />
-                    )}
-
-                  </motion.div>
-
-                </AnimatePresence>
-              </div>
-            </div>
           </Col>
         )}
       </Row>
-    </div >
+    </div>
   );
 }
 

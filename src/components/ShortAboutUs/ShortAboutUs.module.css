@@ -7,6 +7,7 @@
   padding: 44px 24px;
   background-color: var(--tertiary-color);
   border-radius: 20px;
+  padding-right: 130px;
   /* overflow: hidden; */
 }
 
@@ -25,9 +26,7 @@
   position: relative;
 }
 
-.imgWrapper {
-  /* padding-left: 241px; */
-}
+
 
 .imgWrapper {
   display: flex;
@@ -38,11 +37,10 @@
 }
 
 .imgWrapper img {
-  width: 70%;
   /* Set to fill the container width */
-  max-width: 451px;
+
   /* Maximum size for large screens */
-  height: auto;
+
   /* Maintain aspect ratio */
 
   object-fit: cover;
@@ -55,12 +53,14 @@
 }
 
 .preview3D {
+  max-width: 273px;
   margin-left: 140px;
   margin-top: 65px;
 }
 
 .commonImage {
-  margin-left: 135px;
+  max-width: 313px;
+  margin-left: 156px;
   margin-top: 25px;
 }
 
@@ -68,27 +68,6 @@
   overflow: hidden;
   position: relative;
 }
-
-/* .imgWrapper {
-  position: relative;
-  overflow: hidden;
-
-}
-
-.slideIn {
-  animation: slideInFromRight 0.5s ease forwards;
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-} */
 
 .wrapper {
   position: relative;
@@ -109,12 +88,6 @@
 .imgWrapper {
   position: relative;
   /* overflow: hidden; */
-  height: 100%;
-}
-
-.imgWrapper {
-  position: relative;
-  /* overflow: hidden; */
   height: 460px;
   /* Set a fixed height or adjust based on your design */
 }
@@ -130,7 +103,7 @@
 }
 
 .imgContainer img {
-  max-width: 420px;
+  /* max-width: 420px; */
 }
 
 .slideInNext {
@@ -150,7 +123,10 @@ img {
   height: 100%;
   object-fit: cover;
 }
-
+.icon {
+  height: 54px;
+  width: 54px;
+}
 /* .wrapper {
   padding-right: 75px !important;
 } */
@@ -191,4 +167,48 @@ img {
   }
 }
 
-@media(max-width:1300px) {}
+@media (max-width: 1200px) {
+  .commonImage {
+    max-width: 273px;
+    margin-left: 156px;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .commonImage {
+    max-width: 223px;
+  }
+}
+@media (max-width: 992px) {
+  .icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .bigCircle {
+    height: 100px !important;
+    width: 100px !important;
+    left: 37px !important;
+    top: 35px !important;
+  }
+  .mediumCircle {
+    width: 45px !important;
+    height: 42px !important;
+  }
+  .smallCircle {
+    top: 135px !important;
+    left: 120px !important;
+  }
+}
+@media (max-width: 1050px) {
+  .preview3D {
+    max-width: 223px;
+  }
+  .coffee_bag {
+    margin-left: 90px;
+  }
+  .commonImage {
+    margin-top: 40px;
+    max-width: 223px;
+  }
+}

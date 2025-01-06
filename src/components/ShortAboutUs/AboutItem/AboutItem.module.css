@@ -17,27 +17,13 @@
   flex-direction: row-reverse;
   border-radius: 0;
 }
-
-/* .accordionItem:first-child a {
-  border-top: initial;
+.imgContainer {
+  display: flex;
+  margin-left: auto;
 }
-.aboutContainer :global(.p-accordion-tab) .accordionItem:first-child > a {
-  border-top: 1px solid rgba(16, 16, 20, 0.3);
+.imgContainer img {
+  margin-left: 150px;
 }
-.aboutContainer :global(.p-accordion-tab):first-child .accordionItem > a {
-  border-top: initial;
-}
-.accordionItem :global(a.p-accordion-header-link:focus-visible) {
-  box-shadow: initial;
-}
-.accordionItem :global(.p-accordion-header-text) {
-  color: var(--text-color);
-  font-family: "Inter-medium";
-  font-size: 30px;
-  line-height: 39px;
-  font-weight: 500;
-  text-transform: uppercase;
-}*/
 /* remove border and background color */
 .accordionItem :global(.p-accordion-header-link) {
   border: initial;
@@ -56,13 +42,6 @@
 .aboutContainer {
   background-color: var(--tertiary-color);
 }
-
-/* accordion tab styling end */
-
-/* image render in mobile */
-/* .imageWrapper {
-  display: none;
-} */
 
 .accordionItem {
   border: 1px solid var(--secondary-gray-color);
@@ -124,7 +103,9 @@
 .inner {
   padding: 1rem;
 }
-
+.imgWrapper {
+  position: relative;
+}
 div.divider {
   border: 1.5px solid #d9d9d9;
   width: 95%;
@@ -134,7 +115,21 @@ div.divider {
   margin-left: 15px;
   /* Add spacing around the divider */
 }
-
+.img {
+  max-width: 270px;
+  margin-top: 90px;
+}
+.coffee_bag {
+  margin-top: 80px !important;
+  margin-left: 100px !important ;
+}
+.icon {
+  height: 44px;
+  width: 44px;
+}
+.preview3D {
+  margin-top: 125px;
+}
 @media (max-width: 767px) {
   .divider {
     width: 100%;
@@ -162,7 +157,28 @@ div.divider {
     max-width: 251px !important;
   }
 }
+@media (max-width: 546px) {
+  .bigCircle {
+    width: 100px !important;
+    height: 100px !important;
+    left: 40px !important;
+    top: 46px !important;
+  }
+  .img {
+    max-width: 221px;
+  }
+}
 
+@media (max-width: 446px) {
+  .imageSection {
+    margin-left: -80px;
+    flex-grow: 1;
+  }
+  .imageSection img {
+    margin-top: 107px !important;
+    margin-left: auto !important;
+  }
+}
 @media (max-width: 352px) {
   .accordionItem > h2 button {
     font-size: 26px;
