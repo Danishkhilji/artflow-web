@@ -21,13 +21,32 @@ const DesktopHeader = () => {
           <Logo className={clsx("img-fluid")} />
         </span>
         <nav className={classes.navbar}>
-          <span>PRODUCTS</span>
-          <span>SERVICES</span>
+          <span onClick={() => {
+            window.open(
+              "https://oyepackaging.com/products",
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}>PRODUCTS</span>
+          <span onClick={() => {
+            window.open(
+              "https://oyepackaging.com/services",
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}>SERVICES</span>
         </nav>
         <div className={classes.ctaWrapper}>
           <Button
             label="configure packagING"
             className="transparent-btn primary-btn"
+            onClick={() => {
+              window.open(
+                "https://oyepackaging.com/configurator",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
           />
           {/* <Button label="SIGN IN" className="transparent-btn bg-primary" /> */}
         </div>

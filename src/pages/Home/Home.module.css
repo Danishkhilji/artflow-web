@@ -1,43 +1,65 @@
 .wrapper {
   padding-top: 0px;
-
-  height: 200vh;
+  height: 100%;
+  min-height: 100vh;
 }
+
 .expandWrapper {
   position: relative;
   z-index: 99 !important;
   overflow: hidden;
   transform-origin: left;
 }
+
 .text {
   color: var(--text-color);
-  font-size: 20px;
+  font-family: "Inter-Regular";
+  font-size: 22px;
   line-height: 32px;
 }
+
+.textSemiBold {
+  font-family: "Inter-SemiBold";
+  font-size: 22px;
+}
+
+.mediumHeading {
+  font-family: "inter-medium";
+  font-size: 44px;
+}
+
 .contentWrapper {
   max-width: 600px;
   position: relative;
   z-index: 999 !important;
-  transform: translateX(0) !important;
+  transform: translate(0, -50%) !important;
 }
+
 .mainHeading {
   padding-top: 3px;
   padding-bottom: 20px;
   text-transform: uppercase;
+  font-family: "Inter-semiBold";
+  font-size: 100px;
 }
+
 .quickCardsWrapper {
   padding-top: 24px;
 }
+
 .aboutWrapper {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
+
 .aboutTitle {
   padding-top: 70px;
   font-family: "Inter-semiBold";
   font-size: 44px;
   line-height: 49px;
   padding-bottom: 30px;
+  margin-bottom: 0;
 }
+
 .gridWrapper {
   display: flex;
 }
@@ -45,11 +67,13 @@
 .gridWrapper > div {
   flex: 1;
 }
+
 .gridWrapper > div:last-child {
   position: relative;
 
   /* margin-top: -15px; */
 }
+
 .heroImgWrapper {
   flex-shrink: 0;
   height: 100%;
@@ -58,28 +82,35 @@
   z-index: 1;
   margin-left: -75px;
 }
+
 .heroImgWrapper img {
   min-width: 420px !important;
 
   min-height: 250px;
 }
+
 .innerWrapper {
-  padding-top: 94px;
+  padding-top: 50px;
 }
+
 .quickCardsWrapper {
   padding-top: 50px;
 }
+
 .banner1 {
   margin-block: 22px !important;
 }
+
 .imageSection {
   margin-left: -75px;
 }
+
 .img {
   position: relative;
 
   z-index: 999 !important;
 }
+
 .mainContent {
   position: relative;
   z-index: 9999 !important;
@@ -92,12 +123,14 @@
 
 .mainContent {
   position: relative;
-  z-index: 10; /* Higher z-index to stay above image */
+  z-index: 10;
+  /* Higher z-index to stay above image */
 }
 
 .heroImgWrapper {
   position: relative;
-  z-index: 1; /* Lower z-index */
+  z-index: 1;
+  /* Lower z-index */
 }
 
 .heroImgWrapper img {
@@ -110,16 +143,22 @@
   .imageSection {
     display: none;
   }
+
+  .innerWrapper {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 992px) {
   .heroImgWrapper {
     display: none;
   }
+
   .mainHeading {
     font-size: 50px;
     line-height: 50px;
   }
+
   .innerWrapper {
     padding-top: 31px;
   }

@@ -32,6 +32,7 @@
   font-family: "Inter-extraBold";
   src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
 }
+
 .px-100 {
   padding-inline: 100px !important;
 }
@@ -186,6 +187,67 @@ div.modal-open {
 
 .p-dialog-mask {
   z-index: 99999 !important;
+}
+
+.p-dialog-header-icon:focus-visible {
+  outline: none !important;
+  box-shadow: initial !important;
+}
+
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
+.accordion .collapse {
+  transition: height 0.4s ease !important; /* Adjust duration (default is 0.35s) */
+}
+
+.accordion .collapsing {
+  transition: height 0.4s ease !important; /* Speed up collapsing */
+}
+
+.accordion-header {
+  background-color: var(--tertiary-color);
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgContainer {
+  position: relative;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.imgContainer.exit {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.imgContainer.enter {
+  animation: slideFromRight 300ms ease-in-out forwards;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 @media (max-width: 424px) {
   .slick-track {

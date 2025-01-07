@@ -15,10 +15,9 @@ import {
 import clsx from "clsx";
 // CoffeeBag, CoffeeBag2,
 //DesignCard, DesignCard2
-const QuickCard = ({ title, category }) => {
+const QuickCard = ({ title, category, BlockLink }) => {
   const [hover, setHover] = useState(false);
   let content = null;
-  console.log("Hover", hover);
   if (category === "packaging") {
     content = (
       <>
@@ -93,6 +92,13 @@ const QuickCard = ({ title, category }) => {
           )}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
+          onClick={() => {
+            window.open(
+              BlockLink,
+              "_blank",
+              "noopener,noreferrer"
+            );
+          }}
           label="LEARN MORE"
         />
       </div>

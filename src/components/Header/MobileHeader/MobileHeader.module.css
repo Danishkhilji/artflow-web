@@ -8,16 +8,17 @@
   left: 0;
   z-index: 1400;
   width: 100%;
-  height: 4.8rem;
+  height: 4rem;
   flex-direction: column;
   background: #fff;
   backdrop-filter: blur(2rem);
-  transition: all 330ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
 }
+
 
 .header.menu {
   height: 100vh;
-  background: #fafafc;
+  background: #ffffff;
 }
 
 /* Navigation Container */
@@ -40,6 +41,7 @@
 .cta {
   z-index: 1800;
 }
+
 .logo svg {
   width: 84px;
 }
@@ -66,52 +68,46 @@
   color: var(--text-color);
 }
 
-/* Mobile Menu Button */
 .mobileMenu {
-  position: relative;
-  z-index: 999999;
-  width: 100%;
-  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27px;
+  height: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 19px;
 }
 
-.line {
-  position: absolute;
-  width: 18px;
-  height: 2px;
-  background-color: #000;
-  transition: margin-top 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+.icon {
+  width: 27px;
+  height: 19.3px;
+  transition: transform 0.5s ease;
 }
 
-.line-top {
-  margin-top: 3px;
+.active .closeIcon {
+  transform: rotateX(180deg);
+  transition: transform 0.5s ease;
 }
 
-.line-bottom {
-  margin-top: -0.7rem;
+
+.menuIcon {
+  width: 27px;
+  height: 19.3px;
 }
 
-.active .line-top {
-  margin-top: 0;
-  transform: rotate(45deg);
-  transition: transform 0.3192s 0.1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+.closeIcon {
+  width: 27px;
+  height: 27px;
 }
 
-.active .line-bottom {
-  margin-top: 0;
-  transform: rotate(-45deg);
-  transition: transform 0.3192s 0.1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
-}
 
 /* Fullscreen Menu */
 .menu {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .nav {
@@ -123,16 +119,18 @@
   flex: 1;
   background: inherit;
   z-index: 1700;
-  transition: all 0.2s ease-in, transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in, transform 0.5s ease-in-out;
   padding: 16px;
-  padding-top: 4.8rem;
+  padding-top: 4rem;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
+
 .nav {
   overflow-y: scroll;
-  height: 100vh; /* Adjust height as needed */
+  height: 100vh;
+  /* Adjust height as needed */
 }
 
 /* Hide scrollbar for Chrome, Safari, and Edge */
@@ -155,6 +153,7 @@
   opacity: 1;
   visibility: visible;
 }
+
 .nav span {
   padding: 21px;
   font-family: "Inter-semiBold";
@@ -163,14 +162,14 @@
   display: block;
 }
 
-.nav > span {
+.nav>span {
   color: #fff !important;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.6s ease-in-out, opacity 0.4s ease-in;
 }
 
-.header.menu .nav > span {
+.header.menu .nav>span {
   color: var(--text-color) !important;
   transform: translateY(0);
   opacity: 1;
@@ -184,19 +183,23 @@
   border-radius: 10px;
 }
 
-.nav > span,
+.nav>span,
 .nav button,
-.nav button > span {
-  color: transparent; /* Initially hidden */
-  transform: translateY(-10px); /* Slight move up */
+.nav button>span {
+  color: transparent;
+  /* Initially hidden */
+  transform: translateY(-10px);
+  /* Slight move up */
   opacity: 0;
   transition: color 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
 }
 
-.header.menu .nav > span,
+.header.menu .nav>span,
 .nav button {
-  color: #000; /* Target color after menu opens */
-  transform: translateY(0); /* Move back to normal */
+  color: #000;
+  /* Target color after menu opens */
+  transform: translateY(0);
+  /* Move back to normal */
   opacity: 1;
 }
 
@@ -208,9 +211,11 @@ span#config {
   font-family: "Inter-medium";
   min-width: 320px;
   text-align: center;
-  opacity: 1;
-  transition-delay: initial !important;
+  margin-bottom: 100px;
+  /* opacity: 1; */
+  /* transition-delay: initial !important; */
 }
+
 span#signIn {
   margin-top: 20px;
   background-color: var(--primary-color) !important;
@@ -220,15 +225,17 @@ span#signIn {
   min-width: 320px;
   text-align: center;
   border-radius: 20px !important;
-  opacity: 1;
-  transition-delay: initial;
+  /* opacity: 1;
+  transition-delay: initial; */
   box-shadow: initial !important;
 }
+
 span#signIn:hover {
   background-color: #fff !important;
   color: var(--primary-color) !important;
   border: 2px solid var(--primary-color) !important;
 }
+
 span#config:hover {
   color: #fff !important;
   background-color: var(--primary-color) !important;
@@ -236,16 +243,25 @@ span#config:hover {
 
 .config:hover {
   border-radius: 40px !important;
+  color: #fff !important;
+  background-color: var(--primary-color) !important;
 }
-.header.menu .nav > span:nth-child(1) {
-  transition-delay: 0.1s; /* Staggered delay for first item */
+
+.header.menu .nav>span:nth-child(1) {
+  transition-delay: 0.1s;
+  /* Staggered delay for first item */
 }
-.header.menu .nav > span:nth-child(2) {
-  transition-delay: 0.2s; /* Second item */
+
+.header.menu .nav>span:nth-child(2) {
+  transition-delay: 0.2s;
+  /* Second item */
 }
-.header.menu .nav > span:nth-child(3) {
-  transition-delay: 0.3s; /* Third item */
+
+.header.menu .nav>span:nth-child(3) {
+  transition-delay: 0.3s;
+  /* Third item */
 }
+
 .header.menu .config {
   transition-delay: 0.4s !important;
 }
@@ -253,6 +269,7 @@ span#config:hover {
 .header.menu .nav div {
   opacity: 1;
 }
+
 .header.menu .nav button:nth-child(1) {
   transition-delay: 0.5s;
 }
@@ -262,6 +279,7 @@ span#config:hover {
 }
 
 @media (max-width: 500px) {
+
   span#signIn,
   span#config {
     min-width: 100%;

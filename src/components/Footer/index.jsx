@@ -4,14 +4,15 @@ import clsx from "clsx";
 import { socialMediaIcon } from "../../data";
 import CommonContainer from "../CommonContainer";
 import moment from "moment-timezone";
+import { Row, Col } from "react-bootstrap";
 const Footer = () => {
   const currentYear = moment().tz("Etc/GMT-1").format("YYYY");
   return (
     <CommonContainer>
       <footer>
-        <div className="grid">
-          <div className="lg:col-4 col-12 xs:col-6">
-            <div className={classes.logoWrapper}>
+        <Row>
+          <Col lg={4} xs={12} sm={12} >
+            <div className={clsx(classes.logoWrapper, classes.pe30)}>
               <span
                 onClick={() => {
                   window.open(
@@ -29,10 +30,10 @@ const Footer = () => {
                 exciting journey!{" "}
               </p>
             </div>
-          </div>
+          </Col>
 
-          <div className="lg:col-2 sm:col-3 col-6 ">
-            <div className={classes.contentWrapper}>
+          <Col lg={2} sm={3} xs={6}>
+            <div className={clsx(classes.contentWrapper, classes.pl50)}>
               <h2>PACKAGING</h2>
 
               <div>
@@ -42,9 +43,9 @@ const Footer = () => {
                 <p className={"disabled"}>Standup Bags</p>
               </div>
             </div>
-          </div>
+          </Col>
 
-          <div className={clsx("lg:col-2 sm:col-3 col-6", classes.fixInMob)}>
+          <Col lg={2} sm={3} xs={6} className={clsx(classes.fixInMob)}>
             <div className={classes.contentWrapper}>
               <h2>SERVICES</h2>
 
@@ -64,9 +65,9 @@ const Footer = () => {
                 <p className={clsx(classes.dull, "disabled")}>Capsules</p>
               </div>
             </div>
-          </div>
+          </Col>
 
-          <div className="lg:col-2 sm:col-3 col-6">
+          <Col sm={3} lg={2} xs={6}>
             <div className={classes.contentWrapper}>
               <h2>WIKI</h2>
 
@@ -117,8 +118,8 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className={clsx("lg:col-2 sm:col-3 col-6", classes.fixInMob)}>
+          </Col>
+          <Col lg={2} sm={3} xs={6} className={clsx(classes.mlAuto)}>
             <div className={classes.contentWrapper}>
               <h2>ABOUT US</h2>
 
@@ -158,10 +159,10 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
         <div className={classes.bottomDetails}>
-          <p>Copyright © {currentYear} ÖYE PACKAGING</p>
+          <p className="pb-0 mb-0">Copyright © {currentYear} ÖYE PACKAGING</p>
           <nav className={classes.navbar}>
             <span
               onClick={() => {
