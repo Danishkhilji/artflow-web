@@ -12,18 +12,21 @@
 }
 
 /* accordion tab styling */
-.accordionItem > a {
+.accordionItem>a {
   padding-block: 20px;
   flex-direction: row-reverse;
   border-radius: 0;
 }
+
 .imgContainer {
   display: flex;
   margin-left: auto;
 }
+
 .imgContainer img {
   margin-left: 150px;
 }
+
 /* remove border and background color */
 .accordionItem :global(.p-accordion-header-link) {
   border: initial;
@@ -34,7 +37,7 @@
   border: initial;
 }
 
-.accordionItem > a :global(svg.p-accordion-toggle-icon) {
+.accordionItem>a :global(svg.p-accordion-toggle-icon) {
   fill: var(--text-color) !important;
 }
 
@@ -47,7 +50,7 @@
   border: 1px solid var(--secondary-gray-color);
 }
 
-.accordionItem > h2 button {
+.accordionItem>h2 button {
   color: var(--heading-color);
   font-family: "Inter-medium";
   font-size: 30px;
@@ -103,9 +106,11 @@
 .inner {
   padding: 1rem;
 }
+
 .imgWrapper {
   position: relative;
 }
+
 div.divider {
   border: 1.5px solid #d9d9d9;
   width: 95%;
@@ -115,25 +120,31 @@ div.divider {
   margin-left: 15px;
   /* Add spacing around the divider */
 }
+
 .img {
   max-width: 270px;
   margin-top: 90px;
 }
+
 .coffee_bag {
   margin-top: 80px !important;
-  margin-left: 100px !important ;
+  margin-left: 100px !important;
 }
+
 .icon {
   height: 44px;
   width: 44px;
 }
+
 .preview3D {
   margin-top: 125px;
 }
+
 @media (max-width: 767px) {
   .divider {
     width: 100%;
   }
+
   .imageWrapper {
     margin-top: 30px;
     display: flex;
@@ -150,6 +161,43 @@ div.divider {
   .accordionItem :global(.p-accordion-header-text) {
     font-size: 22px;
   }
+
+
+
+
+  /* test */
+  .imageSection {
+    /* margin-left: -80px; */
+    flex-grow: 1;
+  }
+
+  .imgContainer img {
+    margin-left: 250px;
+  }
+
+  .coffee_bag {
+    margin-left: 185px !important;
+  }
+
+  .imageSection img {
+    margin-top: 150px !important;
+    /* margin-left: 180 !important; */
+  }
+
+  .bigCircle {
+    left: 115px !important;
+    top: 65px !important;
+  }
+
+  .mediumCircle {
+    left: 180px !important;
+    top: 130px !important;
+  }
+
+  .smallCircle {
+    left: 235px !important;
+    top: 180px !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -157,6 +205,7 @@ div.divider {
     max-width: 251px !important;
   }
 }
+
 @media (max-width: 546px) {
   .bigCircle {
     width: 100px !important;
@@ -164,6 +213,7 @@ div.divider {
     left: 40px !important;
     top: 46px !important;
   }
+
   .img {
     max-width: 221px;
   }
@@ -174,13 +224,48 @@ div.divider {
     margin-left: -80px;
     flex-grow: 1;
   }
+
+  .imgContainer img {
+    margin-left: 185px;
+  }
+
+  .coffee_bag {
+    margin-left: 185px !important;
+  }
+
   .imageSection img {
-    margin-top: 107px !important;
+    margin-top: 90px !important;
     margin-left: auto !important;
   }
+
+  .bigCircle {
+    width: 90px !important;
+    height: 90px !important;
+    left: 20px !important;
+    top: 15px !important;
+  }
+
+  .mediumCircle {
+    width: 50px !important;
+    height: 50px !important;
+    left: 60px !important;
+    top: 55px !important;
+  }
+
+  .smallCircle {
+    width: 15px !important;
+    height: 15px !important;
+    left: 105px !important;
+    top: 100px !important;
+  }
+
+  .img {
+    max-width: 201px;
+  }
 }
+
 @media (max-width: 352px) {
-  .accordionItem > h2 button {
+  .accordionItem>h2 button {
     font-size: 26px;
   }
 }

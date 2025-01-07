@@ -116,7 +116,7 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                           {activeTab === index && (
                             <motion.div
                               className={classes.imageSection}
-                              initial={{ opacity: 0, scale: 0.5 }}
+                              initial={{ opacity: 1, scale: 0.5 }}
                               animate={{ opacity: 1, scale: 1 }}
                               exit={{ opacity: 0, scale: 0.5 }}
                               transition={{
@@ -160,7 +160,7 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                               top: `${positions.smallCircle.y}px`,
                               zIndex: positions.smallCircle.zIndex,
                             }}
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 1, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{
                               duration: 0.2,
@@ -181,7 +181,7 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                               top: `${positions.middleCircle.y}px`,
                               zIndex: positions.middleCircle.zIndex,
                             }}
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 1, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{
                               duration: 0.2,
@@ -205,7 +205,7 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                               zIndex: positions.largeCircle.zIndex,
                             }}
                             className={classes.bigCircle}
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 1, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{
                               duration: 0.2,

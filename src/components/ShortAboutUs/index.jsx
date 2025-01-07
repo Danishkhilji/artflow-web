@@ -4,7 +4,6 @@ import { useMobileViewHook } from "../../hooks/useMobileViewHook";
 import AboutItem from "./AboutItem";
 import { Row, Col } from "react-bootstrap";
 import classes from "./ShortAboutUs.module.css";
-import { FaHeart } from "react-icons/fa";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 const positions = {
@@ -32,7 +31,7 @@ function ShortAboutUs() {
   const [isMobile, setIsMobile] = useState(false);
   const [currentImage, setCurrentImage] = useState(shortAboutUs[0]);
 
-  useMobileViewHook(setIsMobile, 767);
+  useMobileViewHook(setIsMobile, 768);
 
   useEffect(() => {
     if (activeTab !== shortAboutUs.indexOf(currentImage)) {
@@ -44,7 +43,7 @@ function ShortAboutUs() {
     }
   }, [activeTab]);
 
-  console.log(currentImage);
+  console.log(isMobile);
   const [showFirst, setShowFirst] = useState(false);
   const [showSecond, setShowSecond] = useState(false);
   const [showThird, setShowThird] = useState(false);
@@ -80,12 +79,12 @@ function ShortAboutUs() {
           </div>
         </Col>
         {!isMobile && (
-          <Col md={12} lg={5} className={classes.imgWrapper}>
+          <Col md={6} lg={5} className={classes.imgWrapper}>
             <div className={clsx(classes.imgContainer, {})}>
               <AnimatePresence>
                 <motion.div
                   className={classes.imageSection}
-                  initial={{ opacity: 0, scale: 0.5 }}
+                  initial={{ opacity: 1, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.5,
@@ -103,8 +102,8 @@ function ShortAboutUs() {
                       currentImage.img.includes("coffee_bag")
                         ? classes.coffee_bag
                         : currentImage.img.includes("3d-preview")
-                        ? classes.preview3D
-                        : classes.commonImage,
+                          ? classes.preview3D
+                          : classes.commonImage,
                       "image-transition img-fluid"
                     )}
                     src={currentImage.img}
@@ -127,7 +126,7 @@ function ShortAboutUs() {
                     top: `${positions.smallCircle.y}px`,
                     zIndex: positions.smallCircle.zIndex,
                   }}
-                  initial={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 1, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,
@@ -148,7 +147,7 @@ function ShortAboutUs() {
                     top: `${positions.middleCircle.y}px`,
                     zIndex: positions.middleCircle.zIndex,
                   }}
-                  initial={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 1, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,
@@ -172,7 +171,7 @@ function ShortAboutUs() {
                     zIndex: positions.largeCircle.zIndex,
                   }}
                   className={classes.bigCircle}
-                  initial={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 1, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.2,

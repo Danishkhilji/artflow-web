@@ -12,7 +12,7 @@
   flex-direction: column;
   background: #fff;
   backdrop-filter: blur(2rem);
-  transition: all 1000ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.6, 1) 30ms;
 }
 
 
@@ -82,12 +82,12 @@
 .icon {
   width: 27px;
   height: 19.3px;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 
 .active .closeIcon {
   transform: rotateX(180deg);
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 
 
@@ -119,9 +119,9 @@
   flex: 1;
   background: inherit;
   z-index: 1700;
-  transition: all 1s ease-in, transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in, transform 0.5s ease-in-out;
   padding: 16px;
-  padding-top: 4.8rem;
+  padding-top: 4rem;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -211,6 +211,7 @@ span#config {
   font-family: "Inter-medium";
   min-width: 320px;
   text-align: center;
+  margin-bottom: 100px;
   /* opacity: 1; */
   /* transition-delay: initial !important; */
 }
