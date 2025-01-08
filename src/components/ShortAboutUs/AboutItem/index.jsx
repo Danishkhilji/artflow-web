@@ -1,12 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
-import { Button } from "primereact/button";
+import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { shortAboutUs } from "../../../data";
 import { redirectTo } from "../../../helpers";
 import { useMobileViewHook } from "../../../hooks/useMobileViewHook";
+import Button from "../../Button";
 import classes from "./AboutItem.module.css";
 
 const positions = {
@@ -92,23 +92,14 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                     {element.description}
                   </p>
                   <Button
+                    variant={"primary"}
                     onClick={() => {
                       element?.link && redirectTo(element?.link);
                     }}
                     label={element.cta}
-                    className={clsx("transparent-btn primary-btn", classes.cta)}
+                    id={clsx(classes.cta)}
                   />
-                  {/* {isMobile && (
-                    <div className={classes.imageWrapper}>
-                      {shortAboutUs[activeTab] && (
-                        <img
-                          className="img-fluid"
-                          src={shortAboutUs[activeTab].img}
-                          alt={shortAboutUs[activeTab].title}
-                        />
-                      )}
-                    </div>
-                  )} */}
+
                   {isMobile && (
                     <div className={classes.imgWrapper}>
                       <div className={clsx(classes.imgContainer, {})}>

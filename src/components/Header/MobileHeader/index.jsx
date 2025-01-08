@@ -85,13 +85,11 @@
 // export default MobileHeader;
 
 
-import { useState } from "react";
 import clsx from "clsx";
-import classes from "./MobileHeader.module.css";
-import { Logo } from "../../../constant";
+import { useState } from "react";
+import { Logo, menuClose, menuIcon } from "../../../constant";
 import CommonContainer from "../../CommonContainer";
-import { Button } from "primereact/button";
-import { menuIcon, menuClose } from "../../../constant";
+import classes from "./MobileHeader.module.css";
 
 const MobileHeader = () => {
   const [active, setActive] = useState(false);
@@ -187,12 +185,12 @@ const MobileHeader = () => {
           >
             Configure Packaging
           </span>
-          {/* <span
+          <span
             id={classes.signIn}
             className={clsx("transparent-btn primary-btn", classes.signIn)}
           >
             SIGN IN
-          </span> */}
+          </span>
         </div>
       </header>
     </>

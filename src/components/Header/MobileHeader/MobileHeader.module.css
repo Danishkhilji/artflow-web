@@ -37,11 +37,9 @@
 
   cursor: pointer;
 }
-
 .cta {
   z-index: 1800;
 }
-
 .logo svg {
   width: 84px;
 }

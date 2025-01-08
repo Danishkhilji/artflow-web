@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { Button } from "primereact/button";
+import Button from "../Button";
 import PropTypes from "prop-types";
 import React, { useRef } from "react";
 import CommonContainer from "../CommonContainer";
@@ -62,6 +62,7 @@ const Banner = React.forwardRef(
                 {title}
               </h2>
               <Button
+                variant={"secondary"}
                 className={clsx("transparent-btn", classes.cta)}
                 onClick={onClick}
                 label={ctaTitle}

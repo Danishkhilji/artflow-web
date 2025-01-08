@@ -1,0 +1,35 @@
+.btn {
+  font-size: 16px !important;
+  line-height: 19px !important;
+  font-family: "Inter-medium" !important;
+  font-weight: 500 !important;
+  display: block;
+  padding: 12px 24px !important;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+/* ======= primary button =========  */
+.primary {
+  border: 2px solid var(--primary-color) !important;
+  cursor: pointer;
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+}
+button.primary:hover,
+button.primary:active {
+  border-color: var(--primary-color) !important;
+}
+/* ==== secondary button =====  */
+.secondary {
+  border: 2px solid #fff;
+  background-color: transparent !important;
+}
+button.secondary:hover,
+button.secondary:active {
+  border-color: #fff !important;
+}

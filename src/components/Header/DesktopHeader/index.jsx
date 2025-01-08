@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import { Button } from "primereact/button";
 import { Logo } from "../../../constant";
 import classes from "./DesktopHeader.module.css";
 import CommonContainer from "../../CommonContainer";
+import Button from "../../Button";
 const DesktopHeader = () => {
   // const navigate = useNavigate();
   return (
@@ -21,20 +21,28 @@ const DesktopHeader = () => {
           <Logo className={clsx("img-fluid")} />
         </span>
         <nav className={classes.navbar}>
-          <span onClick={() => {
-            window.open(
-              "https://oyepackaging.com/products",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}>PRODUCTS</span>
-          <span onClick={() => {
-            window.open(
-              "https://oyepackaging.com/services",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}>SERVICES</span>
+          <span
+            onClick={() => {
+              window.open(
+                "https://oyepackaging.com/products",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+          >
+            PRODUCTS
+          </span>
+          <span
+            onClick={() => {
+              window.open(
+                "https://oyepackaging.com/services",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+          >
+            SERVICES
+          </span>
         </nav>
         <div className={classes.ctaWrapper}>
           <Button
