@@ -47,7 +47,7 @@ const DesktopHeader = () => {
         <div className={classes.ctaWrapper}>
           <Button
             label="configure packagING"
-            className="transparent-btn primary-btn"
+            variant={"primary"}
             onClick={() => {
               window.open(
                 "https://oyepackaging.com/configurator",
@@ -56,7 +56,7 @@ const DesktopHeader = () => {
               );
             }}
           />
-          {/* <Button label="SIGN IN" className="transparent-btn bg-primary" /> */}
+          <Button label="SIGN IN" variant={"primary"} />
         </div>
       </header>
     </CommonContainer>

@@ -84,10 +84,10 @@
 
 // export default MobileHeader;
 
-
 import clsx from "clsx";
 import { useState } from "react";
 import { Logo, menuClose, menuIcon } from "../../../constant";
+import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
 
@@ -155,42 +155,48 @@ const MobileHeader = () => {
           </nav>
         </CommonContainer>
 
-        <div
-          className={clsx(classes.nav, { [classes.navActive]: active })}
-        >
-          <span onClick={() => {
-            window.open(
-              "https://oyepackaging.com/products",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}>PRODUCTS</span>
-          <span onClick={() => {
-            window.open(
-              "https://oyepackaging.com/services",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}>SERVICES</span>
+        <div className={clsx(classes.nav, { [classes.navActive]: active })}>
           <span
-            id={classes.config}
-            className={clsx("transparent-btn primary-btn", classes.config)}
             onClick={() => {
               window.open(
-                "https://oyepackaging.com/configurator",
+                "https://oyepackaging.com/products",
                 "_blank",
                 "noopener,noreferrer"
               );
             }}
           >
-            Configure Packaging
+            PRODUCTS
           </span>
           <span
-            id={classes.signIn}
-            className={clsx("transparent-btn primary-btn", classes.signIn)}
+            onClick={() => {
+              window.open(
+                "https://oyepackaging.com/services",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
           >
-            SIGN IN
+            SERVICES
           </span>
+          <div className={classes.downActions}>
+            <Button
+              id={classes.config}
+              variant={"primary"}
+              className={clsx(classes.config)}
+              onClick={() => {
+                window.open(
+                  "https://oyepackaging.com/configurator",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+            >
+              Configure Packaging
+            </Button>
+            <Button id={classes.signIn} variant={"primary"}>
+              SIGN IN
+            </Button>
+          </div>
         </div>
       </header>
     </>

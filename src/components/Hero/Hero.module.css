@@ -28,6 +28,8 @@
   font-size: 44px;
   line-height: 49px;
   padding-bottom: 30px;
+  text-transform: uppercase;
+  background-color: red;
 }
 @media (max-width: 992px) {
   .mainHeading {

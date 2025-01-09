@@ -24,8 +24,7 @@
 }
 
 .mediumHeading {
-  font-family: "inter-medium";
-  font-size: 44px;
+  line-height: 49px;
 }
 
 .contentWrapper {
@@ -36,7 +35,6 @@
 }
 
 .mainHeading {
-  padding-top: 3px;
   padding-bottom: 20px;
   text-transform: uppercase;
   font-family: "Inter-semiBold";
@@ -47,10 +45,6 @@
   padding-top: 24px;
 }
 
-.aboutWrapper {
-  /* margin-top: 15px; */
-}
-
 .aboutTitle {
   padding-top: 70px;
   font-family: "Inter-semiBold";
@@ -58,6 +52,7 @@
   line-height: 49px;
   padding-bottom: 30px;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 .gridWrapper {

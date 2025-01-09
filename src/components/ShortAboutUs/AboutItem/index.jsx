@@ -96,8 +96,8 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                     onClick={() => {
                       element?.link && redirectTo(element?.link);
                     }}
+                    className={classes.cta}
                     label={element.cta}
-                    id={clsx(classes.cta)}
                   />
 
                   {isMobile && (
@@ -234,7 +234,7 @@ AboutItem.propTypes = {
 const circleStyle = {
   position: "absolute",
   backgroundColor: "white",
-  border: "2px solid black",
+  border: "1px solid var(--text-color)",
   borderRadius: "50%",
 };
 

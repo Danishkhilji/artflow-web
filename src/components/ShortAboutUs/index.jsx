@@ -102,8 +102,8 @@ function ShortAboutUs() {
                       currentImage.img.includes("coffee_bag")
                         ? classes.coffee_bag
                         : currentImage.img.includes("3d-preview")
-                          ? classes.preview3D
-                          : classes.commonImage,
+                        ? classes.preview3D
+                        : classes.commonImage,
                       "image-transition img-fluid"
                     )}
                     src={currentImage.img}
@@ -196,7 +196,7 @@ function ShortAboutUs() {
 const circleStyle = {
   position: "absolute",
   backgroundColor: "white",
-  border: "2px solid black",
+  border: "1px solid var(--text-color)",
   borderRadius: "50%",
 };
 
