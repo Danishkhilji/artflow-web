@@ -147,25 +147,23 @@ const Home = () => {
             </CommonContainer>
           )}
           <CommonContainer className={classes.quickCardsWrapper}>
-            <Container>
-              <Row>
-                {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
-                <Col md={6} xs={12}>
-                  <QuickCard
-                    category="packaging"
-                    title="Coffee Packaging"
-                    blockLink="https://oyepackaging.com/products"
-                  />
-                </Col>
-                <Col md={6} xs={12}>
-                  <QuickCard
-                    category="services"
-                    title="Coffee Services"
-                    blockLink="https://oyepackaging.com/services"
-                  />
-                </Col>
-              </Row>
-            </Container>
+            <Row>
+              {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
+              <Col md={6} xs={12}>
+                <QuickCard
+                  category="packaging"
+                  title="Coffee Packaging"
+                  blockLink="https://oyepackaging.com/products"
+                />
+              </Col>
+              <Col md={6} xs={12}>
+                <QuickCard
+                  category="services"
+                  title="Coffee Services"
+                  blockLink="https://oyepackaging.com/services"
+                />
+              </Col>
+            </Row>
           </CommonContainer>
           <Banner
             ref={banner1}

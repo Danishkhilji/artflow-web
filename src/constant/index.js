@@ -32,8 +32,6 @@ export { default as menuIcon } from "../assets/images/menu-icon.svg";
 export { default as menuClose } from "../assets/images/menu-close.svg";
 export { default as plusIcon } from "../assets/images/plus-Icon.svg";
 
-
-
 export { default as supprotIcon } from "../assets/images/supprotIcon.png";
 
 export { default as testPrintIcon } from "../assets/images/testPrintIcon.png";
@@ -41,4 +39,3 @@ export { default as testPrintIcon } from "../assets/images/testPrintIcon.png";
 export { default as configIcon } from "../assets/images/configIcon.png";
 
 export { default as Preview3DIcon } from "../assets/images/preview3DIcon.png";
-

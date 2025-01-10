@@ -8,6 +8,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import ReviewSection from "../ReviewSection";
 import CommonContainer from "../CommonContainer";
+import { Col, Row } from "react-bootstrap";
 const Hero = () => {
   return (
     <>
@@ -26,15 +27,15 @@ const Hero = () => {
           </div>
         </CommonContainer>
         <CommonContainer className={classes.quickCardsWrapper}>
-          <div className="grid">
-            <div className="md:col-6 col-12">
+          <Row>
+            <Col md={6} sm={12}>
               <QuickCard category="packaging" />
-            </div>
+            </Col>
 
-            <div className="md:col-6 col-12">
+            <Col md={6} xs={12}>
               <QuickCard category="services" />
-            </div>
-          </div>
+            </Col>
+          </Row>
         </CommonContainer>
         <div>
           <CommonContainer className={classes.aboutWrapper}>

@@ -172,12 +172,7 @@ p {
   z-index: 99999 !important;
 }
 
-.p-component-overlay {
-  backdrop-filter: blur(2px) !important;
-  background: rgba(0, 0, 0, 0.25) !important; /* Reduce opacity */
-  pointer-events: all;
-  /* opacity: 1; */
-}
+
 
 div.modal-open {
   backdrop-filter: blur(600px) !important;
@@ -197,14 +192,7 @@ div.modal-open {
   height: auto !important;
 }
 
-.p-dialog-mask {
-  z-index: 99999 !important;
-}
 
-.p-dialog-header-icon:focus-visible {
-  outline: none !important;
-  box-shadow: initial !important;
-}
 
 button {
   user-select: none;
