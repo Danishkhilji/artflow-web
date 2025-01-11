@@ -28,7 +28,7 @@ const ReviewSection = () => {
   }, [isPaused, scrollSpeed]);
 
   const handlePause = () => {
-    // setIsPaused(true);
+    setIsPaused(true);
     setScrollSpeed(1); // Slow down when hovering (adjust this value as needed)
   };
 

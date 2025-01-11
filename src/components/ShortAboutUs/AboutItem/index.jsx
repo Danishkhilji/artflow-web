@@ -128,6 +128,9 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                                   {
                                     [classes.coffee_bag]: [0].includes(index),
                                     [classes.preview3D]: 2 == index,
+                                    [classes.circleImage]: [1, 3].includes(
+                                      index
+                                    ),
                                   }
                                 )}
                                 src={element.img}

@@ -99,7 +99,6 @@
   object-fit: cover;
 }
 
-
 @media (max-width: 506px) {
   .wrapper {
     min-height: 550px;
@@ -135,6 +134,18 @@
   }
 }
 
+@media (max-width: 576px) {
+  .mainContent {
+    top: initial;
+    bottom: 0px;
+  }
+  .title {
+    font-size: 30px;
+    line-height: 39px;
+    font-family: "Inter-bold";
+  }
+}
+
 @media (max-width: 1100px) {
   .wrapper {
     padding-inline: 50px;
@@ -143,6 +154,10 @@
   .mainContent {
     left: 50%;
     text-align: center;
+  }
+  .mainContent button {
+    display: block;
+    margin-inline: auto;
   }
 
   .title {

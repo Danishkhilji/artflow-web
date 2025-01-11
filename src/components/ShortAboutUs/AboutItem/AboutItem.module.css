@@ -128,12 +128,12 @@ div.divider {
 
 .coffee_bag {
   margin-top: 80px !important;
-  margin-left: 100px !important;
+  margin-left: 80px !important;
 }
 
 .icon {
-  height: 44px;
-  width: 44px;
+  height: 34px;
+  width: 34px;
 }
 
 .preview3D {
@@ -168,32 +168,13 @@ div.divider {
     flex-grow: 1;
   }
 
-  .imgContainer img {
-    margin-left: 250px;
-  }
-
   .coffee_bag {
-    margin-left: 185px !important;
+    /* margin-left: 185px !important; */
   }
 
   .imageSection img {
-    margin-top: 150px !important;
+    margin-top: 20px !important;
     /* margin-left: 180 !important; */
-  }
-
-  .bigCircle {
-    left: 115px !important;
-    top: 65px !important;
-  }
-
-  .mediumCircle {
-    left: 180px !important;
-    top: 130px !important;
-  }
-
-  .smallCircle {
-    left: 235px !important;
-    top: 180px !important;
   }
 }
 
@@ -205,10 +186,14 @@ div.divider {
 
 @media (max-width: 546px) {
   .bigCircle {
-    width: 100px !important;
-    height: 100px !important;
-    left: 40px !important;
-    top: 46px !important;
+    width: 72px !important;
+    height: 72px !important;
+    left: 40px;
+    top: 46px;
+  }
+  .mediumCircle {
+    left: 90px;
+    top: -56px;
   }
 
   .img {
@@ -216,51 +201,71 @@ div.divider {
   }
 }
 
-@media (max-width: 446px) {
-  .imageSection {
-    margin-left: -80px;
-    flex-grow: 1;
+@media (max-width: 767px) {
+  img.preview3D {
+    margin-top: 65px !important;
   }
-
-  .imgContainer img {
-    margin-left: 185px;
-  }
-
-  .coffee_bag {
-    margin-left: 185px !important;
-  }
-
-  .imageSection img {
-    margin-top: 90px !important;
-    margin-left: auto !important;
-  }
-
   .bigCircle {
-    width: 90px !important;
-    height: 90px !important;
-    left: 20px !important;
+    width: 72px !important;
+    height: 72px !important;
+    left: 50px !important;
     top: 15px !important;
+  }
+  .cta {
+    margin-bottom: 14px;
   }
 
   .mediumCircle {
-    width: 50px !important;
-    height: 50px !important;
-    left: 60px !important;
-    top: 55px !important;
+    width: 30px !important;
+    height: 30px !important;
+    left: 94px !important;
+    top: 52px !important;
   }
 
   .smallCircle {
     width: 15px !important;
     height: 15px !important;
-    left: 105px !important;
-    top: 100px !important;
-  }
-
-  .img {
-    max-width: 201px;
+    left: 125px !important;
+    top: 75px !important;
   }
 }
-
+@media (max-width: 446px) {
+  .imageSection {
+    margin-left: -80px;
+    flex-grow: 1;
+  }
+  .imgContainer img {
+    margin-left: 215px;
+  }
+  img.circleImage {
+    margin-top: 60px !important;
+  }
+  .coffee_bag {
+    margin-left: 185px !important;
+    min-height: 265px;
+  }
+  .img {
+    max-width: 177px;
+  }
+}
+@media (max-width: 386px) {
+  .bigCircle {
+    left: 22px !important;
+  }
+  .mediumCircle {
+    left: 68px !important;
+  }
+  .smallCircle {
+    left: 100px !important;
+  }
+  .imgContainer img {
+    margin-left: 190px;
+    max-width: 150px;
+  }
+  img.preview3D {
+    margin-top: 75px !important;
+  }
+}
 @media (max-width: 352px) {
   .accordionItem > h2 button {
     font-size: 26px;

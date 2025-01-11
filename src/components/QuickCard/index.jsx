@@ -4,8 +4,8 @@ import { useState } from "react";
 import {
   CoffeeBag,
   CoffeeBag2,
-  // designCard1,
-  // designCard2,
+  designCard1,
+  designCard2,
 } from "../../constant";
 import Button from "../Button";
 import classes from "./QuickCard.module.css";
@@ -34,21 +34,21 @@ const QuickCard = ({ title, category, blockLink }) => {
   } else {
     content = (
       <>
-        {/* <img
+        <img
           src={designCard1}
           alt="design card1"
           className={clsx("img-fluid", classes.designPattern1, {
             [classes.scaleCoffeeBag1]: hover,
           })}
-        /> */}
-        <DesignCard2 />
-        {/* <img
+        /> 
+      
+        <img
           src={designCard2}
           alt="design card2"
           className={clsx("img-fluid", classes.designPattern2, {
             [classes.scaleCoffeeBag2]: hover,
           })}
-        /> */}
+        />
       </>
     );
   }
@@ -71,6 +71,7 @@ const QuickCard = ({ title, category, blockLink }) => {
       </h1>
       <div className={classes.ctaWrapper}>
         <Button
+          isHover={false}
           variant={buttonVariant}
           className={clsx(classes.btn)}
           onMouseEnter={() => setHover(true)}

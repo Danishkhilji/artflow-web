@@ -18,7 +18,7 @@ export { default as Sustain } from "../assets/images/sustainable.svg?react";
 // export png here
 export { default as bg1 } from "../../src/assets/images/banner1.png";
 export { default as demoReview1 } from "../../src/assets/images/review-demo1.png";
-export { default as coffeeBag } from "..//assets/images/coffee_bag.png";
+export { default as coffeeBag } from "..//assets/images/coffee_bag.webp";
 export { default as testPrint } from "../assets/images/test-print.png";
 export { default as Preview3D } from "../assets/images/3d-preview.png";
 export { default as designSupport } from "../assets/images/design-support.png";

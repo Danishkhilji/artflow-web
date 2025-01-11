@@ -79,21 +79,23 @@
 }
 .designPattern1 {
   bottom: 0px;
-  left: 0%;
+  left: 0px;
   position: absolute;
-  max-width: 373px;
-  width: 82%;
+  max-width: 341px;
+  max-height: 341px;
+  width: 100%;
   transition: all 0.4s ease-in-out;
   flex-grow: 1;
 }
 
 .designPattern2 {
-  top: 30px;
+  top: 70px;
   bottom: 0px;
-  right: 0%;
+  right: -10px;
   position: absolute;
-  max-width: 318px;
-  width: 33%;
+  max-width: 200px;
+
+  width: 100%;
   transition: all 0.4s ease-in-out;
   flex-grow: 1;
 }
@@ -113,7 +115,7 @@ button.servicesBtn span {
   transform: scale(1.2) !important;
 }
 .scaleCoffeeBag2 {
-  transform: scale(0.8) !important;
+  transform: scale(0.9) !important;
 }
 .firstSvg,
 .secondSvg {
@@ -125,9 +127,9 @@ button.servicesBtn span {
 }
 
 @media (max-width: 1399px) {
-  .container {
+  /* .container {
     height: 380px;
-  }
+  } */
   .firstSvg {
     max-width: 480px;
     bottom: 0px;
@@ -153,13 +155,6 @@ button.servicesBtn span {
   }
 }
 @media (max-width: 576px) {
-  .container .designPattern2 {
-    max-width: 200px;
-    top: 120px;
-  }
-  .container .designPattern1 {
-    max-width: 212px !important;
-  }
 }
 
 @media (max-width: 528px) {
@@ -174,6 +169,15 @@ button.servicesBtn span {
     max-width: 233px;
     right: -15px;
   }
+  .container .designPattern2 {
+    max-width: 180px;
+    top: 80px;
+  }
+  .container .designPattern1 {
+    max-width: 300px;
+    bottom: -15px;
+    left: -30px;
+  }
 }
 
 @media (max-width: 432px) {
@@ -186,8 +190,14 @@ button.servicesBtn span {
 @media (max-width: 420px) {
   .firstSvg {
     top: initial;
-    max-height: 350px;
+    max-height: 346px;
     bottom: -1% !important;
+  }
+  .container .designPattern2 {
+    max-width: 175px;
+  }
+  .container .designPattern1 {
+    bottom: -15px;
   }
 }
 @media (max-width: 328px) {
@@ -207,6 +217,12 @@ button.servicesBtn span {
   }
 }
 
+@media (max-width: 1400px) {
+  .designPattern1 {
+    min-height: auto;
+    left: -5px;
+  }
+}
 @media only screen and (max-width: 1217px) and (min-width: 768px) {
   .firstSvg {
     max-width: 420px !important;
@@ -216,5 +232,15 @@ button.servicesBtn span {
   }
   .container {
     padding-inline: 14px;
+  }
+}
+
+@media (max-width: 395px) {
+  .designPattern1 {
+    max-width: 230px;
+  }
+  .designPattern2 {
+    /* top: 75px !important; */
+    max-width: 160px !important;
   }
 }
