@@ -9,7 +9,6 @@ const ModalSkeleton = ({
   title,
 
   setShow,
-
   gapBetweenHeadAndBody = "20px",
   borderRadius = "20px",
   width = "100%",
@@ -21,10 +20,16 @@ const ModalSkeleton = ({
   return (
     <>
       <style>{`
+      .modal{
+      z-index:9999 !important;
+      }
+      .modal-backdrop{
+      z-index:1500 !important;
+      }
         .modal-content {
           overflow: visible !important;
           width: 100%;
-          max-width: ${width};
+        
           margin: auto;
           border-radius: ${borderRadius};
           overflow: hidden;
@@ -36,17 +41,26 @@ const ModalSkeleton = ({
           border-bottom: none;
           padding: 0px;
         }
+          .modal-dialog{
+          z-index:9999!important  ;
+            max-width: ${width};
+            width:90%;
+            
+          }
         .modal-body {
           width: 100%;
           padding: 0px;
         }
+
+        @media(max-width:576px){
+         .modal-dialog{
+           width:95% !important;
+margin:auto;
+           }
+      
+        }
       `}</style>
       <Modal show={show} onHide={setShow} centered={isCentered}>
-        <Modal.Header>
-          <div className={[classes.headerDiv].join(" ")}>
-            <h2 className={[classes.headingText].join(" ")}>{title}</h2>
-          </div>
-        </Modal.Header>
         <Modal.Body>
           <div className={classes.content}>{children}</div>
         </Modal.Body>
@@ -81,7 +95,9 @@ ModalSkeleton.defaultProps = {
   borderRadius: "20px",
   width: "100%",
   position: "centered",
+  padding: "",
   isCancel: true,
+  isCentered: true,
 };
 
 export default ModalSkeleton;

@@ -1,7 +1,7 @@
 .container {
   background: linear-gradient(360.62deg, #efeff2 32.27%, #ffffff 65.46%);
   background-color: #fff;
-  padding-bottom: 86px;
+  padding-bottom: 112px;
   position: relative;
 }
 
@@ -14,7 +14,7 @@
   font-family: "Inter-semiBold";
   font-size: 44px;
   line-height: 49px;
-  padding-bottom: 18px;
+  padding-bottom: 28px;
   text-transform: uppercase;
   width: 40%;
 }
@@ -39,7 +39,7 @@
 }
 
 .slider :global(.slick-slide > div) {
-  padding: 0.8rem;
+  padding-right: 20px;
 }
 
 .slide {
@@ -48,7 +48,7 @@
   display: flex !important;
   flex-direction: column;
   background-color: #fff;
-  padding: 14px 27px;
+
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
   border-radius: 20px;
@@ -74,7 +74,11 @@
   flex-direction: column;
   height: 100%;
   flex: 1;
+
   /* Ensure content takes full height */
+}
+.holder {
+  padding: 30px 37px 20px 30px;
 }
 
 .plusButton {
@@ -87,7 +91,7 @@
   height: 34px;
   border-radius: 100%;
   position: absolute;
-  bottom: -45px;
+  bottom: -61px;
   right: 0;
   display: flex;
   justify-content: center;
@@ -140,6 +144,11 @@
 
 .ctaWrapper {
   margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 20px;
+  padding-top: 0;
 }
 
 @media (max-width: 1100px) {
@@ -149,6 +158,9 @@
 }
 
 @media (max-width: 776px) {
+  .aboutTitle {
+    padding-bottom: 20px;
+  }
   .wrapper {
     padding-left: 0px;
   }
@@ -188,8 +200,7 @@
 @media (max-width: 873px) {
   .slide {
     border-radius: 20px;
-    padding: 30px;
-    max-width: 341px;
+    max-width: 100%;
     width: 100%;
     min-height: 341px;
     background: #fff;
@@ -200,8 +211,11 @@
   }
 }
 
-@media (max-width: 873px) {
-  .slide {
-    max-width: 100%;
+@media (max-width: 400px) {
+  .holder {
+    padding: 30px 16px 0 16px;
+  }
+  .ctaWrapper {
+    padding-inline: 12px;
   }
 }

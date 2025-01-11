@@ -135,10 +135,15 @@
 }
 
 @media (max-width: 767px) {
+  .quickCardsWrapper {
+    padding-top: 30px;
+  }
   .imageSection {
     display: none;
   }
-
+  .quickCardsWrapper > div:last-child {
+    margin-top: 20px;
+  }
   .innerWrapper {
     margin-top: 10px;
   }
