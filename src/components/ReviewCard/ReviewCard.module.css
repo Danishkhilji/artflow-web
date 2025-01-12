@@ -19,6 +19,9 @@ div.wrapper {
 .img {
   width: 285px;
 }
+.generalInfo {
+  margin-top: 6px;
+}
 .generalInfo h2 {
   color: var(--text-color);
   font-size: 24px;
@@ -37,10 +40,21 @@ div.wrapper {
 }
 
 .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 67px;
   height: 67px;
   border-radius: 50%;
   background-color: #000;
+  overflow: hidden;
+}
+.bgWhite {
+  border: 1px solid #e1dfe5;
+  background: #fff;
+}
+.circle img {
+  width: 36px;
 }
 .detailWrapper {
   margin-top: 20px;

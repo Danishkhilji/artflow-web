@@ -50,6 +50,9 @@
   line-height: 26px;
   letter-spacing: -2%;
 }
+.closeCta {
+  cursor: pointer;
+}
 
 .iconWrapper svg {
   height: 74px;

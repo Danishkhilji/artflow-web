@@ -14,7 +14,10 @@ import {
   supprotIcon,
   testPrintIcon,
   Preview3DIcon,
-  configIcon
+  configIcon,
+  demoReview3,
+  company1,
+  company2,
 } from "../constant";
 
 import { FaLinkedinIn } from "react-icons/fa";
@@ -29,7 +32,7 @@ const shortAboutUs = [
     link: "",
     cta: "SIGN UP",
     img: coffeeBag,
-    icon: configIcon
+    icon: configIcon,
   },
   {
     id: "2",
@@ -39,7 +42,7 @@ const shortAboutUs = [
     link: "/",
     cta: "SIGN UP",
     img: testPrint,
-    icon: testPrintIcon
+    icon: testPrintIcon,
   },
   {
     id: "3",
@@ -49,7 +52,8 @@ const shortAboutUs = [
     link: "https://oyepackaging.com/contact",
     cta: "LEARN MORE",
     img: Preview3D,
-    icon: Preview3DIcon
+    icon: Preview3DIcon,
+    logo: company1,
   },
   {
     id: "4",
@@ -59,7 +63,8 @@ const shortAboutUs = [
     link: "/",
     cta: "CONTACT US",
     img: designSupport,
-    icon: supprotIcon
+    icon: supprotIcon,
+    logo: company2,
   },
 ];
 
@@ -69,6 +74,9 @@ const reviewsData = [
     title: "Doris Erne",
     subTitle: "Wheycation",
     img: demoReview1,
+    logo: company1,
+    name: "Doris Erne",
+    short: "Wheycation",
     description:
       "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },
@@ -76,7 +84,10 @@ const reviewsData = [
     id: "2",
     title: "Doris Erne",
     subTitle: "Wheycation",
-    img: demoReview1,
+    img: demoReview3,
+    name: "Zero Gravity Coffee",
+    logo: company2,
+    short: "Wheycation",
     description:
       "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },
@@ -85,6 +96,9 @@ const reviewsData = [
     title: "Doris Erne",
     subTitle: "Wheycation",
     img: demoReview1,
+    logo: company1,
+    name: "Doris Erne",
+    short: "Wheycation",
     description:
       "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },

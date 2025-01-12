@@ -3,6 +3,7 @@ import classes from "./ReviewCard.module.css";
 import clsx from "clsx";
 
 const ReviewCard = ({ data }) => {
+  console.log("data ==>>", data);
   return (
     <div className={classes.wrapper}>
       <div className={classes.imgWrapper}>
@@ -20,10 +21,16 @@ const ReviewCard = ({ data }) => {
             &quot;
           </p>
           <div className={classes.detailWrapper}>
-            <span className={classes.circle}></span>
+            <span
+              className={clsx(classes.circle, {
+                [classes.bgWhite]: !data?.name?.toLowerCase()?.includes("zero"),
+              })}
+            >
+              <img src={data?.logo} alt="logo" className={clsx("img-fluid")} />
+            </span>
             <div className={classes.generalInfo}>
               <h2>{data?.name || "Anonymous"}</h2>
-              <p>{data?.role || "Customer"}</p>
+              <p>{data?.short || "Customer"}</p>
             </div>
           </div>
         </div>
@@ -37,7 +44,8 @@ ReviewCard.propTypes = {
   data: PropTypes.shape({
     img: PropTypes.string.isRequired, // Ensure img is required and a string
     name: PropTypes.string, // Optional string for name
-    role: PropTypes.string, // Optional string for role
+    short: PropTypes.string, // Optional string for role
+    logo: PropTypes.string,
   }).isRequired, // data object itself is required
 };
 

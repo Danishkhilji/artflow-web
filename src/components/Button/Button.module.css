@@ -9,10 +9,14 @@
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  outline: none !important;
 }
-.btn:focus {
-  outline: none;
+button.btn:focus,
+button.btn:focus-visible {
+  outline: none !important;
   box-shadow: none !important;
+  border-color: none !important;
+  border: 0px solid !important;
 }
 
 /* ======= primary button =========  */

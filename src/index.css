@@ -172,8 +172,6 @@ p {
   z-index: 99999 !important;
 }
 
-
-
 div.modal-open {
   backdrop-filter: blur(600px) !important;
   background: rgba(0, 0, 0, 0.47) !important; /* Optional for dimming effect */
@@ -191,8 +189,6 @@ div.modal-open {
 .slick-list {
   height: auto !important;
 }
-
-
 
 button {
   user-select: none;
@@ -237,6 +233,10 @@ button {
 
 .imgContainer.enter {
   animation: slideFromRight 300ms ease-in-out forwards;
+}
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important; /* Removes any box-shadow applied by React Bootstrap */
 }
 
 @keyframes slideFromRight {
