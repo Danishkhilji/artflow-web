@@ -10,7 +10,6 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   outline: none !important;
-  
 }
 button.btn:focus,
 button.btn:focus-visible {
@@ -46,6 +45,7 @@ button.secondary:active {
 button.bgPrimary {
   color: #fff !important;
   background-color: var(--primary-color) !important;
+  border-width: 2px !important;
 }
 
 button.isHover.bgPrimary:hover {

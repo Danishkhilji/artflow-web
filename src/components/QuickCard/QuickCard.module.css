@@ -42,7 +42,7 @@
 .container .btn:hover ~ .wrapper .firstSvg,
 .container .btn:hover ~ .wrapper .secondSvg {
   transform: scale(2);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 .container .btn:hover ~ .wrapper {
   background-color: red;
@@ -78,11 +78,11 @@
 }
 .designPattern1 {
   bottom: 0px;
-  left: 0px;
+  left: 40px;
   position: absolute;
   max-width: 341px;
-  /* min-height: 341px; */
-  min-height: auto;
+  min-height: 322px;
+
   width: 100%;
   transition: all 0.5s ease-in-out;
   flex-grow: 1;
