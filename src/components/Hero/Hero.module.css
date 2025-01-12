@@ -19,15 +19,14 @@
 .quickCardsWrapper {
   padding-top: 51px;
 }
-.aboutWrapper {
-  /* margin-top: 15px; */
-}
 .aboutTitle {
   padding-top: 70px;
   font-family: "Inter-semiBold";
   font-size: 44px;
   line-height: 49px;
   padding-bottom: 30px;
+  text-transform: uppercase;
+  background-color: red;
 }
 @media (max-width: 992px) {
   .mainHeading {

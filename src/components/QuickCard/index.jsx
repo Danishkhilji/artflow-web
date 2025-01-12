@@ -1,24 +1,21 @@
-import classes from "./QuickCard.module.css";
-import { Button } from "primereact/button";
-import { useState } from "react";
+import clsx from "clsx";
 import PropTypes from "prop-types";
-// import { ReactComponent as CoffeeBags } from "../../assets/images/coffee_bag.svg";
+import { useState } from "react";
 import {
   CoffeeBag,
   CoffeeBag2,
-  // DesignCard,
-  // DesignCard2,
   designCard1,
   designCard2,
-  // designPattern2,
 } from "../../constant";
-import clsx from "clsx";
-// CoffeeBag, CoffeeBag2,
-//DesignCard, DesignCard2
-const QuickCard = ({ title, category, BlockLink }) => {
+import Button from "../Button";
+import classes from "./QuickCard.module.css";
+import { DesignCard2 } from "../../constant";
+const QuickCard = ({ title, category, blockLink }) => {
+  let buttonVariant = "primary";
   const [hover, setHover] = useState(false);
   let content = null;
   if (category === "packaging") {
+    buttonVariant = "secondary";
     content = (
       <>
         {" "}
@@ -37,18 +34,14 @@ const QuickCard = ({ title, category, BlockLink }) => {
   } else {
     content = (
       <>
-        {/* <DesignCard className={clsx("img-fluid", classes.designPattern1)} />
-        <DesignCard2
-          className={clsx("img-fluid", classes.designPattern2)}
-        /> */}
-
         <img
           src={designCard1}
           alt="design card1"
           className={clsx("img-fluid", classes.designPattern1, {
             [classes.scaleCoffeeBag1]: hover,
           })}
-        />
+        /> 
+      
         <img
           src={designCard2}
           alt="design card2"
@@ -56,11 +49,6 @@ const QuickCard = ({ title, category, BlockLink }) => {
             [classes.scaleCoffeeBag2]: hover,
           })}
         />
-        {/* <img
-          src={designPattern2}
-          alt="design pattern"
-          className={clsx("img-fluid", classes.designPattern2)}
-        /> */}
       </>
     );
   }
@@ -83,41 +71,25 @@ const QuickCard = ({ title, category, BlockLink }) => {
       </h1>
       <div className={classes.ctaWrapper}>
         <Button
-          className={clsx(
-            "transparent-btn",
-            {
-              [classes.servicesBtn]: category === "services",
-            },
-            classes.btn
-          )}
+          isHover={false}
+          variant={buttonVariant}
+          className={clsx(classes.btn)}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           onClick={() => {
-            window.open(
-              BlockLink,
-              "_blank",
-              "noopener,noreferrer"
-            );
+            window.open(blockLink, "_blank", "noopener,noreferrer");
           }}
           label="LEARN MORE"
         />
       </div>
-      <div className={classes.wrapper}>
-        {/* <img
-          src={coffeeBag3}
-          alt="pouch image"
-          className={clsx(classes.firstSvg, "img-fluid")}
-        /> */}
-        {/* <img src={coffeeBag4} alt="pouch image" /> */}
-        {content}
-        {/**/}
-      </div>
+      <div className={classes.wrapper}>{content}</div>
     </div>
   );
 };
 QuickCard.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.oneOf(["packaging", "services"]).isRequired,
+  blockLink: PropTypes.string,
 };
 
 export default QuickCard;

@@ -1,12 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
-import { Button } from "primereact/button";
+import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { shortAboutUs } from "../../../data";
 import { redirectTo } from "../../../helpers";
 import { useMobileViewHook } from "../../../hooks/useMobileViewHook";
+import Button from "../../Button";
 import classes from "./AboutItem.module.css";
 
 const positions = {
@@ -92,23 +92,14 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                     {element.description}
                   </p>
                   <Button
+                    variant={"primary"}
                     onClick={() => {
                       element?.link && redirectTo(element?.link);
                     }}
+                    className={classes.cta}
                     label={element.cta}
-                    className={clsx("transparent-btn primary-btn", classes.cta)}
                   />
-                  {/* {isMobile && (
-                    <div className={classes.imageWrapper}>
-                      {shortAboutUs[activeTab] && (
-                        <img
-                          className="img-fluid"
-                          src={shortAboutUs[activeTab].img}
-                          alt={shortAboutUs[activeTab].title}
-                        />
-                      )}
-                    </div>
-                  )} */}
+
                   {isMobile && (
                     <div className={classes.imgWrapper}>
                       <div className={clsx(classes.imgContainer, {})}>
@@ -137,6 +128,9 @@ const AboutItem = ({ activeTab, setActiveTab }) => {
                                   {
                                     [classes.coffee_bag]: [0].includes(index),
                                     [classes.preview3D]: 2 == index,
+                                    [classes.circleImage]: [1, 3].includes(
+                                      index
+                                    ),
                                   }
                                 )}
                                 src={element.img}
@@ -243,7 +237,7 @@ AboutItem.propTypes = {
 const circleStyle = {
   position: "absolute",
   backgroundColor: "white",
-  border: "2px solid black",
+  border: "1px solid var(--text-color)",
   borderRadius: "50%",
 };
 

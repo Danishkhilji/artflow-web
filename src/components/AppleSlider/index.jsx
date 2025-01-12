@@ -51,12 +51,14 @@ const AppleSlider = () => {
           {ourFeatures.map((slide, index) => (
             <div key={index} className={classes.slide}>
               <div className={classes.slideContent}>
-                <span className={classes.icon}>{slide.icon}</span>
-                <div className={classes.contentArea}>
-                  <h3 className={classes.slideTitle}>{slide.title}</h3>
-                  <p className={classes.slideDescription}>
-                    {slide.description}
-                  </p>
+                <div className={classes.holder}>
+                  <span className={classes.icon}>{slide.icon}</span>
+                  <div className={classes.contentArea}>
+                    <h3 className={classes.slideTitle}>{slide.title}</h3>
+                    <p className={classes.slideDescription}>
+                      {slide.description}
+                    </p>
+                  </div>
                 </div>
                 <div
                   className={clsx(

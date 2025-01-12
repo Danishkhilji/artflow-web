@@ -14,7 +14,8 @@
 .navbar span {
   font-size: 18px;
   cursor: pointer;
-  line-height: 21.78px;
+  line-height: 22px;
+  font-family: "Inter-medium";
 }
 
 .navbar span:hover {
@@ -24,6 +25,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.ctaWrapper button {
+  font-size: 18px;
 }
 .ctaWrapper span {
   font-size: 18px !important;
@@ -40,25 +44,8 @@
   padding: 16px 24px !important;
 }
 
-.ctaWrapper button:first-child:hover {
-  background-color: var(--primary-color) !important;
-}
-.ctaWrapper button:first-child:hover span {
-  color: #fff !important;
-}
-.ctaWrapper button:last-child:hover {
-  background-color: #fff !important;
-  border: 1px solid var(--primary-color);
-}
-.ctaWrapper button:last-child:hover span {
-  color: var(--primary-color) !important;
-}
 @media (max-width: 998px) {
   .navbar span {
     font-size: 14px;
-  }
-
-  .ctaWrapper > button span {
-    font-size: 14px !important;
   }
 }

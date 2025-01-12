@@ -35,14 +35,8 @@ const Home = () => {
   const banner1 = useRef();
   const banner2 = useRef();
 
-
-
   // useMobileViewHook(setIsMobile, 600);
   useMobileViewHook(setIsMobileHeroSection, 767);
-
-
-
-
 
   useEffect(() => {
     setTimeout(() => setExpanded(true), 200); // Delay for smoother effect
@@ -95,9 +89,9 @@ const Home = () => {
                       packaging
                     </h2>
                     <p className={classes.text}>
-                      We support the growth of coffee roasting companies <br /> by
-                      providing<b> fully customized</b> packaging solutions and{" "}
-                      <b>unique filling services.</b>
+                      We support the growth of coffee roasting companies <br />{" "}
+                      by providing<b> fully customized</b> packaging solutions
+                      and <b>unique filling services.</b>
                     </p>
                   </motion.div>
 
@@ -140,32 +134,36 @@ const Home = () => {
                 <p className={classes.text}>
                   We support the growth of coffee roasting companies by
                   providing
-                  <span className={classes.textSemiBold}> fully customized</span> packaging solutions and{" "}
-                  <span className={classes.textSemiBold}>unique filling services.</span>
+                  <span className={classes.textSemiBold}>
+                    {" "}
+                    fully customized
+                  </span>{" "}
+                  packaging solutions and{" "}
+                  <span className={classes.textSemiBold}>
+                    unique filling services.
+                  </span>
                 </p>
               </div>
             </CommonContainer>
           )}
           <CommonContainer className={classes.quickCardsWrapper}>
-            <Container>
-              <Row>
-                {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
-                <Col md={6} xs={12}>
-                  <QuickCard
-                    category="packaging"
-                    title="Coffee Packaging"
-                    BlockLink="https://oyepackaging.com/products"
-                  />
-                </Col>
-                <Col md={6} xs={12}>
-                  <QuickCard
-                    category="services"
-                    title="Coffee Services"
-                    BlockLink="https://oyepackaging.com/services"
-                  />
-                </Col>
-              </Row>
-            </Container>
+            <Row>
+              {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
+              <Col md={6} xs={12}>
+                <QuickCard
+                  category="packaging"
+                  title="Coffee Packaging"
+                  blockLink="https://oyepackaging.com/products"
+                />
+              </Col>
+              <Col md={6} xs={12}>
+                <QuickCard
+                  category="services"
+                  title="Coffee Services"
+                  blockLink="https://oyepackaging.com/services"
+                />
+              </Col>
+            </Row>
           </CommonContainer>
           <Banner
             ref={banner1}

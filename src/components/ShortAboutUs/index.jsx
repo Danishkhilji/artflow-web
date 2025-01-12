@@ -72,14 +72,16 @@ function ShortAboutUs() {
 
   return (
     <div className={classes.wrapper}>
-      <Row className="justify-content-between">
-        <Col md={6} sm={12} className="pe-md-0">
+      <div className={clsx(classes.row,{
+        [classes.gap]:currentImage.img.includes("coffee_bag")
+      })}>
+        <div className="pe-md-0">
           <div className={classes.accordionsTab}>
             <AboutItem activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
-        </Col>
+        </div>
         {!isMobile && (
-          <Col md={6} lg={5} className={classes.imgWrapper}>
+          <div className={clsx(classes.imgWrapper)}>
             <div className={clsx(classes.imgContainer, {})}>
               <AnimatePresence>
                 <motion.div
@@ -102,8 +104,8 @@ function ShortAboutUs() {
                       currentImage.img.includes("coffee_bag")
                         ? classes.coffee_bag
                         : currentImage.img.includes("3d-preview")
-                          ? classes.preview3D
-                          : classes.commonImage,
+                        ? classes.preview3D
+                        : classes.commonImage,
                       "image-transition img-fluid"
                     )}
                     src={currentImage.img}
@@ -186,9 +188,9 @@ function ShortAboutUs() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </Col>
+          </div>
         )}
-      </Row>
+      </div>
     </div>
   );
 }
@@ -196,7 +198,7 @@ function ShortAboutUs() {
 const circleStyle = {
   position: "absolute",
   backgroundColor: "white",
-  border: "2px solid black",
+  border: "1px solid var(--text-color)",
   borderRadius: "50%",
 };
 

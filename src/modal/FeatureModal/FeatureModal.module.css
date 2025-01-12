@@ -1,6 +1,12 @@
 .wrapper {
   padding: 30px 58px;
 }
+.header {
+  padding-top: 22px;
+  display: flex;
+  padding-right: 22px;
+  justify-content: flex-end;
+}
 
 .closeCta {
   background-color: var(--text-color);
@@ -44,6 +50,9 @@
   line-height: 26px;
   letter-spacing: -2%;
 }
+.closeCta {
+  cursor: pointer;
+}
 
 .iconWrapper svg {
   height: 74px;
@@ -52,6 +61,11 @@
 @media (max-width: 576px) {
   .wrapper {
     padding: 16px;
+    padding-top: 30px;
+  }
+  .header {
+    padding-top: 16px;
+    padding-right: 16px;
   }
   .title {
     font-size: 36px;

@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
 import ModalSkeleton from "../../components/ModalSkeleton";
+import { Cross } from "../../constant";
 import classes from "./FeatureModal.module.css";
 const FeatureModal = ({ show, setShow, data }) => {
   return (
-    <ModalSkeleton show={show} setShow={setShow}>
+    <ModalSkeleton show={show} setShow={setShow} width="1032px">
+      <header className={classes.header}>
+        <Cross className={classes.closeCta} onClick={() => {
+            setShow(false);
+          }} />
+       
+      </header>
       <div className={classes.wrapper}>
-        {/* <header className={classes.header}>
-          <span className={classes.closeCta}>
-            <RxCross2 color="#fff" size={14} />
-          </span>
-        </header> */}
-
         <h3 className={classes.title}>{data?.mainTitle}</h3>
 
         <div className={classes.content}>

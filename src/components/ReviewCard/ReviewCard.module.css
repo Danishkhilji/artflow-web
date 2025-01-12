@@ -1,11 +1,11 @@
 div.wrapper {
   border-radius: 20px;
   padding: 10px;
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  border-top: 1px solid rgba(16, 16, 20, 0.3) !important;
+  border: 1px solid rgba(16, 16, 20, 0.3) !important;
+  /* border-top: 1px solid rgba(16, 16, 20, 0.3) !important;
   border-bottom: 1px solid rgba(16, 16, 20, 0.3) !important;
   border-right: 2px solid rgba(16, 16, 20, 0.3) !important;
-  border-left: 2px solid rgba(16, 16, 20, 0.3) !important;
+  border-left: 2px solid rgba(16, 16, 20, 0.3) !important; */
   display: flex;
   padding: 10px;
   padding-right: 25px;
@@ -14,9 +14,13 @@ div.wrapper {
   flex-shrink: 0;
   margin: 0.3rem;
   box-shadow: initial !important;
+  overflow: hidden;
 }
 .img {
   width: 285px;
+}
+.generalInfo {
+  margin-top: 6px;
 }
 .generalInfo h2 {
   color: var(--text-color);
@@ -36,10 +40,21 @@ div.wrapper {
 }
 
 .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 67px;
   height: 67px;
   border-radius: 50%;
   background-color: #000;
+  overflow: hidden;
+}
+.bgWhite {
+  border: 1px solid #e1dfe5;
+  background: #fff;
+}
+.circle img {
+  width: 36px;
 }
 .detailWrapper {
   margin-top: 20px;
