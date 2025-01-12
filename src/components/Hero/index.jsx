@@ -10,6 +10,7 @@ import ReviewSection from "../ReviewSection";
 import CommonContainer from "../CommonContainer";
 import { Col, Row } from "react-bootstrap";
 const Hero = () => {
+  console.log("A==>>", clsx(classes["mt-20"], classes.marginTop));
   return (
     <>
       <Header />
@@ -22,7 +23,10 @@ const Hero = () => {
             </h2>
             <p className={classes.text}>
               We support the growth of coffee roasting companies by providing
-              fully customized packaging solutions and unique filling services.
+              <span className={classes.boldText}>fully</span> customized
+              packaging solutions and{" "}
+              <span className={classes.boldText}>unique</span>
+              filling services.
             </p>
           </div>
         </CommonContainer>
@@ -32,7 +36,11 @@ const Hero = () => {
               <QuickCard category="packaging" />
             </Col>
 
-            <Col md={6} xs={12}>
+            <Col
+              md={6}
+              xs={12}
+              className={clsx(classes["mt-20"], classes.marginTop)}
+            >
               <QuickCard category="services" />
             </Col>
           </Row>

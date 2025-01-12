@@ -38,6 +38,11 @@
 }
 .cta {
   z-index: 1800;
+  display: flex;
+  align-items: center;
+}
+.cta span {
+  flex-grow: 1;
 }
 .logo svg {
   width: 84px;
@@ -73,12 +78,13 @@
   height: 20px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-top: 19px;
+}
+.mobileMenu img {
 }
 
 .icon {
-  width: 27px;
-  height: 19.3px;
+  /* width: 27px;
+  height: 19.3px; */
   transition: transform 0.5s ease;
 }
 
@@ -88,13 +94,14 @@
 }
 
 .menuIcon {
-  width: 27px;
-  height: 19.3px;
+  height: auto;
+  /* width: 27px;
+  height: 19.3px; */
 }
 
 .closeIcon {
-  width: 27px;
-  height: 27px;
+  width: 19px;
+  height: 19px;
 }
 
 /* Fullscreen Menu */
@@ -225,7 +232,6 @@ span#config {
   transition-delay: initial; */
   box-shadow: initial !important;
 }
-
 
 .header.menu .nav > span:nth-child(1) {
   transition-delay: 0.1s;

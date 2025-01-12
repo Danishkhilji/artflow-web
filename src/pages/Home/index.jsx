@@ -156,7 +156,7 @@ const Home = () => {
                   blockLink="https://oyepackaging.com/products"
                 />
               </Col>
-              <Col md={6} xs={12}>
+              <Col md={6} xs={12} className={classes.mt20}>
                 <QuickCard
                   category="services"
                   title="Coffee Services"

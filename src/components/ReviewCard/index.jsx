@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 import classes from "./ReviewCard.module.css";
 import clsx from "clsx";
 
-const ReviewCard = ({ data }) => {
-  console.log("data ==>>", data);
+const ReviewCard = ({ data }) => {                
   return (
     <div className={classes.wrapper}>
       <div className={classes.imgWrapper}>
