@@ -1,12 +1,11 @@
 .wrapper {
-  padding: 10px 40px;
+  padding: 10px 0px;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  /* padding: 100px; */
   margin-block: 70px;
-  /* border-radius: 20px; */
   overflow: hidden;
+  min-height: 450px;
 }
 
 .content {
@@ -55,7 +54,7 @@
 
 /* Take 100% height and width of container */
 .el {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   position: absolute;
   left: 0;
@@ -72,7 +71,7 @@
 .mainContent {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 30%;
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: left;
@@ -83,13 +82,14 @@
   /* Optional, adjust based on your design */
   padding: 0 1rem;
   /* Add some padding for smaller screens */
+
 }
 
 .imageContainer {
   position: absolute;
   /* width: 100%; */
   height: 100%;
-  z-index: 1;
+  z-index: 11;
   /* Ensure it stays below the content */
 }
 
@@ -97,17 +97,87 @@
   border-radius: 20px;
   height: 100%;
   object-fit: cover;
+  z-index: 11;
+}
+
+
+
+@media (max-width: 1100px) {
+  .wrapper {
+    padding-inline: 50px;
+  }
+
+  .mainContent {
+    left: 50%;
+    text-align: center;
+  }
+
+  .mainContent button {
+    display: block;
+    margin-inline: auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 776px) {
+  .wrapper {
+    padding-inline: 0px;
+  }
+
+  .mainContent {
+    left: 50%;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 601px) {
+  .wrapper {
+    min-height: 925px;
+    display: flex;
+  }
+
+  .mainContent {
+    top: initial;
+    bottom: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+
+
+  .title {
+    font-size: 30px;
+    line-height: 39px;
+    font-family: "Inter-bold";
+  }
+
+  .wrapper {
+    min-height: 885px;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    min-height: 830px;
+  }
+
 }
 
 @media (max-width: 506px) {
   .wrapper {
-    min-height: 550px;
-    padding: 90px 16px;
+    min-height: 730px;
     display: flex;
   }
 
   .content {
-    margin-top: auto;
+    /* margin-top: auto; */
     flex: 1;
   }
 
@@ -129,53 +199,29 @@
     text-align: center;
     width: 100%;
   }
+
   .title {
     text-align: center;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 440px) {
+  .wrapper {
+    min-height: 670px;
+    /* padding-inline: 16px; */
+    display: flex;
+  }
+
   .mainContent {
     top: initial;
-    bottom: 0px;
-  }
-  .title {
-    font-size: 30px;
-    line-height: 39px;
-    font-family: "Inter-bold";
+    bottom: 60px;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 399px) {
   .wrapper {
-    padding-inline: 50px;
-  }
-
-  .mainContent {
-    left: 50%;
-    text-align: center;
-  }
-  .mainContent button {
-    display: block;
-    margin-inline: auto;
-  }
-
-  .title {
-    text-align: center;
-  }
-}
-
-@media (max-width: 776px) {
-  .wrapper {
-    padding-inline: 16px;
-  }
-
-  .mainContent {
-    left: 50%;
-    text-align: center;
-  }
-
-  .title {
-    text-align: center;
+    min-height: 610px;
+    /* padding-inline: 16px; */
+    display: flex;
   }
 }
