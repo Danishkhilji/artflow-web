@@ -18,6 +18,7 @@ export { default as Return } from "../assets/images/return-policy.svg?react";
 export { default as Sustain } from "../assets/images/sustainable.svg?react";
 // export png here
 export { default as bg1 } from "../../src/assets/images/banner1.png";
+export { default as banner_bg2 } from "../../src/assets/images/banner_bg2.png";
 export { default as demoReview1 } from "../../src/assets/images/review-demo1.png";
 export { default as demoReview3 } from "../assets/images/review-demo3.png";
 export { default as company1 } from "../assets/images/company1.png";
@@ -28,6 +29,9 @@ export { default as Preview3D } from "../assets/images/3d-preview.png";
 export { default as designSupport } from "../assets/images/design-support.png";
 export { default as heroBg } from "../assets/images/hero_bg.webp";
 export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
+export { default as banner2_mobile } from "../assets/images/banner_mb_bg2.png";
+
+
 export { default as designPattern2 } from "../assets/images/design-pattern2.png";
 export { default as designCard1 } from "../assets/images/design-card1.png";
 export { default as designCard2 } from "../assets/images/design-card2.png";

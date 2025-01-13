@@ -8,7 +8,7 @@ import Header from "../../components/Header";
 import QuickCard from "../../components/QuickCard";
 import ReviewSection from "../../components/ReviewSection";
 import ShortAboutUs from "../../components/ShortAboutUs";
-import { bg1, heroBg, banner1_mobile } from "../../constant";
+import { bg1, banner_bg2, heroBg, banner1_mobile, banner2_mobile } from "../../constant";
 import classes from "./Home.module.css";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
 import { redirectTo } from "../../helpers";
@@ -200,7 +200,7 @@ const Home = () => {
             title="Any questions left?"
             ctaTitle="Book a call"
             className={classes.banner1}
-            bg={isMobile ? banner1_mobile : bg1}
+            bg={isMobile ? banner2_mobile : banner_bg2}
             isMobile={isMobile}
           />
           <Footer />
