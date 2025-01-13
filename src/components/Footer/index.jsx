@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <CommonContainer>
       <footer>
-        <Row>
-          <Col lg={4} xs={12} sm={12} >
+        <div className={classes.row}>
+          <div lg={4} xs={12} sm={12}>
             <div className={clsx(classes.logoWrapper, classes.pe30)}>
               <span
                 onClick={() => {
@@ -30,9 +30,9 @@ const Footer = () => {
                 exciting journey!{" "}
               </p>
             </div>
-          </Col>
+          </div>
 
-          <Col lg={2} sm={3} xs={6}>
+          <div lg={2} sm={3} xs={6}>
             <div className={clsx(classes.contentWrapper, classes.pl50)}>
               <h2>PACKAGING</h2>
 
@@ -43,9 +43,9 @@ const Footer = () => {
                 <p className={"disabled"}>Standup Bags</p>
               </div>
             </div>
-          </Col>
+          </div>
 
-          <Col lg={2} sm={3} xs={6} className={clsx(classes.fixInMob)}>
+          <div lg={2} sm={3} xs={6} className={clsx(classes.fixInMob)}>
             <div className={classes.contentWrapper}>
               <h2>SERVICES</h2>
 
@@ -65,9 +65,9 @@ const Footer = () => {
                 <p className={clsx(classes.dull, "disabled")}>Capsules</p>
               </div>
             </div>
-          </Col>
+          </div>
 
-          <Col sm={3} lg={2} xs={6}>
+          <div sm={3} lg={2} xs={6}>
             <div className={classes.contentWrapper}>
               <h2>WIKI</h2>
 
@@ -118,8 +118,8 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-          </Col>
-          <Col lg={2} sm={3} xs={6} className={clsx(classes.mlAuto)}>
+          </div>
+          <div lg={2} sm={3} xs={6} className={clsx(classes.mlAuto)}>
             <div className={classes.contentWrapper}>
               <h2>ABOUT US</h2>
 
@@ -159,10 +159,12 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
         <div className={classes.bottomDetails}>
-          <p className="pb-0 mb-0">Copyright © {currentYear} ÖYE PACKAGING</p>
+          <p className={clsx("pb-0 mb-0", classes.copyRight)}>
+            Copyright © {currentYear} ÖYE PACKAGING
+          </p>
           <nav className={classes.navbar}>
             <span
               onClick={() => {

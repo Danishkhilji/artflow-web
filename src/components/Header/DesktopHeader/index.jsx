@@ -56,7 +56,7 @@ const DesktopHeader = () => {
               );
             }}
           />
-          <Button label="SIGN IN" variant={"primary"} />
+          <Button variant={"bgPrimary"} label="SIGN IN"  />
         </div>
       </header>
     </CommonContainer>

@@ -10,6 +10,7 @@ const Button = ({ label, className, variant, children, isHover, ...rest }) => {
         [classes.isHover]: isHover,
         [classes.primary]: variant === "primary",
         [classes.secondary]: variant === "secondary",
+        [classes.bgPrimary]: variant === "bgPrimary",
       })}
     >
       {label || children}

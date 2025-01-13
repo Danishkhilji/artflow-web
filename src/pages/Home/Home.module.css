@@ -135,6 +135,9 @@
 }
 
 @media (max-width: 767px) {
+  .mt20 {
+    margin-top: 20px;
+  }
   .quickCardsWrapper {
     padding-top: 30px;
   }

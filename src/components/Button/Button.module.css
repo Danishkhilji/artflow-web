@@ -42,3 +42,15 @@ button.secondary:hover,
 button.secondary:active {
   border-color: #fff !important;
 }
+button.bgPrimary {
+  color: #fff !important;
+  background-color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+}
+
+button.isHover.bgPrimary:hover {
+  background-color: #fff !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  border-width: 2px !important;
+}
