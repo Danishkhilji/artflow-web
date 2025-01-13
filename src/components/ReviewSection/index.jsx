@@ -5,7 +5,7 @@ import classes from "./ReviewSecton.module.css";
 
 const ReviewSection = () => {
   const [isPaused, setIsPaused] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(1); // Default speed
+  const [scrollSpeed, setScrollSpeed] = useState(-5); // Default speed
   const scrollRef = useRef(null);
 
   useEffect(() => {

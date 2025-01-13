@@ -142,7 +142,11 @@ const Banner = React.forwardRef(
 
     // Dynamic padding calculation
     const rawPadding = useTransform(scrollYProgress, [0, 0.5, 1], [16, 0, 16]);
-    const dynamicMaxPadding = useTransform(scrollYProgress, [0, 0.5, 1], [maxPadding, 0, maxPadding]);
+    const dynamicMaxPadding = useTransform(
+      scrollYProgress,
+      [0, 0.5, 1],
+      [maxPadding, 0, maxPadding]
+    );
     const padding = useSpring(isMobile ? rawPadding : dynamicMaxPadding, {
       stiffness: 100,
       damping: 20,
@@ -164,7 +168,8 @@ const Banner = React.forwardRef(
               style={{
                 width: width,
                 height: "100%", // Always 100% width (edge-to-edge)
-                borderRadius: "2px",
+                scale: useTransform(scrollYProgress, [0, 1], [1, 5]),
+                borderRadius: "30px", // Border radius for the inner div
               }}
               transition={{
                 type: "spring",
@@ -172,7 +177,7 @@ const Banner = React.forwardRef(
                 damping: 15,
                 mass: 1,
                 restDelta: 0.001,
-                delay: 0.4,
+                delay: 0.8,
               }}
             >
               {/* Image with dynamic padding */}
