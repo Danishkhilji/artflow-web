@@ -2,7 +2,7 @@
 // import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 // import Button from "../Button";
 // import PropTypes from "prop-types";
-// import React, { useRef } from "react";
+// import React, { useRef, useEffect, useState } from "react";
 // import CommonContainer from "../CommonContainer";
 // import classes from "./Banner.module.css";
 
@@ -13,10 +13,53 @@
 //       target: container,
 //       offset: ["start end", "end start"],
 //     });
-//     // Dynamic padding for the image (16px on each side initially)
+//     const [maxScale, setMaxScale] = useState(1); // Default scale is 1
+//     useEffect(() => {
+//       // Calculate maxScale dynamically
+//       const containerWidth = ref.current.offsetWidth; // Get container width
+//       const image = new Image();
+//       image.src = bg;
+//       image.onload = () => {
+//         const imgWidth = image.width; // Actual image width
+//         console.log("imgWidth", imgWidth)
+//         const scale = containerWidth / 1360; // Calculate max scale
+//         setMaxScale(scale);
+//       };
+//     }, [bg, ref]);
+
+//     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, maxScale, 1]);
+
+
+//     // State to store max padding
+//     const [maxPadding, setMaxPadding] = useState(100);
+
+//     // Update maxPadding dynamically based on screen size
+//     useEffect(() => {
+//       const updateMaxPadding = () => {
+//         if (window.innerWidth < 776) {
+//           setMaxPadding(16); // For widths less than 776px
+//         } else if (window.innerWidth < 1100) {
+//           setMaxPadding(50); // For widths between 776px and 1100px
+//         } else {
+//           setMaxPadding(100); // For widths greater than 1100px
+//         }
+//       };
+//       updateMaxPadding(); // Initial check
+//       window.addEventListener("resize", updateMaxPadding);
+
+//       return () => {
+//         window.removeEventListener("resize", updateMaxPadding);
+//       };
+//     }, []);
+
+//     // Dynamic padding calculation
 //     const rawPadding = useTransform(scrollYProgress, [0, 0.5, 1], [16, 0, 16]);
-//     const desktopRawPadding = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, 100]);
-//     const padding = useSpring(isMobile ? rawPadding : desktopRawPadding, {
+//     const dynamicMaxPadding = useTransform(
+//       scrollYProgress,
+//       [0, 0.5, 1],
+//       [maxPadding, 0, maxPadding]
+//     );
+//     const padding = useSpring(isMobile ? rawPadding : dynamicMaxPadding, {
 //       stiffness: 100,
 //       damping: 20,
 //       mass: 1,
@@ -36,9 +79,9 @@
 //             <motion.div
 //               style={{
 //                 width: width,
-//                 height: "100%",// Always 100% width (edge-to-edge)
-
-//                 borderRadius: "2px",
+//                 height: "100%", // Always 100% width (edge-to-edge)
+//                 scale: scale,
+//                 borderRadius: "30px",
 //               }}
 //               transition={{
 //                 type: "spring",
@@ -46,7 +89,7 @@
 //                 damping: 15,
 //                 mass: 1,
 //                 restDelta: 0.001,
-//                 delay: 0.4,
+//                 delay: 0.8,
 //               }}
 //             >
 //               {/* Image with dynamic padding */}
@@ -59,7 +102,7 @@
 //                   paddingRight: padding, // Dynamic right padding based on scroll
 //                   overflow: "hidden",
 //                   objectFit: "cover", // Make sure the image covers the area
-//                   borderRadius: "2px", // Border radius for the image
+//                   borderRadius: "20px", // Border radius for the image
 //                 }}
 //               />
 //             </motion.div>
@@ -78,7 +121,7 @@
 //             </div>
 //           </div>
 //         </CommonContainer>
-//       </section >
+//       </section>
 //     );
 //   }
 // );
@@ -117,6 +160,21 @@ const Banner = React.forwardRef(
       target: container,
       offset: ["start end", "end start"],
     });
+    const [maxScale, setMaxScale] = useState(1); // Default scale is 1
+    useEffect(() => {
+      // Calculate maxScale dynamically
+      const containerWidth = ref.current.offsetWidth; // Get container width
+      const image = new Image();
+      image.src = bg;
+      image.onload = () => {
+        // const imgWidth = image.width; // Actual image width
+        const scale = containerWidth / 1360; // Calculate max scale
+        isMobile ? setMaxScale(1) : setMaxScale(scale);
+
+      };
+    }, [bg, ref]);
+
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, maxScale, 1]);
 
     // State to store max padding
     const [maxPadding, setMaxPadding] = useState(100);
@@ -162,34 +220,30 @@ const Banner = React.forwardRef(
           <div ref={container} className={classes.el}>
             <motion.div
               style={{
-                width: width,
-                height: "100%", // Always 100% width (edge-to-edge)
-                borderRadius: "2px",
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 80,
-                damping: 15,
-                mass: 1,
-                restDelta: 0.001,
-                delay: 0.4,
+                width: "100%", // Width of the container
+                height: "100%", // Always 100% height of the parent div
+                scale: scale, // Dynamic scale value
+                borderRadius: "20px", // Rounded corners for the motion div
+                overflow: "hidden", // Prevent image overflow
+                display: "inline-block", // Ensure the motion div scales based on content width
+
               }}
             >
-              {/* Image with dynamic padding */}
+
               <motion.img
                 src={bg}
                 alt="Banner background"
                 style={{
                   width: "100%", // Make image take 100% width of the container
+                  height: "100%", // Make the image height fill the container
+                  objectFit: "cover", // Ensure the image covers the container
+                  borderRadius: "12px", // Maintain rounded corners on the image
                   paddingLeft: padding, // Dynamic left padding based on scroll
                   paddingRight: padding, // Dynamic right padding based on scroll
-                  overflow: "hidden",
-                  objectFit: "cover", // Make sure the image covers the area
-                  borderRadius: "2px", // Border radius for the image
                 }}
               />
-            </motion.div>
 
+            </motion.div>
             {/* Content stays fixed */}
             <div className={classes.mainContent}>
               <h2 className={clsx("semiBold-heading", classes.title)}>

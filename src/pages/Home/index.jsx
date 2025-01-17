@@ -51,12 +51,12 @@ const Home = () => {
               <CommonContainer>
                 <motion.div
                   className={classes.mainContainer}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 1,
-                    ease: "easeInOut",
-                  }}
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
+                  // transition={{
+                  //   duration: 1,
+                  //   ease: "easeInOut",
+                  // }}
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -69,16 +69,16 @@ const Home = () => {
                     className={clsx(classes.textSection, {
                       [classes.expanded]: expanded,
                     })}
-                    initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
-                    animate={{
-                      opacity: 1,
-                      x: "0%", // Move to its position on the left
-                    }}
-                    transition={{
-                      delay: 1.3, // Start after the image animation
-                      duration: 0.75,
-                      ease: "easeOut",
-                    }}
+                    // initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
+                    // animate={{
+                    //   opacity: 1,
+                    //   x: "0%", // Move to its position on the left
+                    // }}
+                    // transition={{
+                    //   delay: 1.3, // Start after the image animation
+                    //   duration: 0.75,
+                    //   ease: "easeOut",
+                    // }}
                     style={{
                       zIndex: 3,
                       position: "relative",
@@ -98,17 +98,17 @@ const Home = () => {
                   {/* Image Section */}
                   <motion.div
                     className={classes.imageSection}
-                    initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
-                    animate={{
-                      opacity: 1,
-                      scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
-                      x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
-                    }}
-                    transition={{
-                      duration: 2, // Total animation time
-                      times: [0, 0.5, 1], // Define keyframes: grow, pause, move
-                      ease: "easeInOut",
-                    }}
+                    // initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
+                    // animate={{
+                    //   opacity: 1,
+                    //   scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
+                    //   x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
+                    // }}
+                    // transition={{
+                    //   duration: 2, // Total animation time
+                    //   times: [0, 0.5, 1], // Define keyframes: grow, pause, move
+                    //   ease: "easeInOut",
+                    // }}
                     style={{
                       zIndex: 2,
                       position: "relative",
