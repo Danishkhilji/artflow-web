@@ -60,7 +60,7 @@ const Home = () => {
             className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16"
           >
             <div className="w-full md:w-2/4 relative z-10 pr-10">
-              <h1 className="uppercase mb-1 font-semibold text-[44px] text-text-color">
+              <h1 className="uppercase mb-1 font-semibold text-[28px] md:text-[44px] text-text-color">
                 We are ÖYE!
               </h1>
               <h2 className="text-[50px] md:text-[65px] lg:text-[80px] xl:text-[100px] font-bold uppercase text-text-color">
