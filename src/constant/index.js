@@ -49,3 +49,4 @@ export { default as Preview3DIcon } from "../assets/images/preview3DIcon.png";
 export { default as cupImage3DIcon } from "../assets/images/cup-image.png";
 export { default as packetImage } from "../assets/images/packet-image.png";
 export { default as commentIcon} from "../assets/images/comment-icon.svg";
+export { default as starFaceEmoji} from "../assets/images/star-face-emoji.png";

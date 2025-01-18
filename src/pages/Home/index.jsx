@@ -17,6 +17,7 @@ import {
   cupImage3DIcon,
   packetImage,
   commentIcon,
+  starFaceEmoji,
 } from "../../constant";
 import classes from "./Home.module.css";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
@@ -134,8 +135,9 @@ const Home = () => {
                   delay: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
+                className="px-4 xl:!px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
               >
+                <div className="h-[68px] ">
                 <motion.p
                   initial={{
                     opacity: 0,
@@ -148,10 +150,28 @@ const Home = () => {
                     delay: 3,
                     ease: "easeInOut",
                   }}
-                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px] pr-10"
+                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium  inline"
                 >
-                  {useTypingAnimation(["Create your dream\ncoffee bag 🤩"], 3)}
-                </motion.p>
+                  {useTypingAnimation(["Create your dream\ncoffee bag"], 3)}
+                  {/* <TypingText  text={"Create your dream\ncoffee bag"} delay={3} /> */}
+                </motion.p>{" "}
+                <motion.img
+                  src={starFaceEmoji}
+                  alt="emoji-icon"
+                  className="w-7 h-7 inline"
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0,
+                    delay: 4.5,
+                    ease: "easeInOut",
+                  }}
+                />
+                </div>
                 <img
                   src={commentIcon}
                   alt="comment"
