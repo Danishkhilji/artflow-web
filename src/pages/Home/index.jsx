@@ -56,7 +56,7 @@ const Home = () => {
       <>
         <Header />
         <div className={classes.innerWrapper}>
-          <CommonContainer className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16">
+          <CommonContainer id="hero-section-container"  className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16">
             <div className="w-full md:w-2/4 md:mr-[-5%] xl:mr-[-10%] relative z-10">
               <h1 className="text-3xl xl:medium-heading mb-1 uppercase">
                 We are ÖYE!
@@ -90,7 +90,7 @@ const Home = () => {
                   delay: 3,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue  absolute right-10 top-4 w-[290px] xl:w-[403px]"
+                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color  absolute right-10 top-4 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -132,7 +132,7 @@ const Home = () => {
                   delay: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
+                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -171,7 +171,7 @@ const Home = () => {
                   duration: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue absolute right-20 -bottom-11 w-[290px] xl:w-[403px]"
+                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color absolute right-20 -bottom-11 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{

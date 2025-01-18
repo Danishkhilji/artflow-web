@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors:{
-        'primary-blue':"#264eab",
+        'primary-color':"#264eab",
         'blue-color':"#7ba0d0",
         'secondary-color':"#6c757d",
-        'secondary-color':"#f5f5ef",
-        'tertiary-color':"#101014",
+        'tertiary-color':"#f5f5ef",
+        'text-color':"#101014",
         'bg-color':"#efeff2",
       },
       spacing:{

@@ -33,8 +33,6 @@ function useTypingAnimation(texts, delay) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [delay]);
-  console.log(displayText?.get());
-  
   return displayText;
 }
 
