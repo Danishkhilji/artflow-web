@@ -50,39 +50,41 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => setExpanded(true), 200); // Delay for smoother effect
   }, []);
-
   return (
     <main className={classes.wrapper}>
       <>
         <Header />
         <div className={classes.innerWrapper}>
-          <CommonContainer id="hero-section-container"  className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16">
-            <div className="w-full md:w-2/4 md:mr-[-5%] xl:mr-[-10%] relative z-10">
-              <h1 className="text-3xl xl:medium-heading mb-1 uppercase">
+          <CommonContainer
+            id="hero-section-container"
+            className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16"
+          >
+            <div className="w-full md:w-2/4 relative z-10 pr-10">
+              <h1 className="uppercase mb-1 font-semibold text-[44px] text-text-color">
                 We are ÖYE!
               </h1>
-              <h2 className="text-[50px] md:text-[65px] lg:text-[80px] font-bold xl:!large-heading  uppercase">
+              <h2 className="text-[50px] md:text-[65px] lg:text-[80px] xl:text-[100px] font-bold uppercase text-text-color">
                 packaging
               </h2>
-              <p className={clsx(classes.text, "!pt-5")}>
+              <p className={clsx("text-[22px] text-text-color !pt-5")}>
                 We support the growth of coffee roasting companies by providing
                 <b> fully customized</b> packaging solutions and{" "}
                 <b>unique filling services.</b>
               </p>
             </div>
-            <div className="w-full md:w-3/5 relative hidden md:block">
+            <div className="w-full md:w-3/5 -ml-[9%] relative hidden md:block">
               <div className="h-[314px] rounded-[20px] w-full max-w-[513px] bg-primary-gradient"></div>
               <motion.div
                 initial={{
                   opacity: 0,
                   scale: 0.1,
-                  rotate: -4,
+                  rotate: -6,
                   transformOrigin: "bottom left",
                 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  rotate: -4,
+                  rotate: -6,
                   transformOrigin: "bottom left",
                 }}
                 transition={{
@@ -104,7 +106,7 @@ const Home = () => {
                     delay: 4,
                     ease: "easeInOut",
                   }}
-                  className="text-2xl text-white h-16"
+                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px] pr-6 xl:pr-0"
                 >
                   {useTypingAnimation(["We produce\npackaging in Europe"], 4)}
                 </motion.p>
@@ -146,7 +148,7 @@ const Home = () => {
                     delay: 3,
                     ease: "easeInOut",
                   }}
-                  className="text-2xl text-white h-16"
+                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px] pr-10"
                 >
                   {useTypingAnimation(["Create your dream\ncoffee bag 🤩"], 3)}
                 </motion.p>
@@ -185,7 +187,7 @@ const Home = () => {
                     delay: 1,
                     ease: "easeInOut",
                   }}
-                  className="text-2xl text-white h-16"
+                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px]"
                 >
                   {useTypingAnimation(
                     ["Launch a new coffee\nproduct with us"],
@@ -214,7 +216,7 @@ const Home = () => {
                 }}
                 src={cupImage3DIcon}
                 alt="cup-image"
-                className="w-40 h-40 xl:w-52 xl:h-52 absolute top-10 xl:top-0 right-0"
+                className="w-40 h-40 xl:w-56 xl:h-w-56 absolute top-0 xl:-top-6 -right-6 xl:-right-11"
               />
               <motion.img
                 initial={{
@@ -232,7 +234,7 @@ const Home = () => {
                 }}
                 src={packetImage}
                 alt="packet-image"
-                className="w-60 h-60 xl:w-80 xl:h-80 absolute top-5 xl:-top-6 right-[220px] xl:right-[300px] "
+                className="w-60 h-60 xl:w-80 xl:h-80 absolute top-5 xl:-top-10 right-[220px] xl:right-[320px] "
               />
             </div>
           </CommonContainer>
