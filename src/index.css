@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --primary-color: #264eab;
   --blue-color: #7ba0d0;
@@ -99,23 +102,25 @@ p {
   margin: 0;
 }
 
-.large-heading {
-  font-family: "Inter-semiBold";
-  font-size: 100px;
-  color: var(--text-color);
-  line-height: 99px;
-}
-.medium-heading {
-  font-family: "Inter-medium";
-  font-size: 44px;
-  color: var(--text-color);
-  line-height: 49px;
-}
-.semiBold-heading {
-  font-family: "Inter-semiBold";
-  font-size: 44px;
-  color: var(--text-color);
-  line-height: 49px;
+@layer components {
+  .large-heading {
+    font-family: "Inter-semiBold";
+    font-size: 100px;
+    color: var(--text-color);
+    line-height: 99px;
+  }
+  .medium-heading {
+    font-family: "Inter-medium";
+    font-size: 44px;
+    color: var(--text-color);
+    line-height: 49px;
+  }
+  .semiBold-heading {
+    font-family: "Inter-semiBold";
+    font-size: 44px;
+    color: var(--text-color);
+    line-height: 49px;
+  }
 }
 
 .img-fluid {

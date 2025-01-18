@@ -8,11 +8,20 @@ import Header from "../../components/Header";
 import QuickCard from "../../components/QuickCard";
 import ReviewSection from "../../components/ReviewSection";
 import ShortAboutUs from "../../components/ShortAboutUs";
-import { bg1, banner_bg2, heroBg, banner1_mobile, banner2_mobile } from "../../constant";
+import {
+  bg1,
+  banner_bg2,
+  heroBg,
+  banner1_mobile,
+  banner2_mobile,
+  cupImage3DIcon,
+  packetImage,
+  commentIcon,
+} from "../../constant";
 import classes from "./Home.module.css";
 import { useMobileViewHook } from "../../hooks/useMobileViewHook";
-import { redirectTo } from "../../helpers";
-import { motion } from "framer-motion";
+import { redirectTo, useTypingAnimation } from "../../helpers";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 import { Container, Row, Col } from "react-bootstrap";
 const Home = () => {
@@ -41,111 +50,192 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => setExpanded(true), 200); // Delay for smoother effect
   }, []);
+
   return (
     <main className={classes.wrapper}>
       <>
         <Header />
         <div className={classes.innerWrapper}>
-          {!mobileHeroSection ? (
-            <>
-              <CommonContainer>
-                <motion.div
-                  className={classes.mainContainer}
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
-                  // transition={{
-                  //   duration: 1,
-                  //   ease: "easeInOut",
-                  // }}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    position: "relative",
+          <CommonContainer className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16">
+            <div className="w-full md:w-2/4 md:mr-[-5%] xl:mr-[-10%] relative z-10">
+              <h1 className="text-3xl xl:medium-heading mb-1 uppercase">
+                We are ÖYE!
+              </h1>
+              <h2 className="text-[50px] md:text-[65px] lg:text-[80px] font-bold xl:!large-heading  uppercase">
+                packaging
+              </h2>
+              <p className={clsx(classes.text, "!pt-5")}>
+                We support the growth of coffee roasting companies by providing
+                <b> fully customized</b> packaging solutions and{" "}
+                <b>unique filling services.</b>
+              </p>
+            </div>
+            <div className="w-full md:w-3/5 relative hidden md:block">
+              <div className="h-[314px] rounded-[20px] w-full max-w-[513px] bg-primary-gradient"></div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.1,
+                  rotate: -4,
+                  transformOrigin: "bottom left",
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: -4,
+                  transformOrigin: "bottom left",
+                }}
+                transition={{
+                  duration: 2,
+                  delay: 3,
+                  ease: "easeInOut",
+                }}
+                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue  absolute right-10 top-4 w-[290px] xl:w-[403px]"
+              >
+                <motion.p
+                  initial={{
+                    opacity: 0,
                   }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                    delay: 4,
+                    ease: "easeInOut",
+                  }}
+                  className="text-2xl text-white h-16"
                 >
-                  {/* Text Section */}
-                  <motion.div
-                    className={clsx(classes.textSection, {
-                      [classes.expanded]: expanded,
-                    })}
-                    // initial={{ opacity: 0, x: "50%" }} // Start off-screen to the right
-                    // animate={{
-                    //   opacity: 1,
-                    //   x: "0%", // Move to its position on the left
-                    // }}
-                    // transition={{
-                    //   delay: 1.3, // Start after the image animation
-                    //   duration: 0.75,
-                    //   ease: "easeOut",
-                    // }}
-                    style={{
-                      zIndex: 3,
-                      position: "relative",
-                    }}
-                  >
-                    <h1 className={classes.mediumHeading}>WE ARE ÖYE!</h1>
-                    <h2 className={clsx("large-heading", classes.mainHeading)}>
-                      packaging
-                    </h2>
-                    <p className={classes.text}>
-                      We support the growth of coffee roasting companies <br />{" "}
-                      by providing<b> fully customized</b> packaging solutions
-                      and <b>unique filling services.</b>
-                    </p>
-                  </motion.div>
-
-                  {/* Image Section */}
-                  <motion.div
-                    className={classes.imageSection}
-                    // initial={{ opacity: 1, scale: 0.1, x: "0%" }} // Tiny image at the center
-                    // animate={{
-                    //   opacity: 1,
-                    //   scale: [0.1, 0.4, 1], // Grow from tiny -> medium -> full
-                    //   x: ["-35%", "-35%", "0%"], // Center -> pause -> move right
-                    // }}
-                    // transition={{
-                    //   duration: 2, // Total animation time
-                    //   times: [0, 0.5, 1], // Define keyframes: grow, pause, move
-                    //   ease: "easeInOut",
-                    // }}
-                    style={{
-                      zIndex: 2,
-                      position: "relative",
-                      overflow: "visible", // Ensure image is always visible
-                    }}
-                  >
-                    <img
-                      src={heroBg}
-                      alt="hero img"
-                      className={clsx("img-fluid", classes.img)}
-                    />
-                  </motion.div>
-                </motion.div>
-              </CommonContainer>
-            </>
-          ) : (
-            <CommonContainer>
-              <div className={classes.innerWrapper}>
-                <h1 className={classes.mediumHeading}>WE ARE ÖYE!</h1>
-                <h2 className={clsx("large-heading", classes.mainHeading)}>
-                  Packaging
-                </h2>
-                <p className={classes.text}>
-                  We support the growth of coffee roasting companies by
-                  providing
-                  <span className={classes.textSemiBold}>
-                    {" "}
-                    fully customized
-                  </span>{" "}
-                  packaging solutions and{" "}
-                  <span className={classes.textSemiBold}>
-                    unique filling services.
-                  </span>
-                </p>
-              </div>
-            </CommonContainer>
-          )}
+                  {useTypingAnimation(["We produce\npackaging in Europe"], 4)}
+                </motion.p>
+                <img
+                  src={commentIcon}
+                  alt="comment"
+                  className="absolute -left-3 w-6 h-[34px] -bottom-2"
+                />
+              </motion.div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.1,
+                  rotate: 6,
+                  transformOrigin: "bottom right",
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: 6,
+                  transformOrigin: "bottom right",
+                }}
+                transition={{
+                  duration: 2,
+                  delay: 2,
+                  ease: "easeInOut",
+                }}
+                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
+              >
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                    delay: 3,
+                    ease: "easeInOut",
+                  }}
+                  className="text-2xl text-white h-16"
+                >
+                  {useTypingAnimation(["Create your dream\ncoffee bag 🤩"], 3)}
+                </motion.p>
+                <img
+                  src={commentIcon}
+                  alt="comment"
+                  className="absolute -right-3 w-6 h-[34px] -scale-x-100 -bottom-2"
+                />
+              </motion.div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.1,
+                  transformOrigin: "bottom left",
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  transformOrigin: "bottom left",
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                }}
+                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-blue absolute right-20 -bottom-11 w-[290px] xl:w-[403px]"
+              >
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1,
+                    delay: 1,
+                    ease: "easeInOut",
+                  }}
+                  className="text-2xl text-white h-16"
+                >
+                  {useTypingAnimation(
+                    ["Launch a new coffee\nproduct with us"],
+                    1
+                  )}
+                </motion.p>
+                <img
+                  src={commentIcon}
+                  alt="comment"
+                  className="absolute -left-3 w-6 h-[34px] -bottom-2"
+                />
+              </motion.div>
+              <motion.img
+                initial={{
+                  opacity: 0,
+                  scale: 0.1,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 3,
+                  ease: "easeInOut",
+                }}
+                src={cupImage3DIcon}
+                alt="cup-image"
+                className="w-40 h-40 xl:w-52 xl:h-52 absolute top-10 xl:top-0 right-0"
+              />
+              <motion.img
+                initial={{
+                  opacity: 0,
+                  scale: 0.1,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 4,
+                  ease: "easeInOut",
+                }}
+                src={packetImage}
+                alt="packet-image"
+                className="w-60 h-60 xl:w-80 xl:h-80 absolute top-5 xl:-top-6 right-[220px] xl:right-[300px] "
+              />
+            </div>
+          </CommonContainer>
           <CommonContainer className={classes.quickCardsWrapper}>
             <Row>
               {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}

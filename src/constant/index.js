@@ -31,7 +31,6 @@ export { default as heroBg } from "../assets/images/hero_bg.webp";
 export { default as banner1_mobile } from "../assets/images/banner-mobile1.png";
 export { default as banner2_mobile } from "../assets/images/banner_mb_bg2.png";
 
-
 export { default as designPattern2 } from "../assets/images/design-pattern2.png";
 export { default as designCard1 } from "../assets/images/design-card1.png";
 export { default as designCard2 } from "../assets/images/design-card2.png";
@@ -47,3 +46,6 @@ export { default as testPrintIcon } from "../assets/images/testPrintIcon.png";
 export { default as configIcon } from "../assets/images/configIcon.png";
 
 export { default as Preview3DIcon } from "../assets/images/preview3DIcon.png";
+export { default as cupImage3DIcon } from "../assets/images/cup-image.png";
+export { default as packetImage } from "../assets/images/packet-image.png";
+export { default as commentIcon} from "../assets/images/comment-icon.svg";
