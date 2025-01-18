@@ -268,3 +268,6 @@ button:focus-visible {
     gap: 5px;
   }
 }
+.transition-global {
+  transition: all 0.3s;
+}
