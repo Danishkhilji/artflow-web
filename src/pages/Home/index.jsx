@@ -231,7 +231,7 @@ const Home = () => {
                 }}
                 transition={{
                   duration: 1,
-                  delay: 3,
+                  delay: 4,
                   ease: "easeInOut",
                 }}
                 src={cupImage3DIcon}
