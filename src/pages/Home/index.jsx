@@ -61,16 +61,16 @@ const Home = () => {
             className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16"
           >
             <div className="w-full md:w-2/4 relative z-10 pr-10">
-              <h1 className="uppercase mb-1 font-semibold text-[28px] md:text-[44px] text-text-color">
+              <h1 className="uppercase mb-1 font-medium text-[28px] md:text-[34px] custom-md:text-[44px] text-text-color font-primary">
                 We are ÖYE!
               </h1>
-              <h2 className="text-[50px] md:text-[65px] lg:text-[80px] xl:text-[100px] font-bold uppercase text-text-color">
+              <h2 className="text-[50px] md:text-[48px] custom-md:text-[65px] lg:text-[80px] font-primary  custom-xl:text-[100px] font-semibold uppercase text-text-color">
                 packaging
               </h2>
-              <p className={clsx("text-[22px] text-text-color !pt-5")}>
+              <p className={clsx("text-[22px] font-primary font-normal text-text-color !pt-5")}>
                 We support the growth of coffee roasting companies by providing
-                <b> fully customized</b> packaging solutions and{" "}
-                <b>unique filling services.</b>
+                <b className="font-semibold"> fully customized</b> packaging solutions and{" "}
+                <b className="font-semibold">unique filling services.</b>
               </p>
             </div>
             <div className="w-full md:w-3/5 -ml-[9%] relative hidden md:block">
@@ -93,7 +93,7 @@ const Home = () => {
                   delay: 3,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color  absolute right-10 top-4 w-[290px] xl:w-[403px]"
+                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color  absolute right-10 xl:right-20 top-4 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -107,7 +107,7 @@ const Home = () => {
                     delay: 4,
                     ease: "easeInOut",
                   }}
-                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px] pr-6 xl:pr-0"
+                  className="text-[22px] xl:text-[28px] font-primary text-white leading-[34px] font-medium h-[68px] pr-6 xl:pr-0"
                 >
                   {useTypingAnimation(["We produce\npackaging in Europe"], 4)}
                 </motion.p>
@@ -135,7 +135,7 @@ const Home = () => {
                   delay: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:!px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color text-2xl text-white absolute right-0 top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
+                className="px-4 xl:!px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color text-2xl text-white absolute  right-0 xl:right-8 top-[46%] xl:top-2/4 -translate-y-[20%] rotate-[6deg] w-[290px] xl:w-[403px]"
               >
                 <div className="h-[68px] ">
                 <motion.p
@@ -150,7 +150,7 @@ const Home = () => {
                     delay: 3,
                     ease: "easeInOut",
                   }}
-                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium  inline"
+                  className="text-[22px] xl:text-[28px] font-primary text-white leading-[34px] font-medium  inline"
                 >
                   {useTypingAnimation(["Create your dream\ncoffee bag"], 3)}
                   {/* <TypingText  text={"Create your dream\ncoffee bag"} delay={3} /> */}
@@ -193,7 +193,7 @@ const Home = () => {
                   duration: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color absolute right-20 -bottom-11 w-[290px] xl:w-[403px]"
+                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color absolute right-20 xl:right-[120px] -bottom-11 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -207,7 +207,7 @@ const Home = () => {
                     delay: 1,
                     ease: "easeInOut",
                   }}
-                  className="text-[22px] xl:text-[28px] text-white leading-[34px] font-medium h-[68px]"
+                  className="text-[22px] xl:text-[28px] font-primary text-white leading-[34px] font-medium h-[68px]"
                 >
                   {useTypingAnimation(
                     ["Launch a new coffee\nproduct with us"],
@@ -236,15 +236,17 @@ const Home = () => {
                 }}
                 src={cupImage3DIcon}
                 alt="cup-image"
-                className="w-40 h-40 xl:w-56 xl:h-w-56 absolute top-0 xl:-top-6 -right-6 xl:-right-11"
+                className="w-40 h-40 xl:w-[204px] xl:h-[204px] absolute !-top-2 xl:!-top-10 -right-6 xl:-right-0"
               />
               <motion.img
                 initial={{
                   opacity: 0,
+                  rotate:-25,
                   scale: 0.1,
                 }}
                 animate={{
                   opacity: 1,
+                  rotate:-25,
                   scale: 1,
                 }}
                 transition={{
@@ -254,7 +256,7 @@ const Home = () => {
                 }}
                 src={packetImage}
                 alt="packet-image"
-                className="w-60 h-60 xl:w-80 xl:h-80 absolute top-5 xl:-top-10 right-[220px] xl:right-[320px] "
+                className="w-[200px] h-[200px] xl:w-[247px] xl:h-[247px] absolute top-7 xl:-top-0 right-[255px] xl:right-[390px] "
               />
             </div>
           </CommonContainer>

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --primary-color: #264eab;
   --blue-color: #7ba0d0;
@@ -9,7 +10,7 @@
   --text-color: #101014;
   --bg-color: #efeff2;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 /* Inter */
 /* Regular (normal): 400
   Medium: 500
