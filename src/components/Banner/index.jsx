@@ -223,7 +223,7 @@ const Banner = React.forwardRef(
                 width: "100%", // Width of the container
                 height: "100%", // Always 100% height of the parent div // Always 100% height of the parent div
                 transformOrigin:"top center",
-                scale: scale, // Dynamic scale value
+                scaleX: scale, // Dynamic scale value
                 borderRadius: "20px", // Rounded corners for the motion div
                 overflow: "hidden", // Prevent image overflow
                 display: "inline-block", // Ensure the motion div scales based on content width
