@@ -67,3 +67,7 @@ export { default as shieldCheckIcon} from "../assets/images/shield-check-icon.sv
 export { default as pickingBoxIcon} from "../assets/images/picking-box-icon.svg";
 export { default as materialCardImageOne} from "../assets/images/material-card-image-1.png";
 export { default as materialCardImageTwo} from "../assets/images/material-card-image-2.png";
+export { default as matteIcon} from "../assets/images/matte-icon.svg";
+export { default as premiumMatteIcon} from "../assets/images/premium-matte-icon.svg";
+export { default as softTouchIcon} from "../assets/images/soft-touch-icon.svg";
+export { default as sandyTouchIcon} from "../assets/images/sandy-touch-icon.svg";

@@ -19,6 +19,7 @@ import ProductPresentationBlock from "../../components/ProductPresentationBlock"
 import MaterialsBlock from "../../components/MaterialBlock";
 import ChooseABagSizeBlock from "../../components/ChooseABagSizeBlock";
 import TouchAndFeelCustomization from "../../components/TouchAndFeelCustomizationBlock";
+import FeaturesBlock from "../../components/FeaturesBlock";
 
 const TABS = [
   {
@@ -65,7 +66,7 @@ const ProductPage = () => {
                 <img
                   src={toggleTab === label ? activeIcon : icon}
                   alt={label}
-                  className=""
+                  className="object-contain"
                 />
               </div>{" "}
               {label}
@@ -84,10 +85,14 @@ const ProductPage = () => {
             <ChooseABagSizeBlock
               {...productPageMocks?.customizationOptions?.chooseABagSizeBlock}
             />
-            {/* <TouchAndFeelCustomization
+            <TouchAndFeelCustomization
               {...productPageMocks?.customizationOptions
                 ?.touchAndFeelCustomization}
-            /> */}
+            />
+            <FeaturesBlock
+              {...productPageMocks?.customizationOptions
+                ?.features}
+            />
           </div>
         </div>
       </CommonContainer>

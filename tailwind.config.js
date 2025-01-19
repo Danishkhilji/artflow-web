@@ -26,6 +26,9 @@ export default {
         100: "6.25rem",
         50: "3.125",
       },
+      fontSize:{
+         22:['1.375rem','2.438rem']
+      },
       backgroundImage: {
         "primary-gradient":
           "linear-gradient(40.34deg, #ECECEC 7.69%, #FFFFFF 77.04%)",

@@ -3,11 +3,15 @@ import {
   europeanUnionSmall,
   materialCardImageOne,
   materialCardImageTwo,
+  matteIcon,
   mugHotAltIcon,
   packetStatsIcon,
   pickingBoxIcon,
+  premiumMatteIcon,
   productFrame,
+  sandyTouchIcon,
   shieldCheckIcon,
+  softTouchIcon,
 } from "../../constant";
 
 export const productPageMocks = {
@@ -84,20 +88,43 @@ export const productPageMocks = {
         "Indulge in a sensory experience with various tactile effects. Customize the touch and feel of your bag with options such as:",
       tabs: [
         {
-          icon: "",
+          icon: matteIcon,
           label: "Matte",
         },
         {
-          icon: "",
+          icon: premiumMatteIcon,
           label: "Premium Matte",
         },
         {
-          icon: "",
+          icon: softTouchIcon,
           label: "Soft touch",
         },
         {
-          icon: "",
+          icon: sandyTouchIcon,
           label: "Sandy touch",
+        },
+      ],
+    },
+    features: {
+      heading: "Features",
+      cards: [
+        {
+          label: "Top-opening zipper",
+        },
+        {
+          label: "Front zipper",
+        },
+        {
+          label: "Tear Notch",
+        },
+        {
+          label: "Coffee Valve",
+        },
+        {
+          label: "Hanger with front zipper",
+        },
+        {
+          label: "Carton box",
         },
       ],
     },
