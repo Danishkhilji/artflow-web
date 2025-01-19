@@ -1,10 +1,12 @@
 import {
   customizeComputer,
   europeanUnionSmall,
+  humidityIcon,
   materialCardImageOne,
   materialCardImageTwo,
   matteIcon,
   mugHotAltIcon,
+  oxygenIcon,
   packetStatsIcon,
   pickingBoxIcon,
   premiumMatteIcon,
@@ -12,6 +14,8 @@ import {
   sandyTouchIcon,
   shieldCheckIcon,
   softTouchIcon,
+  twoCtaCardOne,
+  uvLightIcon,
 } from "../../constant";
 
 export const productPageMocks = {
@@ -125,6 +129,55 @@ export const productPageMocks = {
         },
         {
           label: "Carton box",
+        },
+      ],
+    },
+    bestCoffeeBarrier: {
+      heading: "The best barrier for your coffee",
+      details: [
+        {
+          icon: oxygenIcon,
+          title: "Oxygen",
+          description: "causing oxidation and staling.",
+        },
+        {
+          icon: humidityIcon,
+          title: "Humidity",
+          description:
+            "accelerating the moisture absorption, leading to loss of flavor and potential mold growth.",
+        },
+        {
+          icon: uvLightIcon,
+          title: "UV light",
+          description:
+            "accelerating the degradation of certain compounds, resulting in a loss of flavor and aroma.",
+        },
+      ],
+      certifications: {
+        heading: "Certifications",
+        list: ["ISO 9001:2015", "BRC Food Certificate"],
+      },
+      keyFeatures: {
+        heading: "Key features:",
+        list: [
+          "Highly recyclable materials",
+          "Made in Europe",
+          "Design check before print",
+          "Production time from 4 - 8 weeks",
+        ],
+      },
+    },
+    twoCta: {
+      cards: [
+        {
+          backgroundImage: twoCtaCardOne,
+          title: "Still have questions?",
+          buttonLabel: "Book a call",
+        },
+        {
+          backgroundImage: twoCtaCardOne,
+          title: "enjoy the packaging",
+          buttonLabel: "configure packagING ",
         },
       ],
     },

@@ -22,11 +22,11 @@ const ProductPresentationBlock = ({
             {title}
           </h1>
           <p className="text-lg text-text-color font-primary">{description}</p>
-          <div className="!mt-5 mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 !gap-5 md:!gap-2">
+          <div className="!mt-5 mb-8 md:mb-10 flex flex-wrap justify-start !gap-5 md:!gap-y-2 md:gap-x-8">
             {details?.map(({ label, icon }, index) => (
               <p
                 key={index}
-                className="text-lg font-medium text-text-color gap-2.5 flex items-center font-primary"
+                className="text-lg font-medium text-text-color gap-2.5 flex items-center font-primary "
               >
                 <img src={icon} alt={label} className="w-5 h-5" />
                 {label}
@@ -49,10 +49,10 @@ const ProductPresentationBlock = ({
             key={index}
             className="flex justify-center first:pb-8 last:pt-8 first:border-b md:first:border-b-transparent md:last:pt-0 md:first:pb-0 first:border-b-text-color/30 md:first:border-r md:first:border-r-text-color/30"
           >
-            <div className="flex items-center !gap-5 md:gap-6 flex-col  md:flex-row">
+            <div className="w-full justify-center flex items-center !gap-5 md:gap-6 flex-col  md:flex-row lg:flex-col xl:flex-row">
               <img src={icon} alt={title} className="max-w-10 max-h-10 object-contain" />
               <div className="text-center text-text-color">
-                <p className="text-lg font-medium font-primary">{title}</p>
+                <p className="text-lg font-medium font-primary uppercase">{title}</p>
                 <h5 className="font-medium text-3xl font-primary">{stats}</h5>
               </div>
             </div>

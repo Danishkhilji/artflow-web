@@ -20,6 +20,8 @@ import MaterialsBlock from "../../components/MaterialBlock";
 import ChooseABagSizeBlock from "../../components/ChooseABagSizeBlock";
 import TouchAndFeelCustomization from "../../components/TouchAndFeelCustomizationBlock";
 import FeaturesBlock from "../../components/FeaturesBlock";
+import BestCoffeeBarrier from "../../components/BestCoffeeBarrierBlock";
+import TwoCtaBlock from "../../components/TwoCtaBlock";
 
 const TABS = [
   {
@@ -49,7 +51,7 @@ const ProductPage = () => {
   return (
     <main>
       <Header />
-      <CommonContainer className="flex items-start !gap-5 pt-20 md:pt-14 font-primary ">
+      <CommonContainer className="flex items-start !gap-5 pt-20 md:pt-14 font-primary !mb-12 md:!mb-16">
         <div className="hidden flex-col gap-2.5 min-w-[294px] w-[294px] h-fit sticky top-20 lg:flex">
           {TABS?.map(({ icon, activeIcon, label }, index) => (
             <button
@@ -90,13 +92,17 @@ const ProductPage = () => {
                 ?.touchAndFeelCustomization}
             />
             <FeaturesBlock
-              {...productPageMocks?.customizationOptions
-                ?.features}
+              {...productPageMocks?.customizationOptions?.features}
+            />
+            <BestCoffeeBarrier
+              {...productPageMocks?.customizationOptions?.bestCoffeeBarrier}
+            />
+            <TwoCtaBlock
+              {...productPageMocks?.customizationOptions?.twoCta}
             />
           </div>
         </div>
       </CommonContainer>
-      <div className="mb-16"></div>
       <Footer />
     </main>
   );

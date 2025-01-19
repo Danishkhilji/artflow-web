@@ -71,3 +71,7 @@ export { default as matteIcon} from "../assets/images/matte-icon.svg";
 export { default as premiumMatteIcon} from "../assets/images/premium-matte-icon.svg";
 export { default as softTouchIcon} from "../assets/images/soft-touch-icon.svg";
 export { default as sandyTouchIcon} from "../assets/images/sandy-touch-icon.svg";
+export { default as oxygenIcon} from "../assets/images/oxygen-icon.svg";
+export { default as humidityIcon} from "../assets/images/humidity-icon.svg";
+export { default as uvLightIcon} from "../assets/images/uv-light-icon.svg";
+export { default as twoCtaCardOne} from "../assets/images/two-cta-card-1.png";
