@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --primary-color: #264eab;
   --blue-color: #7ba0d0;
@@ -12,26 +15,26 @@
   Medium: 500
   SemiBold: 600
   InterBold: 700 */
-@font-face {
-  font-family: "Inter-regular";
-  src: url("./assets/fonts/Inter/Inter-Regular.ttf");
-}
-@font-face {
-  font-family: "Inter-medium";
-  src: url("./assets/fonts/Inter/Inter-Medium.ttf");
-}
-@font-face {
-  font-family: "Inter-semiBold";
-  src: url("./assets/fonts/Inter/Inter-SemiBold.ttf");
-}
-@font-face {
-  font-family: "Inter-bold";
-  src: url("./assets/fonts/Inter/Inter-Bold.ttf");
-}
-@font-face {
-  font-family: "Inter-extraBold";
-  src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
-}
+  @font-face {
+    font-family: "Inter-regular";
+    src: url("./assets/fonts/Inter/Inter-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Inter-medium";
+    src: url("./assets/fonts/Inter/Inter-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Inter-semiBold";
+    src: url("./assets/fonts/Inter/Inter-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "Inter-bold";
+    src: url("./assets/fonts/Inter/Inter-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Inter-extraBold";
+    src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
+  }
 
 .px-100 {
   padding-inline: 100px !important;
@@ -99,23 +102,25 @@ p {
   margin: 0;
 }
 
-.large-heading {
-  font-family: "Inter-semiBold";
-  font-size: 100px;
-  color: var(--text-color);
-  line-height: 99px;
-}
-.medium-heading {
-  font-family: "Inter-medium";
-  font-size: 44px;
-  color: var(--text-color);
-  line-height: 49px;
-}
-.semiBold-heading {
-  font-family: "Inter-semiBold";
-  font-size: 44px;
-  color: var(--text-color);
-  line-height: 49px;
+@layer components {
+  .large-heading {
+    font-family: "Inter-semiBold";
+    font-size: 100px;
+    color: var(--text-color);
+    line-height: 99px;
+  }
+  .medium-heading {
+    font-family: "Inter-medium";
+    font-size: 44px;
+    color: var(--text-color);
+    line-height: 49px;
+  }
+  .semiBold-heading {
+    font-family: "Inter-semiBold";
+    font-size: 44px;
+    color: var(--text-color);
+    line-height: 49px;
+  }
 }
 
 .img-fluid {

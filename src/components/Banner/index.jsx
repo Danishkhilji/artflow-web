@@ -168,7 +168,7 @@ const Banner = React.forwardRef(
       image.src = bg;
       image.onload = () => {
         // const imgWidth = image.width; // Actual image width
-        const scale = containerWidth / 1360; // Calculate max scale
+        const scale = containerWidth / document.getElementById("hero-section-container").offsetWidth; // Calculate max scale
         isMobile ? setMaxScale(1) : setMaxScale(scale);
 
       };
@@ -221,8 +221,9 @@ const Banner = React.forwardRef(
             <motion.div
               style={{
                 width: "100%", // Width of the container
-                height: "100%", // Always 100% height of the parent div
-                scale: scale, // Dynamic scale value
+                height: "100%", // Always 100% height of the parent div // Always 100% height of the parent div
+                transformOrigin:"top center",
+                scaleX: scale, // Dynamic scale value
                 borderRadius: "20px", // Rounded corners for the motion div
                 overflow: "hidden", // Prevent image overflow
                 display: "inline-block", // Ensure the motion div scales based on content width
