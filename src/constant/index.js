@@ -75,6 +75,7 @@ export { default as oxygenIcon} from "../assets/images/oxygen-icon.svg";
 export { default as humidityIcon} from "../assets/images/humidity-icon.svg";
 export { default as uvLightIcon} from "../assets/images/uv-light-icon.svg";
 export { default as twoCtaCardOne} from "../assets/images/two-cta-card-1.png";
+export { default as twoCtaCardTwo} from "../assets/images/two-cta-card-2.png";
 export { default as matteCoffeeBagImage} from "../assets/images/matte-coffee-bag-image.png";
 export { default as matteCoffeeBagImageTwo} from "../assets/images/matte-coffee-bag-image-two.png";
 export { default as matteCoffeeBagImageThree} from "../assets/images/matte-coffee-bag-image-three.png";

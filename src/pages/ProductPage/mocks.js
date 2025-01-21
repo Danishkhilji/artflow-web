@@ -18,6 +18,7 @@ import {
   shieldCheckIcon,
   softTouchIcon,
   twoCtaCardOne,
+  twoCtaCardTwo,
   uvLightIcon,
 } from "../../constant";
 
@@ -199,7 +200,7 @@ export const productPageMocks = {
           buttonLabel: "Book a call",
         },
         {
-          backgroundImage: twoCtaCardOne,
+          backgroundImage: twoCtaCardTwo,
           title: "enjoy the packaging",
           buttonLabel: "configure packagING ",
         },
