@@ -10,8 +10,8 @@ const ProductPresentationBlock = ({
 }) => {
   return (
     <div>
-      <div className=" md:flex-row flex-col flex items-center !gap-5">
-        <div className="w-full md:w-2/5 md:min-w-[300px]">
+      <div className=" md:flex-row flex-col flex items-start !gap-5">
+        <div className="w-full md:w-2/5 md:min-w-[350px]">
           <h1 className="md:hidden text-3xl text-text-color font-semibold leading-10 uppercase !mb-5 font-primary">
             {title}
           </h1>
