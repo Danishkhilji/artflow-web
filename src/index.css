@@ -268,3 +268,8 @@ button:focus-visible {
     gap: 5px;
   }
 }
+
+.reviews-slider .slick-list{
+  padding-left: 0px !important;
+  
+}

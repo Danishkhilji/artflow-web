@@ -1,57 +1,84 @@
-import { useRef, useEffect, useState } from "react";
+import Slider from "react-slick";
 import { reviewsData } from "../../data";
 import ReviewCard from "../ReviewCard";
 import classes from "./ReviewSecton.module.css";
 
 const ReviewSection = () => {
-  const [isPaused, setIsPaused] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(1); // Default speed
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    let animationFrame;
-
-    const scroll = () => {
-      if (scrollContainer && !isPaused) {
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 3;
-        }
-        // Increase scrollLeft based on scrollSpeed
-        scrollContainer.scrollLeft += scrollSpeed;
-      }
-      animationFrame = requestAnimationFrame(scroll);
-    };
-
-    scroll();
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isPaused, scrollSpeed]);
-
-  const handlePause = () => {
-    setIsPaused(true);
-    setScrollSpeed(1); // Slow down when hovering (adjust this value as needed)
+  var settings = {
+    dots: false,
+    arrows: false,
+    autoplay: true,
+    infinite: true,
+    speed: 8000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    swipeToSlide:true,
+    draggable:true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "300px",
+    pauseOnHover:true,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          centerMode: true,
+          centerPadding: "200px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          centerMode: true,
+          centerPadding: "80px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          centerPadding: "150px",
+          slidesToShow: 1,
+          speed: 7000,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 670,
+        settings: {
+          centerMode: true,
+          centerPadding: "100px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 550,
+        settings: {
+          centerMode: true,
+          centerPadding: "20px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  const handleResume = () => {
-    setIsPaused(false);
-    setScrollSpeed(2); // Default speed
-  };
-
   return (
     <section className={classes.wrapper}>
       <h2 className={classes.title}>Reviews About ÖYE</h2>
-      <div
-        ref={scrollRef}
-        className={classes.reviews}
-        onMouseEnter={handlePause}
-        onMouseLeave={handleResume}
-        onTouchStart={handlePause}
-        onTouchEnd={handleResume}
-      >
+      <Slider {...settings} className="reviews-slider">
         {reviewsData.concat(reviewsData).map((element, index) => (
-          <ReviewCard key={index} data={element} />
+          <div className="!pr-5 !w-fit">
+            <ReviewCard key={index} data={element} />
+          </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 };

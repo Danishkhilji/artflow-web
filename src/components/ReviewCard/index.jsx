@@ -4,17 +4,17 @@ import clsx from "clsx";
 
 const ReviewCard = ({ data }) => {                
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.imgWrapper}>
+    <div className={clsx(classes.wrapper ,'!pr-2.5 md:!pr-5')}>
+      <div className={clsx(classes.imgWrapper,'w-full')}>
         <img
           src={data?.img}
           alt={data?.name || "Review Image"}
-          className={clsx(classes.img)}
+          className={clsx(classes.img, '   md:min-w-[285px] md:min-h-[211px] rounded-xl')}
         />
       </div>
       <div className={classes.content}>
         <div>
-          <p>
+          <p className="text-lg font-primary text-text-color font-normal">
             &quot;Packiro is a perfect fit for us: high quality products,
             sustainable and uncomplicated, and excellent customer service 👌
             &quot;
@@ -28,7 +28,7 @@ const ReviewCard = ({ data }) => {
               <img src={data?.logo} alt="logo" className={clsx("img-fluid")} />
             </span>
             <div className={classes.generalInfo}>
-              <h2>{data?.name || "Anonymous"}</h2>
+              <h2 className="text-2xl font-primary text-text-color font-normal">{data?.name || "Anonymous"}</h2>
               <p>{data?.short || "Customer"}</p>
             </div>
           </div>
