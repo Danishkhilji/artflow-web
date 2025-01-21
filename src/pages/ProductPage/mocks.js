@@ -4,6 +4,9 @@ import {
   humidityIcon,
   materialCardImageOne,
   materialCardImageTwo,
+  matteCoffeeBagImage,
+  matteCoffeeBagImageThree,
+  matteCoffeeBagImageTwo,
   matteIcon,
   mugHotAltIcon,
   oxygenIcon,
@@ -85,6 +88,27 @@ export const productPageMocks = {
       description:
         "This product is perfectly tailored for display on shelves and transportation. It is suitable for all types of coffee beans (from small to very large).",
       sizes: ["250g", "500g", "1000g", "Custom size"],
+    },
+    printCustomization: {
+      heading: "Print customization",
+      description: "Try different print options for your package",
+      cards: [
+        {
+          image: matteCoffeeBagImage,
+          title: "Single color",
+          metaTitle: "(from stock)",
+        },
+        {
+          image: matteCoffeeBagImageTwo,
+          title: "Partly printed",
+          metaTitle: "(front & back)",
+        },
+        {
+          image: matteCoffeeBagImageThree,
+          title: "Fully printed",
+          metaTitle: "(front & back + side gussets)",
+        },
+      ],
     },
     touchAndFeelCustomization: {
       heading: "TOUCH & FEEL CUSTOMIZATION",

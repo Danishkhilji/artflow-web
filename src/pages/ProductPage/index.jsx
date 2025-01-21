@@ -22,6 +22,7 @@ import TouchAndFeelCustomization from "../../components/TouchAndFeelCustomizatio
 import FeaturesBlock from "../../components/FeaturesBlock";
 import BestCoffeeBarrier from "../../components/BestCoffeeBarrierBlock";
 import TwoCtaBlock from "../../components/TwoCtaBlock";
+import PrintCustomizationBlock from "../../components/PrintCustomizationBlock";
 
 const TABS = [
   {
@@ -87,6 +88,9 @@ const ProductPage = () => {
             <ChooseABagSizeBlock
               {...productPageMocks?.customizationOptions?.chooseABagSizeBlock}
             />
+            <PrintCustomizationBlock
+              {...productPageMocks?.customizationOptions?.printCustomization}
+            />
             <TouchAndFeelCustomization
               {...productPageMocks?.customizationOptions
                 ?.touchAndFeelCustomization}
@@ -97,9 +101,7 @@ const ProductPage = () => {
             <BestCoffeeBarrier
               {...productPageMocks?.customizationOptions?.bestCoffeeBarrier}
             />
-            <TwoCtaBlock
-              {...productPageMocks?.customizationOptions?.twoCta}
-            />
+            <TwoCtaBlock {...productPageMocks?.customizationOptions?.twoCta} />
           </div>
         </div>
       </CommonContainer>
