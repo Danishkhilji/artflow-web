@@ -12,7 +12,7 @@ function App() {
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/product-page" element={<ProductPage />} />
+            <Route path="/products" element={<ProductPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
