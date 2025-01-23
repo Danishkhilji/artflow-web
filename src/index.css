@@ -16,26 +16,26 @@
   Medium: 500
   SemiBold: 600
   InterBold: 700 */
-  @font-face {
-    font-family: "Inter-regular";
-    src: url("./assets/fonts/Inter/Inter-Regular.ttf");
-  }
-  @font-face {
-    font-family: "Inter-medium";
-    src: url("./assets/fonts/Inter/Inter-Medium.ttf");
-  }
-  @font-face {
-    font-family: "Inter-semiBold";
-    src: url("./assets/fonts/Inter/Inter-SemiBold.ttf");
-  }
-  @font-face {
-    font-family: "Inter-bold";
-    src: url("./assets/fonts/Inter/Inter-Bold.ttf");
-  }
-  @font-face {
-    font-family: "Inter-extraBold";
-    src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
-  }
+@font-face {
+  font-family: "Inter-regular";
+  src: url("./assets/fonts/Inter/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter-medium";
+  src: url("./assets/fonts/Inter/Inter-Medium.ttf");
+}
+@font-face {
+  font-family: "Inter-semiBold";
+  src: url("./assets/fonts/Inter/Inter-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Inter-bold";
+  src: url("./assets/fonts/Inter/Inter-Bold.ttf");
+}
+@font-face {
+  font-family: "Inter-extraBold";
+  src: url("./assets/fonts/Inter/Inter-ExtraBold.ttf");
+}
 
 .px-100 {
   padding-inline: 100px !important;
@@ -270,4 +270,10 @@ button:focus-visible {
 }
 .transition-global {
   transition: all 0.3s;
+}
+
+.drig-bag-offer-title {
+  @media (min-width: 768px) {
+    writing-mode: sideways-lr;
+  }
 }
