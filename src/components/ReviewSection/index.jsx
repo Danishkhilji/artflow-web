@@ -5,20 +5,22 @@ import classes from "./ReviewSecton.module.css";
 
 const ReviewSection = () => {
   const [isPaused, setIsPaused] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(1); // Default speed
+  const [scrollSpeed, setScrollSpeed] = useState(
+    window.innerWidth < 600 ? 0.5 : 1
+  );
   const scrollRef = useRef(null);
-
+  const scrollPosition = useRef(0);
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     let animationFrame;
-
     const scroll = () => {
       if (scrollContainer && !isPaused) {
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 3;
+          scrollPosition.current = 3;
         }
-        // Increase scrollLeft based on scrollSpeed
-        scrollContainer.scrollLeft += scrollSpeed;
+        scrollPosition.current += scrollSpeed;
+        scrollContainer.scrollLeft = Math.floor(scrollPosition.current);
       }
       animationFrame = requestAnimationFrame(scroll);
     };
@@ -27,14 +29,25 @@ const ReviewSection = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, [isPaused, scrollSpeed]);
 
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    const handleScroll = () => {
+      if (scrollContainer) {
+        scrollPosition.current = scrollContainer.scrollLeft;
+      }
+    };
+    scrollContainer.addEventListener("scroll", handleScroll);
+    return () => scrollContainer.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handlePause = () => {
     setIsPaused(true);
-    setScrollSpeed(1); // Slow down when hovering (adjust this value as needed)
+    setScrollSpeed(window.innerWidth < 600 ? 0.5 : 1);
   };
 
   const handleResume = () => {
     setIsPaused(false);
-    setScrollSpeed(2); // Default speed
+    setScrollSpeed(window.innerWidth < 600 ? 0.5 : 2);
   };
 
   return (
