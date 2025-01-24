@@ -22,10 +22,10 @@ import {
   uvLightIcon,
 } from "../../constant";
 
-export const productPageMocks = {
+export const standupBagsMocks = {
   hero: {
     frame: productFrame,
-    title: "FLAt bottom bags",
+    title: "Standup Bags",
     description:
       "The bag is perfect for coffee roasters, offering various form factors, EU-made materials, and extensive customization options. With our configurator, you can create the package of your dreams 🤩",
     details: [

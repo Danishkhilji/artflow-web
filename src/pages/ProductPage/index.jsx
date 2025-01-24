@@ -8,13 +8,12 @@ import {
   packetActiveIcon,
   cartonBoxIcon,
   cartonBoxActiveIcon,
-  customizeComputer,
   sideGussetBagsActiveIcon,
   standupBagsIcon,
   standupBagsActiveIcon,
   sideGussetBagsIcon,
 } from "../../constant";
-import { productPageMocks } from "./mocks";
+import { flatBottomBagsMocks } from "./flat-bottom-bags-mocks";
 import ProductPresentationBlock from "../../components/ProductPresentationBlock";
 import MaterialsBlock from "../../components/MaterialBlock";
 import ChooseABagSizeBlock from "../../components/ChooseABagSizeBlock";
@@ -23,32 +22,40 @@ import FeaturesBlock from "../../components/FeaturesBlock";
 import BestCoffeeBarrier from "../../components/BestCoffeeBarrierBlock";
 import TwoCtaBlock from "../../components/TwoCtaBlock";
 import PrintCustomizationBlock from "../../components/PrintCustomizationBlock";
+import { cartonBoxesMocks } from "./carton-boxes-mocks";
+import { sideGussetBagMocks } from "./side-gusset-bag-mocks";
+import { standupBagsMocks } from "./standup-bags-mocks";
 
 const TABS = [
   {
     icon: packetIcon,
     activeIcon: packetActiveIcon,
     label: "Flat Bottom Bags",
+    mocksData: flatBottomBagsMocks,
   },
   {
     icon: cartonBoxIcon,
     activeIcon: cartonBoxActiveIcon,
     label: "Carton Boxes",
+    mocksData: cartonBoxesMocks,
   },
   {
     icon: sideGussetBagsIcon,
     activeIcon: sideGussetBagsActiveIcon,
     label: "Side GusSet Bags",
+    mocksData: sideGussetBagMocks,
   },
   {
     icon: standupBagsIcon,
     activeIcon: standupBagsActiveIcon,
     label: "Standup Bags",
+    mocksData: standupBagsMocks,
   },
 ];
 
 const ProductPage = () => {
   const [toggleTab, setToggleTab] = useState(TABS[0]?.label);
+  const activeTabData = TABS.find((tab) => tab.label === toggleTab)?.mocksData;
   return (
     <main>
       <Header />
@@ -65,7 +72,7 @@ const ProductPage = () => {
                   : "text-text-color/40 font-medium"
               )}
             >
-              <div className="w-7 h-7 ">
+              <div className="w-7 h-7">
                 <img
                   src={toggleTab === label ? activeIcon : icon}
                   alt={label}
@@ -77,31 +84,31 @@ const ProductPage = () => {
           ))}
         </div>
         <div className="w-full">
-          <ProductPresentationBlock {...productPageMocks?.hero} />
+          <ProductPresentationBlock {...activeTabData?.hero} />
           <div className="mt-12 md:mt-10">
             <h2 className="text-3xl text-text-color font-semibold leading-10 uppercase !mb-5 md:mb-1 font-primary">
-              {productPageMocks?.customizationOptions?.heading}
+              {activeTabData?.customizationOptions?.heading}
             </h2>
             <MaterialsBlock
-              {...productPageMocks?.customizationOptions?.materials}
+              {...activeTabData?.customizationOptions?.materials}
             />
             <ChooseABagSizeBlock
-              {...productPageMocks?.customizationOptions?.chooseABagSizeBlock}
+              {...activeTabData?.customizationOptions?.chooseABagSizeBlock}
             />
             <PrintCustomizationBlock
-              {...productPageMocks?.customizationOptions?.printCustomization}
+              {...activeTabData?.customizationOptions?.printCustomization}
             />
             <TouchAndFeelCustomization
-              {...productPageMocks?.customizationOptions
+              {...activeTabData?.customizationOptions
                 ?.touchAndFeelCustomization}
             />
             <FeaturesBlock
-              {...productPageMocks?.customizationOptions?.features}
+              {...activeTabData?.customizationOptions?.features}
             />
             <BestCoffeeBarrier
-              {...productPageMocks?.customizationOptions?.bestCoffeeBarrier}
+              {...activeTabData?.customizationOptions?.bestCoffeeBarrier}
             />
-            <TwoCtaBlock {...productPageMocks?.customizationOptions?.twoCta} />
+            <TwoCtaBlock {...activeTabData?.customizationOptions?.twoCta} />
           </div>
         </div>
       </CommonContainer>
