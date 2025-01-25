@@ -66,11 +66,12 @@ const ProductPage = () => {
               onClick={() => setToggleTab(label)}
               key={index}
               className={clsx(
-                "flex items-center !gap-4 !py-4 px-6 w-full text-lg transition-global rounded-xl uppercase",
+                "flex items-center !gap-4 !py-4 px-6 w-full text-lg transition-global rounded-xl uppercase disabled:cursor-not-allowed",
                 toggleTab === label
                   ? "shadow-tabs-active-shadow text-primary-color font-semibold"
                   : "text-text-color/40 font-medium"
               )}
+              disabled={toggleTab !== label}
             >
               <div className="w-7 h-7">
                 <img

@@ -90,6 +90,7 @@ import { Logo, menuClose, menuIcon } from "../../../constant";
 import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
+import { Link } from "react-router-dom";
 
 const MobileHeader = () => {
   const [active, setActive] = useState(false);
@@ -114,18 +115,9 @@ const MobileHeader = () => {
       >
         <CommonContainer className={classes.p0}>
           <nav className={classes.navContainer}>
-            <span
-              className={classes.logo}
-              onClick={() => {
-                window.open(
-                  "https://oyepackaging.com",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
-            >
+            <Link className={classes.logo} to="/">
               <Logo />
-            </span>
+            </Link>
             <span
               className={classes.cta}
               onClick={() => {
@@ -156,44 +148,17 @@ const MobileHeader = () => {
         </CommonContainer>
 
         <div className={clsx(classes.nav, { [classes.navActive]: active })}>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/products",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            PRODUCTS
-          </span>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/services",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            SERVICES
-          </span>
+          <Link to="/products" className=" px-6 rounded-xl !py-5 hover:text-primary-color text-text-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global">PRODUCTS</Link>
+          <Link to="/services" className=" px-6 rounded-xl !py-5 hover:text-primary-color text-text-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global">SERVICES</Link>
           <div className={classes.downActions}>
             <Button
-              id={classes.config}
               variant={"primary"}
-              className={clsx(classes.config)}
-              onClick={() => {
-                window.open(
-                  "https://oyepackaging.com/configurator",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
+              // className={}
+              
             >
               Configure Packaging
             </Button>
-            <Button id={classes.signIn} variant={"primary"}>
+            <Button variant={"bgPrimary"}>
               SIGN IN
             </Button>
           </div>

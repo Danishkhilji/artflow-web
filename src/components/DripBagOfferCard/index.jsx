@@ -13,17 +13,17 @@ const DripBagOfferCard = ({ heading, cards }) => {
           ({ icon, activeIcon, image, title, description }, index) => (
             <button
               className={clsx(
-                "rounded-2xl transition-global !duration-500 border text-left group h-fit md:min-h-[385px] flex",
+                "rounded-2xl transition-global !duration-700 border text-left group h-fit md:min-h-[385px] flex",
                 state === title
                   ? "w-full p-2.5  border-text-color/30"
-                  : "w-full !py-5 md:py-0 md:w-[17%] !border-transparent shadow-cards-shadow items-center"
+                  : "w-full !py-5 md:py-0 md:w-[16.56%] !border-transparent shadow-cards-shadow items-center"
               )}
               key={index}
               onClick={() => setState(title)}
             >
               <div className={clsx("", state === title ? "block" : "hidden")}>
                 <img src={image} alt={title} className={clsx("w-full rounded-xl")} />
-                <div className="md:px-3 mt-2 mb-1">
+                <div className="md:pl-3 mt-2 mb-1">
                   <h4 className="uppercase text-lg font-primary font-medium text-text-color flex items-center gap-2.5 mb-1.5">
                     <img
                       src={icon}

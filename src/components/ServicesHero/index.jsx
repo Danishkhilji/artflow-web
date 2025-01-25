@@ -46,7 +46,7 @@ const ServicesHero = ({
           <div className="flex md:flex-row flex-col flex-wrap md:items-stretch !gap-5 md:!gap-2.5">
             <Button
               variant="bgPrimary"
-              className="uppercase group !flex items-center gap-2.5"
+              className="uppercase group !flex justify-center items-center gap-2.5"
             >
               configure packagING
               <svg
@@ -79,7 +79,7 @@ const ServicesHero = ({
               <img
                 src={icon}
                 alt={title}
-                className="max-w-10 max-h-10 object-contain"
+                className="max-w-14 max-h-14 h-auto w-auto object-contain"
               />
               <div className="text-center text-text-color">
                 <p className="text-lg font-medium font-primary uppercase">

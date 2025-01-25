@@ -44,8 +44,9 @@ const Services = () => {
             <button
               onClick={() => setToggleTab(label)}
               key={index}
+              disabled={toggleTab !== label}
               className={clsx(
-                "flex items-center !gap-4 !py-4 px-6 w-full transition-global rounded-xl ",
+                "flex items-center !gap-4 !py-4 px-6 w-full transition-global rounded-xl disabled:cursor-not-allowed",
                 toggleTab === label && "shadow-tabs-active-shadow"
               )}
             >

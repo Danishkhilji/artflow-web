@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import { threeSixtyIcon } from "../../constant";
 
 const ProductPresentationBlock = ({
   title,
@@ -11,13 +12,23 @@ const ProductPresentationBlock = ({
   return (
     <div>
       <div className=" md:flex-row flex-col flex items-start !gap-5">
-        <div className="w-full md:w-2/5 md:min-w-[350px]">
+        <div className="w-full md:w-2/5 md:max-h-[380px] md:min-w-[300px] 2xl:min-w-[400px]">
           <h1 className="md:hidden text-3xl text-text-color font-semibold leading-10 uppercase !mb-5 font-primary">
             {title}
           </h1>
-          <img src={frame} alt={title} className="aspect-square w-full " />
+          <div className="w-full relative h-full bg-bg-card rounded-2xl flex items-center justify-center">
+            <img src={frame} alt={title} className="w-auto" />
+             <p className="text-lg !px-3 py-0.5 rounded-full bg-white border border-[#EEEEEA] absolute top-3 right-3 flex items-center gap-1">
+                        <img
+                          src={threeSixtyIcon}
+                          alt="360-icon"
+                          className="max-w-5 max-h-5"
+                        />
+                        360°
+                      </p>
+          </div>
         </div>
-        <div className="w-full md:w-3/5">
+        <div className="w-full md:w-3/5 my-auto">
           <h1 className="md:block hidden text-3xl text-text-color font-semibold leading-10 uppercase mb-1 font-primary">
             {title}
           </h1>
@@ -34,7 +45,10 @@ const ProductPresentationBlock = ({
             ))}
           </div>
           <div className="flex md:flex-row flex-col flex-wrap md:items-stretch !gap-5 md:!gap-2.5">
-            <Button variant="bgPrimary" className="uppercase group !flex items-center gap-2.5">
+            <Button
+              variant="bgPrimary"
+              className="uppercase group !flex justify-center items-center gap-2.5"
+            >
               configure packagING
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +80,7 @@ const ProductPresentationBlock = ({
               <img
                 src={icon}
                 alt={title}
-                className="max-w-10 max-h-10 object-contain"
+                className="max-w-14 w-auto h-auto max-h-14 object-contain"
               />
               <div className="text-center text-text-color">
                 <p className="text-lg font-medium font-primary uppercase">
