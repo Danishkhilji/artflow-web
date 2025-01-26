@@ -38,7 +38,7 @@ const Services = () => {
   return (
     <main>
       <Header />
-      <CommonContainer className="flex items-start !gap-5 pt-20 md:pt-14 font-primary !mb-12 md:!mb-16">
+      <CommonContainer className="flex items-start !gap-[21px] pt-20 md:pt-14 font-primary !mb-12 md:!mb-16">
         <div className="hidden flex-col gap-2.5 min-w-[294px] w-[294px] h-fit sticky top-20 lg:flex">
           {TABS?.map(({ icon, activeIcon, label, metaTitle }, index) => (
             <button
@@ -46,7 +46,7 @@ const Services = () => {
               key={index}
               disabled={toggleTab !== label}
               className={clsx(
-                "flex items-center !gap-4 !py-4 px-6 w-full transition-global rounded-xl disabled:cursor-not-allowed",
+                "flex items-center !gap-4 !py-[18.5px] px-6 w-full transition-global rounded-xl disabled:cursor-not-allowed",
                 toggleTab === label && "shadow-tabs-active-shadow"
               )}
             >
@@ -87,7 +87,7 @@ const Services = () => {
           <ServicesCustomizationOptions {...servicesMocks?.customizationOptions} />
           <HowItWorks {...servicesMocks?.howItWorks} />
           <DripBagOfferCard {...servicesMocks?.dripBagOfferCard} />
-          <TwoCtaBlock {...servicesMocks?.twoCta} />
+          <TwoCtaBlock {...servicesMocks?.twoCta} services/>
 
         </div>
       </CommonContainer>

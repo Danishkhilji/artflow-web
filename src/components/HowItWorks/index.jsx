@@ -19,10 +19,10 @@ const HowItWorks = ({ heading, title, description, cards }) => {
           {cards?.map(({ icon, description }, index) => (
             <div
               key={index}
-              className="flex md:flex-row flex-col md:text-left text-center items-center !gap-5 md:gap-6 border border-text-color/30 !py-5 px-6 rounded-2xl"
+              className="flex md:flex-row flex-col  items-center !gap-5 md:gap-6 border !border-text-color/30 !py-5 px-6 rounded-2xl"
             >
               <img src={icon} alt={index} className="max-w-12 max-h-12" />
-              <p className="text-sm font-normal font-primary text-text-color">
+              <p className="text-sm font-normal font-primary text-text-color md:!text-left text-center">
                 {description}
               </p>
             </div>

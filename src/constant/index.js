@@ -119,3 +119,4 @@ export { default as dripBagMainImage} from "../assets/images/drip-bag-main-image
 export { default as dripCardImageOne} from "../assets/images/drip-card-image-one.png";
 export { default as dripCardImageTwo} from "../assets/images/drip-card-image-two.png";
 export { default as threeSixtyIcon} from "../assets/images/360-icon.svg";
+export { default as fireEmojiIcon} from "../assets/images/fire-emoji-icon.png";

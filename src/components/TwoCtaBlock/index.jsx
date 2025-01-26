@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "../Button";
+import clsx from "clsx";
 
-const TwoCtaBlock = ({ cards }) => {
+const TwoCtaBlock = ({ cards, services }) => {
   return (
     <div className="!mt-5 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 !gap-5">
       {cards?.map(({ backgroundImage, title, buttonLabel }, index) => (
@@ -16,7 +17,12 @@ const TwoCtaBlock = ({ cards }) => {
           />
           <div className="absolute w-full z-10 group-hover:!bg-black/25 !bg-transparent h-full flex items-end px-2.5 transition-global">
             <div className="flex flex-col items-center w-full mb-8 text-center">
-              <h4 className="text-22 font-primary text-white font-semibold uppercase">
+              <h4
+                className={clsx(
+                  "text-22 font-primary text-white font-semibold uppercase mb-2.5",
+                  cards?.length - 1 === index && services ? "w-[70%]" : ""
+                )}
+              >
                 {title}
               </h4>
               <Button variant="secondary" className="uppercase">

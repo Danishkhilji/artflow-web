@@ -59,19 +59,18 @@ const ProductPage = () => {
   return (
     <main>
       <Header />
-      <CommonContainer className="flex items-start !gap-5 pt-20 md:pt-14 font-primary !mb-12 md:!mb-16">
+      <CommonContainer className="flex items-start !gap-[21px] pt-20 md:pt-14 font-primary !mb-12 md:!mb-16">
         <div className="hidden flex-col gap-2.5 min-w-[294px] w-[294px] h-fit sticky top-20 lg:flex">
           {TABS?.map(({ icon, activeIcon, label }, index) => (
             <button
               onClick={() => setToggleTab(label)}
               key={index}
               className={clsx(
-                "flex items-center !gap-4 !py-4 px-6 w-full text-lg transition-global rounded-xl uppercase disabled:cursor-not-allowed",
+                "flex items-center !gap-4 !py-[18.5px] px-6 w-full text-lg transition-global rounded-xl uppercase disabled:cursor-not-allowed",
                 toggleTab === label
                   ? "shadow-tabs-active-shadow text-primary-color font-semibold"
                   : "text-text-color/40 font-medium"
               )}
-              disabled={toggleTab !== label}
             >
               <div className="w-7 h-7">
                 <img

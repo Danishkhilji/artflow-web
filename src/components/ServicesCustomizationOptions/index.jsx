@@ -13,7 +13,7 @@ const ServicesCustomizationOptions = ({
       <h1 className="text-3xl text-text-color font-semibold leading-10 uppercase font-primary">
         {heading}
       </h1>
-      <div className="mt-2.5 border border-text-color/30 !p-5 rounded-2xl grid grid-cols-1 md:grid-cols-12 gap-2.5 items-center">
+      <div className="mt-2.5 border !border-text-color/30 !p-5 rounded-2xl grid grid-cols-1 md:grid-cols-12 gap-2.5 items-center">
         <div className="md:hidden">
           <h4 className="text-22 font-primary font-medium text-text-color uppercase">
             {title}

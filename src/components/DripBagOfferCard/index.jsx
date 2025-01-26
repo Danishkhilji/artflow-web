@@ -15,7 +15,7 @@ const DripBagOfferCard = ({ heading, cards }) => {
               className={clsx(
                 "rounded-2xl transition-global !duration-700 border text-left group h-fit md:min-h-[385px] flex",
                 state === title
-                  ? "w-full p-2.5  border-text-color/30"
+                  ? "w-full p-2.5  !border-text-color/30"
                   : "w-full !py-5 md:py-0 md:w-[16.56%] !border-transparent shadow-cards-shadow items-center"
               )}
               key={index}

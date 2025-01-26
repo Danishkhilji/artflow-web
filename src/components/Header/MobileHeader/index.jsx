@@ -90,10 +90,11 @@ import { Logo, menuClose, menuIcon } from "../../../constant";
 import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const MobileHeader = () => {
   const [active, setActive] = useState(false);
+  const pathname = useLocation().pathname;
 
   return (
     <>
@@ -148,19 +149,32 @@ const MobileHeader = () => {
         </CommonContainer>
 
         <div className={clsx(classes.nav, { [classes.navActive]: active })}>
-          <Link to="/products" className=" px-6 rounded-xl !py-5 hover:text-primary-color text-text-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global">PRODUCTS</Link>
-          <Link to="/services" className=" px-6 rounded-xl !py-5 hover:text-primary-color text-text-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global">SERVICES</Link>
+          <Link
+            to="/products"
+            className={clsx(
+              " px-6 rounded-xl !py-5 hover:text-primary-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global",
+              pathname === "/products" ? "text-primary-color" : "text-text-color"
+            )}
+          >
+            PRODUCTS
+          </Link>
+          <Link
+            to="/services"
+            className={clsx(
+              " px-6 rounded-xl !py-5 hover:text-primary-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global",
+              pathname === "/services" ? "text-primary-color" : "text-text-color"
+            )}
+          >
+            SERVICES
+          </Link>
           <div className={classes.downActions}>
             <Button
               variant={"primary"}
               // className={}
-              
             >
               Configure Packaging
             </Button>
-            <Button variant={"bgPrimary"}>
-              SIGN IN
-            </Button>
+            <Button variant={"bgPrimary"}>SIGN IN</Button>
           </div>
         </div>
       </header>
