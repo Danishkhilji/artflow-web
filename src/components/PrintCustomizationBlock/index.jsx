@@ -1,8 +1,22 @@
 import React, { useState } from "react";
 
+const COLORS = [
+  {
+    color: "#FFFFFF",
+  },
+  {
+    color: "#000000",
+  },
+  {
+    color: "#7ba0d0",
+  },
+  {
+    color: "#1E3E89",
+  },
+];
+
 const PrintCustomizationBlock = ({ heading, description, cards }) => {
-  const [color, setColor] = useState("#FFFFFF");
-  console.log(color);
+  const [color, setColor] = useState(COLORS[0]?.color);
 
   return (
     <div className="px-2.5 !py-5 lg:!p-5 rounded-3xl border !border-text-color/30 !mt-5 md:mt-2.5">
@@ -19,33 +33,25 @@ const PrintCustomizationBlock = ({ heading, description, cards }) => {
             <div className="bg-tertiary-color rounded-2xl h-[269px] w-full relative">
               {index === 0 && (
                 <div className="absolute left-3 top-4 flex items-center gap-1 z-10">
-                  <button
-                    onClick={() => setColor("#FFFFFF")}
-                    className="w-fit h-fit rounded-full p-0.5 border border-text-color/30"
-                  >
-                    <span className="w-2 h-2 block rounded-full bg-white"></span>
-                  </button>
-                  <button
-                    onClick={() => setColor("#000000")}
-                    className="w-fit h-fit rounded-full p-0.5 border border-text-color/30"
-                  >
-                    <span className="w-2 h-2 block rounded-full bg-black"></span>
-                  </button>
-                  <button
-                    onClick={() => setColor("#7ba0d0")}
-                    className="w-fit h-fit rounded-full p-0.5 border border-text-color/30"
-                  >
-                    <span className="w-2 h-2 block rounded-full bg-blue-color"></span>
-                  </button>
-                  <button
-                    onClick={() => setColor("#1E3E89")}
-                    className="w-fit h-fit rounded-full p-0.5 border border-text-color/30"
-                  >
-                    <span className="w-2 h-2 block rounded-full bg-primary-color"></span>
-                  </button>
+                  {COLORS?.map(({ color }, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setColor(color)}
+                      className="w-fit h-fit rounded-full p-0.5 border border-text-color/30"
+                    >
+                      <span
+                        className="w-2 h-2 block rounded-full"
+                        style={{ backgroundColor: color }}
+                      ></span>
+                    </button>
+                  ))}
                 </div>
               )}
-              <img src={image} alt={title} className="absolute w-full h-full object-scale-down" />
+              <img
+                src={image}
+                alt={title}
+                className="absolute w-full h-full object-scale-down"
+              />
             </div>
             <div>
               <h4 className="text-22 font-primary font-medium text-text-color text-center uppercase">

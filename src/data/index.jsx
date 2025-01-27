@@ -7,7 +7,6 @@ import {
   Sustain,
   //png imports
   coffeeBag,
-  testPrint,
   Preview3D,
   designSupport,
   demoReview1,
@@ -18,6 +17,7 @@ import {
   demoReview3,
   company1,
   company2,
+  testPrintImage,
 } from "../constant";
 
 import { FaLinkedinIn } from "react-icons/fa";
@@ -41,7 +41,7 @@ const shortAboutUs = [
       "Want to test your design before ordering? We’ve got you covered! We'll print it and deliver it to your doorstep within 10 days so you can review and adjust it before placing your final order.",
     link: "/",
     cta: "SIGN UP",
-    img: testPrint,
+    img: testPrintImage,
     icon: testPrintIcon,
   },
   {

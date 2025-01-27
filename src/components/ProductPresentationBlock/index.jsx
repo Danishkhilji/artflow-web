@@ -12,27 +12,29 @@ const ProductPresentationBlock = ({
   return (
     <div>
       <div className=" md:flex-row flex-col flex items-start !gap-5">
-        <div className="w-full md:w-2/5 2xl:h-[380px] md:min-w-[300px] 2xl:min-w-[400px]">
+        <div className="w-full md:w-2/5 xl:h-[380px] md:min-w-[350px] xl:min-w-[400px]">
           <h1 className="md:hidden text-3xl text-text-color font-semibold leading-10 uppercase !mb-5 font-primary">
             {title}
           </h1>
           <div className="w-full relative h-full bg-tertiary-color rounded-2xl flex items-center justify-center">
             <img src={frame} alt={title} className="w-auto object-scale-down" />
-             <p className="text-lg !px-3 py-0.5 font-primary font-normal rounded-full bg-white border border-[#EEEEEA] absolute top-3 right-3 flex items-center gap-1">
-                        <img
-                          src={threeSixtyIcon}
-                          alt="360-icon"
-                          className="max-w-5 max-h-5"
-                        />
-                        360°
-                      </p>
+            <p className="text-lg !px-3 py-0.5 font-primary font-normal rounded-full bg-white border border-[#EEEEEA] absolute top-3 right-3 flex items-center gap-1">
+              <img
+                src={threeSixtyIcon}
+                alt="360-icon"
+                className="max-w-5 max-h-5"
+              />
+              360°
+            </p>
           </div>
         </div>
         <div className="w-full md:w-3/5 md:mt-2.5">
           <h1 className="md:block hidden text-3xl text-text-color font-semibold leading-10 uppercase mb-1 font-primary">
             {title}
           </h1>
-          <p className="text-lg text-text-color font-primary font-normal">{description}</p>
+          <p className="text-lg text-text-color font-primary font-normal">
+            {description}
+          </p>
           <div className="!mt-5 mb-8 md:mb-10 flex flex-wrap justify-start !gap-5 md:!gap-y-2.5 md:!gap-x-8 md:pl-1">
             {details?.map(({ label, icon }, index) => (
               <p
@@ -64,7 +66,10 @@ const ProductPresentationBlock = ({
                 />
               </svg>
             </Button>
-            <Button variant="primary" className="uppercase flex-1 whitespace-nowrap">
+            <Button
+              variant="primary"
+              className="uppercase flex-1 whitespace-nowrap"
+            >
               order sample kit
             </Button>
           </div>
@@ -86,7 +91,9 @@ const ProductPresentationBlock = ({
                 <p className="text-lg font-medium font-primary uppercase">
                   {title}
                 </p>
-                <h5 className="font-medium text-3xl font-primary uppercase">{stats}</h5>
+                <h5 className="font-medium text-3xl font-primary uppercase">
+                  {stats}
+                </h5>
               </div>
             </div>
           </div>

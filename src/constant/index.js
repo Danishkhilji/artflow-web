@@ -24,7 +24,6 @@ export { default as demoReview3 } from "../assets/images/review-demo3.png";
 export { default as company1 } from "../assets/images/company1.png";
 export { default as company2 } from "../assets/images/company2.png";
 export { default as coffeeBag } from "..//assets/images/coffee_bag.webp";
-export { default as testPrint } from "../assets/images/test-print.png";
 export { default as Preview3D } from "../assets/images/3d-preview.png";
 export { default as designSupport } from "../assets/images/design-support.png";
 export { default as heroBg } from "../assets/images/hero_bg.webp";
@@ -120,3 +119,4 @@ export { default as dripCardImageOne} from "../assets/images/drip-card-image-one
 export { default as dripCardImageTwo} from "../assets/images/drip-card-image-two.png";
 export { default as threeSixtyIcon} from "../assets/images/360-icon.svg";
 export { default as fireEmojiIcon} from "../assets/images/fire-emoji-icon.png";
+export { default as testPrintImage} from "../assets/images/test-print-image.png";
