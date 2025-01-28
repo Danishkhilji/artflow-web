@@ -3,60 +3,51 @@ import { Logo } from "../../../constant";
 import classes from "./DesktopHeader.module.css";
 import CommonContainer from "../../CommonContainer";
 import Button from "../../Button";
-const DesktopHeader = () => {
+import { Link, useLocation } from "react-router-dom";
+const DesktopHeader = ({ otherClasses }) => {
   // const navigate = useNavigate();
+  const pathname = useLocation().pathname;
   return (
-    <CommonContainer>
+    <CommonContainer className={otherClasses}>
       <header className={classes.header}>
-        <span
-          className={classes.logo}
-          onClick={() => {
-            window.open(
-              "https://oyepackaging.com",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}
-        >
+        <Link className={classes.logo} to="/">
           <Logo className={clsx("img-fluid")} />
-        </span>
+        </Link>
         <nav className={classes.navbar}>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/products",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
+          <Link
+            to="/products"
+            className={clsx(
+              "text-lg font-medium font-primary hover:text-primary-color transition-global",
+              pathname === "/products"
+                ? "text-primary-color"
+                : "text-text-color"
+            )}
           >
             PRODUCTS
-          </span>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/services",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
+          </Link>
+          <Link
+            to="/services"
+            className={clsx(
+              "text-lg font-medium font-primary hover:text-primary-color transition-global",
+              pathname === "/services"
+                ? "text-primary-color"
+                : "text-text-color"
+            )}
           >
             SERVICES
-          </span>
+          </Link>
         </nav>
         <div className={classes.ctaWrapper}>
           <Button
             label="configure packagING"
             variant={"primary"}
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/configurator",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
+            // onClick={() => navigate("/")}
           />
-          <Button variant={"bgPrimary"} label="SIGN IN"  />
+          <Button
+            variant={"bgPrimary"}
+            label="SIGN IN"
+            // onClick={() => navigate("/")}
+          />
         </div>
       </header>
     </CommonContainer>

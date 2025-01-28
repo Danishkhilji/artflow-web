@@ -1,41 +1,14 @@
-import { useRef, useEffect, useState } from "react";
 import { reviewsData } from "../../data";
 import ReviewCard from "../ReviewCard";
 import classes from "./ReviewSecton.module.css";
+import useAutoScroll from "../../hooks/useAutoScroll";
 
 const ReviewSection = () => {
-  const [isPaused, setIsPaused] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(1); // Default speed
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    let animationFrame;
-
-    const scroll = () => {
-      if (scrollContainer && !isPaused) {
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 3;
-        }
-        // Increase scrollLeft based on scrollSpeed
-        scrollContainer.scrollLeft += scrollSpeed;
-      }
-      animationFrame = requestAnimationFrame(scroll);
-    };
-
-    scroll();
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isPaused, scrollSpeed]);
-
-  const handlePause = () => {
-    setIsPaused(true);
-    setScrollSpeed(1); // Slow down when hovering (adjust this value as needed)
-  };
-
-  const handleResume = () => {
-    setIsPaused(false);
-    setScrollSpeed(2); // Default speed
-  };
+  const { scrollRef, handlePause, handleResume } = useAutoScroll(
+    window.innerWidth < 600 ? 0.5 : 1,
+    window.innerWidth < 600 ? 0.5 : 1,
+    window.innerWidth < 600 ? 0.5 : 2
+  );
 
   return (
     <section className={classes.wrapper}>

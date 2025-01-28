@@ -86,14 +86,18 @@
 
 import clsx from "clsx";
 import { useState } from "react";
-import { Logo, menuClose, menuIcon } from "../../../constant";
+import { arrowLeftImage, Logo, menuClose, menuIcon } from "../../../constant";
 import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
+import { Link, useLocation } from "react-router-dom";
+import ProductTabs from "./ProductTabs";
+import ServicesTabs from "./ServicesTabs";
 
-const MobileHeader = () => {
+const MobileHeader = ({ otherClasses }) => {
+  const [toggleTab, setToggleTab] = useState("");
   const [active, setActive] = useState(false);
-
+  const pathname = useLocation().pathname;
   return (
     <>
       <style>{`
@@ -108,28 +112,38 @@ const MobileHeader = () => {
       `}</style>
 
       <header
-        className={clsx(classes.header, {
-          [classes.menu]: active,
-        })}
+        className={clsx(
+          classes.header,
+          {
+            [classes.menu]: active,
+          },
+          otherClasses
+        )}
       >
         <CommonContainer className={classes.p0}>
           <nav className={classes.navContainer}>
-            <span
-              className={classes.logo}
-              onClick={() => {
-                window.open(
-                  "https://oyepackaging.com",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
-            >
-              <Logo />
-            </span>
+            {toggleTab !== "" ? (
+              <button
+                onClick={() => setToggleTab("")}
+                className="uppercase z-[1800] h-[57px] flex items-center gap-2.5 text-text-color font-primary font-medium text-sm "
+              >
+                <img
+                  src={arrowLeftImage}
+                  alt="arrow-left"
+                  className="w-6 h-6"
+                />
+                Menu
+              </button>
+            ) : (
+              <Link className={classes.logo} to="/">
+                <Logo />
+              </Link>
+            )}
             <span
               className={classes.cta}
               onClick={() => {
                 setActive((prev) => !prev);
+                setToggleTab("");
               }}
               role="button" /* Mark span as a button for accessibility */
               tabIndex="-1" /* Disable focus on the span */
@@ -156,47 +170,49 @@ const MobileHeader = () => {
         </CommonContainer>
 
         <div className={clsx(classes.nav, { [classes.navActive]: active })}>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/products",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
+          <div
+            className={clsx(
+              "flex-col flex-1",
+              toggleTab !== "" ? "hidden" : "flex"
+            )}
           >
-            PRODUCTS
-          </span>
-          <span
-            onClick={() => {
-              window.open(
-                "https://oyepackaging.com/services",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            SERVICES
-          </span>
-          <div className={classes.downActions}>
-            <Button
-              id={classes.config}
-              variant={"primary"}
-              className={clsx(classes.config)}
-              onClick={() => {
-                window.open(
-                  "https://oyepackaging.com/configurator",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
+            <button
+              onClick={() => setToggleTab("product")}
+              className={clsx(
+                "px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
+              )}
             >
-              Configure Packaging
-            </Button>
-            <Button id={classes.signIn} variant={"primary"}>
-              SIGN IN
-            </Button>
+              PRODUCTS
+            </button>
+            <button
+              onClick={() => setToggleTab("service")}
+              className={clsx(
+                "mt-2.5 px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
+              )}
+            >
+              SERVICES
+            </button>
+            <div className={classes.downActions}>
+              <Button variant={"primary"}>Configure Packaging</Button>
+              <Button variant={"bgPrimary"}>SIGN IN</Button>
+            </div>
           </div>
+          {toggleTab === "product" && (
+            <ProductTabs
+              onClick={() => {
+                setActive((prev) => !prev);
+                setToggleTab("");
+              }}
+            />
+          )}
+          {toggleTab === "service" && (
+            <ServicesTabs
+              onClick={() => {
+                setActive((prev) => !prev);
+                setToggleTab("");
+              }}
+            />
+          )}
         </div>
       </header>
     </>

@@ -1,13 +1,10 @@
-import { useState } from "react";
-import { useMobileViewHook } from "../../hooks/useMobileViewHook";
 import DesktopHeader from "./DesktopHeader";
 import MobileHeader from "./MobileHeader";
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useMobileViewHook(setIsMobile, 767);
   return (
     <>
-      {isMobile ? <MobileHeader /> : <DesktopHeader />}
+      <DesktopHeader otherClasses="md:block hidden" />
+      <MobileHeader otherClasses="md:!hidden" />
     </>
   );
 };
