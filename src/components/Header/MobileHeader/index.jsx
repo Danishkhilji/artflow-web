@@ -86,16 +86,18 @@
 
 import clsx from "clsx";
 import { useState } from "react";
-import { Logo, menuClose, menuIcon } from "../../../constant";
+import { arrowLeftImage, Logo, menuClose, menuIcon } from "../../../constant";
 import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
 import { Link, useLocation } from "react-router-dom";
+import ProductTabs from "./ProductTabs";
+import ServicesTabs from "./ServicesTabs";
 
-const MobileHeader = () => {
+const MobileHeader = ({ otherClasses }) => {
+  const [toggleTab, setToggleTab] = useState("");
   const [active, setActive] = useState(false);
   const pathname = useLocation().pathname;
-
   return (
     <>
       <style>{`
@@ -110,19 +112,38 @@ const MobileHeader = () => {
       `}</style>
 
       <header
-        className={clsx(classes.header, {
-          [classes.menu]: active,
-        })}
+        className={clsx(
+          classes.header,
+          {
+            [classes.menu]: active,
+          },
+          otherClasses
+        )}
       >
         <CommonContainer className={classes.p0}>
           <nav className={classes.navContainer}>
-            <Link className={classes.logo} to="/">
-              <Logo />
-            </Link>
+            {toggleTab !== "" ? (
+              <button
+                onClick={() => setToggleTab("")}
+                className="uppercase z-[1800] h-[57px] flex items-center gap-2.5 text-text-color font-primary font-medium text-sm "
+              >
+                <img
+                  src={arrowLeftImage}
+                  alt="arrow-left"
+                  className="w-6 h-6"
+                />
+                Menu
+              </button>
+            ) : (
+              <Link className={classes.logo} to="/">
+                <Logo />
+              </Link>
+            )}
             <span
               className={classes.cta}
               onClick={() => {
                 setActive((prev) => !prev);
+                setToggleTab("");
               }}
               role="button" /* Mark span as a button for accessibility */
               tabIndex="-1" /* Disable focus on the span */
@@ -149,33 +170,49 @@ const MobileHeader = () => {
         </CommonContainer>
 
         <div className={clsx(classes.nav, { [classes.navActive]: active })}>
-          <Link
-            to="/products"
+          <div
             className={clsx(
-              " px-6 rounded-xl !py-5 hover:text-primary-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global",
-              pathname === "/products" ? "text-primary-color" : "text-text-color"
+              "flex-col flex-1",
+              toggleTab !== "" ? "hidden" : "flex"
             )}
           >
-            PRODUCTS
-          </Link>
-          <Link
-            to="/services"
-            className={clsx(
-              " px-6 rounded-xl !py-5 hover:text-primary-color font-primary hover:font-semibold font-medium hover:shadow-tabs-active-shadow transition-global",
-              pathname === "/services" ? "text-primary-color" : "text-text-color"
-            )}
-          >
-            SERVICES
-          </Link>
-          <div className={classes.downActions}>
-            <Button
-              variant={"primary"}
-              // className={}
+            <button
+              onClick={() => setToggleTab("product")}
+              className={clsx(
+                "px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
+              )}
             >
-              Configure Packaging
-            </Button>
-            <Button variant={"bgPrimary"}>SIGN IN</Button>
+              PRODUCTS
+            </button>
+            <button
+              onClick={() => setToggleTab("service")}
+              className={clsx(
+                "mt-2.5 px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
+              )}
+            >
+              SERVICES
+            </button>
+            <div className={classes.downActions}>
+              <Button variant={"primary"}>Configure Packaging</Button>
+              <Button variant={"bgPrimary"}>SIGN IN</Button>
+            </div>
           </div>
+          {toggleTab === "product" && (
+            <ProductTabs
+              onClick={() => {
+                setActive((prev) => !prev);
+                setToggleTab("");
+              }}
+            />
+          )}
+          {toggleTab === "service" && (
+            <ServicesTabs
+              onClick={() => {
+                setActive((prev) => !prev);
+                setToggleTab("");
+              }}
+            />
+          )}
         </div>
       </header>
     </>

@@ -120,3 +120,4 @@ export { default as dripCardImageTwo} from "../assets/images/drip-card-image-two
 export { default as threeSixtyIcon} from "../assets/images/360-icon.svg";
 export { default as fireEmojiIcon} from "../assets/images/fire-emoji-icon.png";
 export { default as testPrintImage} from "../assets/images/test-print-image.png";
+export { default as arrowLeftImage} from "../assets/images/arrow-left.svg";

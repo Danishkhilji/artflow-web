@@ -4,11 +4,11 @@ import classes from "./DesktopHeader.module.css";
 import CommonContainer from "../../CommonContainer";
 import Button from "../../Button";
 import { Link, useLocation } from "react-router-dom";
-const DesktopHeader = () => {
+const DesktopHeader = ({ otherClasses }) => {
   // const navigate = useNavigate();
-  const pathname = useLocation().pathname
+  const pathname = useLocation().pathname;
   return (
-    <CommonContainer>
+    <CommonContainer className={otherClasses}>
       <header className={classes.header}>
         <Link className={classes.logo} to="/">
           <Logo className={clsx("img-fluid")} />
@@ -18,7 +18,9 @@ const DesktopHeader = () => {
             to="/products"
             className={clsx(
               "text-lg font-medium font-primary hover:text-primary-color transition-global",
-                pathname === "/products" ? "text-primary-color" : "text-text-color"
+              pathname === "/products"
+                ? "text-primary-color"
+                : "text-text-color"
             )}
           >
             PRODUCTS
@@ -27,7 +29,9 @@ const DesktopHeader = () => {
             to="/services"
             className={clsx(
               "text-lg font-medium font-primary hover:text-primary-color transition-global",
-              pathname === "/services" ? "text-primary-color" : "text-text-color"
+              pathname === "/services"
+                ? "text-primary-color"
+                : "text-text-color"
             )}
           >
             SERVICES
