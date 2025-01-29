@@ -85,19 +85,18 @@
 // export default MobileHeader;
 
 import clsx from "clsx";
-import { useState } from "react";
 import { arrowLeftImage, Logo, menuClose, menuIcon } from "../../../constant";
 import Button from "../../Button";
 import CommonContainer from "../../CommonContainer";
 import classes from "./MobileHeader.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProductTabs from "./ProductTabs";
 import ServicesTabs from "./ServicesTabs";
+import useMobileHeader from "../../../hooks/useMobileHeader";
 
 const MobileHeader = ({ otherClasses }) => {
-  const [toggleTab, setToggleTab] = useState("");
-  const [active, setActive] = useState(false);
-  const pathname = useLocation().pathname;
+  const { toggleTab, setToggleTab, active, setActive, activeProduct, handleProductClick } = useMobileHeader();
+
   return (
     <>
       <style>{`
@@ -114,9 +113,7 @@ const MobileHeader = ({ otherClasses }) => {
       <header
         className={clsx(
           classes.header,
-          {
-            [classes.menu]: active,
-          },
+          { [classes.menu]: active },
           otherClasses
         )}
       >
@@ -145,15 +142,15 @@ const MobileHeader = ({ otherClasses }) => {
                 setActive((prev) => !prev);
                 setToggleTab("");
               }}
-              role="button" /* Mark span as a button for accessibility */
-              tabIndex="-1" /* Disable focus on the span */
+              role="button"
+              tabIndex="-1"
             >
               <span
                 className={clsx(classes.mobileMenu, {
                   [classes.active]: active,
                 })}
-                role="button" /* Ensure it's treated as a button */
-                tabIndex="-1" /* Disable focus on the span */
+                role="button"
+                tabIndex="-1"
               >
                 <img
                   src={active ? menuClose : menuIcon}
@@ -162,7 +159,7 @@ const MobileHeader = ({ otherClasses }) => {
                     [classes.closeIcon]: active,
                     [classes.menuIcon]: !active,
                   })}
-                  onContextMenu={(e) => e.preventDefault()} // Prevent right-click menu
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </span>
             </span>
@@ -178,17 +175,13 @@ const MobileHeader = ({ otherClasses }) => {
           >
             <button
               onClick={() => setToggleTab("product")}
-              className={clsx(
-                "px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
-              )}
+              className="px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
             >
               PRODUCTS
             </button>
             <button
               onClick={() => setToggleTab("service")}
-              className={clsx(
-                "mt-2.5 px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
-              )}
+              className="mt-2.5 px-6 text-left rounded-xl !py-5 hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global"
             >
               SERVICES
             </button>
@@ -197,14 +190,15 @@ const MobileHeader = ({ otherClasses }) => {
               <Button variant={"bgPrimary"}>SIGN IN</Button>
             </div>
           </div>
+
+          {/* ✅ Ensure the clicked product is set correctly */}
           {toggleTab === "product" && (
             <ProductTabs
-              onClick={() => {
-                setActive((prev) => !prev);
-                setToggleTab("");
-              }}
+              onClick={handleProductClick}
+              activeLink={activeProduct}
             />
           )}
+
           {toggleTab === "service" && (
             <ServicesTabs
               onClick={() => {

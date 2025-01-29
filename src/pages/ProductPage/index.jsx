@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CommonContainer from "../../components/CommonContainer";
@@ -25,6 +25,7 @@ import PrintCustomizationBlock from "../../components/PrintCustomizationBlock";
 import { cartonBoxesMocks } from "./carton-boxes-mocks";
 import { sideGussetBagMocks } from "./side-gusset-bag-mocks";
 import { standupBagsMocks } from "./standup-bags-mocks";
+import { useLocation } from "react-router-dom";
 
 const TABS = [
   {
@@ -54,8 +55,41 @@ const TABS = [
 ];
 
 const ProductPage = () => {
-  const [toggleTab, setToggleTab] = useState(TABS[0]?.label);
-  const activeTabData = TABS.find((tab) => tab.label === toggleTab)?.mocksData;
+  const [activeProduct, setActiveProduct] = useState(
+    localStorage.getItem("activeProduct") || TABS[0]?.label
+  );
+  const activeTabData = TABS.find(
+    (tab) => tab.label === activeProduct
+  )?.mocksData;
+  const pathname = useLocation()?.pathname;
+
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "activeProduct") {
+        setActiveProduct(event.newValue);
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleLocalChange = () => {
+      setActiveProduct(localStorage.getItem("activeProduct"));
+    };
+    window.addEventListener("localProductChange", handleLocalChange);
+    return () => {
+      window.removeEventListener("localProductChange", handleLocalChange);
+    };
+  }, []);
+  const updateActiveProduct = (newProduct) => {
+    localStorage.setItem("activeProduct", newProduct);
+    window.dispatchEvent(new Event("localProductChange"));
+  };
+
+
   return (
     <main>
       <Header />
@@ -63,18 +97,18 @@ const ProductPage = () => {
         <div className="hidden flex-col gap-2.5 min-w-[294px] w-[294px] h-fit sticky top-20 lg:flex">
           {TABS?.map(({ icon, activeIcon, label }, index) => (
             <button
-              onClick={() => setToggleTab(label)}
+              onClick={() => updateActiveProduct(label)}
               key={index}
               className={clsx(
                 "flex items-center !gap-4 !py-[18.5px] px-6 w-full text-lg transition-global rounded-xl uppercase disabled:cursor-not-allowed",
-                toggleTab === label
+                activeProduct === label
                   ? "shadow-tabs-active-shadow text-primary-color font-semibold"
                   : "text-text-color/40 font-medium"
               )}
             >
               <div className="w-7 h-7">
                 <img
-                  src={toggleTab === label ? activeIcon : icon}
+                  src={activeProduct === label ? activeIcon : icon}
                   alt={label}
                   className="object-contain"
                 />
@@ -102,9 +136,7 @@ const ProductPage = () => {
               {...activeTabData?.customizationOptions
                 ?.touchAndFeelCustomization}
             />
-            <FeaturesBlock
-              {...activeTabData?.customizationOptions?.features}
-            />
+            <FeaturesBlock {...activeTabData?.customizationOptions?.features} />
             <BestCoffeeBarrier
               {...activeTabData?.customizationOptions?.bestCoffeeBarrier}
             />

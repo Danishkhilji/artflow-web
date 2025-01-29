@@ -5,8 +5,38 @@ import { socialMediaIcon } from "../../data";
 import CommonContainer from "../CommonContainer";
 import moment from "moment-timezone";
 import { Row, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
   const currentYear = moment().tz("Etc/GMT-1").format("YYYY");
+  const [activeProduct, setActiveProduct] = useState(
+    localStorage.getItem("activeProduct")
+  );
+  const pathname = useLocation()?.pathname;
+
+  const handleProductClick = (selectedProduct) => {
+    setActiveProduct(selectedProduct);
+    localStorage.setItem("activeProduct", selectedProduct);
+    window.dispatchEvent(new Event("localProductChange"));
+  };
+  useEffect(() => {
+    const handleLocalChange = () => {
+      setActiveProduct(localStorage.getItem("activeProduct"));
+    };
+    window.addEventListener("localProductChange", handleLocalChange);
+    return () =>
+      window.removeEventListener("localProductChange", handleLocalChange);
+  }, []);
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "activeProduct") {
+        setActiveProduct(event.newValue);
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   return (
     <CommonContainer>
       <footer>
@@ -36,11 +66,57 @@ const Footer = () => {
             <div className={clsx(classes.contentWrapper, classes.pl50)}>
               <h2>PACKAGING</h2>
 
-              <div>
-                <p className={"disabled"}>Flat Bottom Bags</p>
-                <p className={"disabled"}>Carton Boxes</p>
-                <p className={"disabled"}>Side Gusset Bags</p>
-                <p className={"disabled"}>Standup Bags</p>
+              <div className="flex flex-col">
+                <Link
+                  to="/products"
+                  onClick={() => handleProductClick("Flat Bottom Bags")}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    pathname === "/products" &&
+                      activeProduct === "Flat Bottom Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Flat Bottom Bags
+                </Link>
+                <Link
+                  to="/products"
+                  onClick={() => handleProductClick("Carton Boxes")}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    pathname === "/products" && activeProduct === "Carton Boxes"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Carton Boxes
+                </Link>
+                <Link
+                  to="/products"
+                  onClick={() => handleProductClick("Side GusSet Bags")}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    pathname === "/products" &&
+                      activeProduct === "Side GusSet Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Side Gusset Bags
+                </Link>
+                <Link
+                  to="/products"
+                  onClick={() => handleProductClick("Standup Bags")}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    pathname === "/products" && activeProduct === "Standup Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Standup Bags
+                </Link>
               </div>
             </div>
           </div>
@@ -50,17 +126,14 @@ const Footer = () => {
               <h2>SERVICES</h2>
 
               <div>
-                <p
-                  onClick={() => {
-                    window.open(
-                      "https://oyepackaging.com/dripBag",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  }}
+                <Link
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color"
+                  )}
+                  to="/services"
                 >
                   Drip Bags
-                </p>
+                </Link>
                 <p className={clsx(classes.dull, "disabled")}>Brew Bags</p>
                 <p className={clsx(classes.dull, "disabled")}>Capsules</p>
               </div>

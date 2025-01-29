@@ -34,7 +34,7 @@ const SERVICES_LINKS = [
   },
 ];
 
-const ServicesTabs = ({onClick}) => {
+const ServicesTabs = ({ onClick }) => {
   return (
     <div className="flex-col gap-2.5  h-fit flex flex-1">
       {SERVICES_LINKS?.map(
@@ -42,9 +42,11 @@ const ServicesTabs = ({onClick}) => {
           <Link
             to={href}
             onClick={onClick}
+            
             key={index}
             className={clsx(
-              "px-6 text-left rounded-xl !py-4 flex uppercase !gap-4 items-center hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global group"
+              "px-6 text-left rounded-xl !py-4 flex uppercase !gap-4 items-center hover:text-primary-color text-lg font-primary hover:font-semibold text-text-color font-medium hover:shadow-tabs-active-shadow transition-global group",
+              index === 0 ? "" : "cursor-not-allowed"
             )}
           >
             <div className="max-w-10 min-w-7 flex justify-center">

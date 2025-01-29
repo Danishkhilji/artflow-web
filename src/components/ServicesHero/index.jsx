@@ -64,7 +64,7 @@ const ServicesHero = ({
               </svg>
             </Button>
             <Button variant="primary" className="uppercase">
-              order sample kit
+            Test your coffee
             </Button>
           </div>
         </div>
