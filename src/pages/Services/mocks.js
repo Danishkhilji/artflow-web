@@ -195,7 +195,7 @@ export const servicesMocks = {
       },
       {
         backgroundImage: twoCtaCardTwo,
-        title: "Configure packaging for your coffee.",
+        title: "Configure packaging for your coffee",
         buttonLabel: "configure packagING",
       },
     ],

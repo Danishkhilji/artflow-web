@@ -35,7 +35,7 @@ const ProductPresentationBlock = ({
           <p className="text-lg text-text-color font-primary font-normal">
             {description}
           </p>
-          <div className="!mt-5 mb-8 md:mb-10 flex flex-wrap justify-start !gap-5 md:!gap-y-2.5 md:!gap-x-8 md:pl-1">
+          <div className="!mt-5 mb-8 md:mb-10 flex flex-col sm:flex-row sm:flex-wrap justify-start !gap-5 md:!gap-y-2.5 md:!gap-x-8 md:pl-1">
             {details?.map(({ label, icon }, index) => (
               <p
                 key={index}

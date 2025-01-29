@@ -274,6 +274,7 @@ button:focus-visible {
 
 .drig-bag-offer-title {
   @media (min-width: 768px) {
-    writing-mode: sideways-lr;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg); /* Fix for Safari */
   }
 }

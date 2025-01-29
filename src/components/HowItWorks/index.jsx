@@ -21,7 +21,7 @@ const HowItWorks = ({ heading, title, description, cards }) => {
               key={index}
               className="flex md:flex-row flex-col  items-center !gap-5 md:gap-6 border !border-text-color/30 !py-5 px-6 rounded-2xl"
             >
-              <img src={icon} alt={index} className="max-w-12 max-h-12" />
+              <img src={icon} alt={index} className="max-w-12 max-h-12 object-contain" />
               <p className="text-sm font-normal font-primary text-text-color md:!text-left text-center">
                 {description}
               </p>

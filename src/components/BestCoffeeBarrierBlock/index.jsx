@@ -7,7 +7,7 @@ const BestCoffeeBarrier = ({
   certifications,
 }) => {
   return (
-    <div className="px-2.5 !py-5 lg:!p-5 rounded-3xl bg-bg-card !mt-5 md:mt-2.5">
+    <div className="px-2.5 pb-2.5 !pt-5 lg:!p-5 rounded-3xl bg-bg-card !mt-5 md:mt-2.5">
       <h3 className="text-22 font-primary text-text-color uppercase font-medium">{heading}</h3>
       <div className="flex flex-col md:flex-row gap-2.5 md:!gap-5 !mt-5 md:mt-2.5">
         <div className="w-full md:w-[45%] flex flex-col gap-2.5">
@@ -31,15 +31,15 @@ const BestCoffeeBarrier = ({
           ))}
         </div>
         <div className="w-full md:w-[55%] flex flex-col gap-2.5 md:!gap-5">
-          <div className="w-full rounded-2xl bg-white border !border-text-color/30 !p-5">
+          <div className="w-full rounded-2xl bg-white border !border-text-color/30 !px-5 !pt-5 pb-2.5 md:!p-5">
             <h4 className="text-text-color font-primary uppercase text-lg font-medium">
               {certifications?.heading}
             </h4>
-            <div className="flex flex-wrap !gap-2.5 mt-2.5">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap !gap-2.5 mt-2.5">
               {certifications?.list?.map((node, index) => (
                 <p
                   key={index}
-                  className="text-sm leading-8 font-normal italic font-primary text-text-color !px-5 rounded-full border !border-[!B7B7B9]/30 py-1 "
+                  className="text-sm leading-8 font-normal italic font-primary text-text-color !px-5 rounded-full border !border-[!B7B7B9]/30 py-1 w-fit"
                 >
                   {node}
                 </p>
