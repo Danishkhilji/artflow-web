@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 :root {
   --primary-color: #264eab;
   --blue-color: #7ba0d0;
@@ -10,7 +11,6 @@
   --text-color: #101014;
   --bg-color: #efeff2;
 }
-@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 /* Inter */
 /* Regular (normal): 400
   Medium: 500
@@ -63,7 +63,8 @@ html,
 body {
   height: 100%;
   font-family: sans-serif;
-  /* overflow-x: hidden; */
+  /* font-feature-settings: normal;
+  font-variation-settings: normal; */
 }
 
 button,
@@ -272,9 +273,9 @@ button:focus-visible {
   transition: all 0.3s;
 }
 
-.drig-bag-offer-title {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .drig-bag-offer-title {
+    transform: rotate(180deg);
     writing-mode: vertical-rl;
-    transform: rotate(180deg); /* Fix for Safari */
   }
 }

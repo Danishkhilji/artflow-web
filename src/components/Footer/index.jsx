@@ -43,17 +43,9 @@ const Footer = () => {
         <div className={classes.row}>
           <div lg={4} xs={12} sm={12}>
             <div className={clsx(classes.logoWrapper, classes.pe30)}>
-              <span
-                onClick={() => {
-                  window.open(
-                    "https://oyepackaging.com",
-                    "_blank",
-                    "noopener,noreferrer"
-                  );
-                }}
-              >
+              <Link to="/">
                 <Logo className={"img-fluid"} />
-              </span>
+              </Link>
               <p className={classes.content}>
                 Say farewell to ordinary packaging and delays - we&apos;ve got
                 your back. Explore our diverse services and join us on an
@@ -121,14 +113,20 @@ const Footer = () => {
             </div>
           </div>
 
-          <div lg={2} sm={3} xs={6} className={clsx(classes.fixInMob)}>
+          <div
+            lg={2}
+            sm={3}
+            xs={6}
+            className={clsx(classes.fixInMob, "pr-8 custom-sm:pr-0")}
+          >
             <div className={classes.contentWrapper}>
               <h2>SERVICES</h2>
 
               <div>
                 <Link
                   className={clsx(
-                    "text-sm font-primary font-normal leading-6 hover:text-primary-color"
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color",
+                    pathname === "/services" ? "text-primary-color" : ""
                   )}
                   to="/services"
                 >
@@ -192,7 +190,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div lg={2} sm={3} xs={6} className={clsx(classes.mlAuto)}>
+          <div
+            lg={2}
+            sm={3}
+            xs={6}
+            className={clsx(classes.mlAuto, "pr-8 custom-sm:pr-0")}
+          >
             <div className={classes.contentWrapper}>
               <h2>ABOUT US</h2>
 

@@ -29,7 +29,6 @@
 
 //     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, maxScale, 1]);
 
-
 //     // State to store max padding
 //     const [maxPadding, setMaxPadding] = useState(100);
 
@@ -162,15 +161,24 @@ const Banner = React.forwardRef(
     });
     const [maxScale, setMaxScale] = useState(1); // Default scale is 1
     useEffect(() => {
-      // Calculate maxScale dynamically
-      const containerWidth = ref.current.offsetWidth; // Get container width
+      // Get container width
+      const containerWidth = ref.current.offsetWidth;
+
+      // Create a new image and load it
       const image = new Image();
       image.src = bg;
       image.onload = () => {
-        // const imgWidth = image.width; // Actual image width
-        const scale = containerWidth / document.getElementById("hero-section-container").offsetWidth; // Calculate max scale
-        isMobile ? setMaxScale(1) : setMaxScale(scale);
+        const maxWidth = 1440; 
+        const scale =
+          window.innerWidth > 1440
+            ? containerWidth > maxWidth + 100
+              ? (maxWidth + 100) / maxWidth
+              : containerWidth / maxWidth
+            : containerWidth /
+              document.getElementById("hero-section-container").offsetWidth;
 
+        // Set the scale based on the device (mobile or not)
+        isMobile ? setMaxScale(1) : setMaxScale(scale);
       };
     }, [bg, ref]);
 
@@ -200,7 +208,11 @@ const Banner = React.forwardRef(
 
     // Dynamic padding calculation
     const rawPadding = useTransform(scrollYProgress, [0, 0.5, 1], [16, 0, 16]);
-    const dynamicMaxPadding = useTransform(scrollYProgress, [0, 0.5, 1], [maxPadding, 0, maxPadding]);
+    const dynamicMaxPadding = useTransform(
+      scrollYProgress,
+      [0, 0.5, 1],
+      [maxPadding, 0, maxPadding]
+    );
     const padding = useSpring(isMobile ? rawPadding : dynamicMaxPadding, {
       stiffness: 100,
       damping: 20,
@@ -222,15 +234,13 @@ const Banner = React.forwardRef(
               style={{
                 width: "100%", // Width of the container
                 height: "100%", // Always 100% height of the parent div // Always 100% height of the parent div
-                transformOrigin:"top center",
+                transformOrigin: "top center",
                 scaleX: scale, // Dynamic scale value
                 borderRadius: "20px", // Rounded corners for the motion div
                 overflow: "hidden", // Prevent image overflow
                 display: "inline-block", // Ensure the motion div scales based on content width
-
               }}
             >
-
               <motion.img
                 src={bg}
                 alt="Banner background"
@@ -243,7 +253,6 @@ const Banner = React.forwardRef(
                   paddingRight: padding, // Dynamic right padding based on scroll
                 }}
               />
-
             </motion.div>
             {/* Content stays fixed */}
             <div className={classes.mainContent}>
