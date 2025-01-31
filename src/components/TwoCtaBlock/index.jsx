@@ -15,16 +15,20 @@ const TwoCtaBlock = ({ cards, services }) => {
             alt={title}
             className="absolute w-full h-full "
           />
-          <div className="absolute w-full z-10 group-hover:!bg-black/25 !bg-transparent h-full flex items-end px-2.5 transition-global">
+          <div className="absolute w-full z-10  !bg-transparent h-full flex items-end px-2.5 transition-global">
             <div className="flex flex-col items-center w-full mb-8 text-center">
-              <h4
-                className={clsx(
-                  "text-22 font-primary text-white font-semibold uppercase mb-2.5",
-                  cards?.length - 1 === index && services ? "w-[70%]" : ""
-                )}
-              >
-                {title}
-              </h4>
+              <div className="mb-2.5">
+                {title?.map((node) => (
+                  <h4
+                    className={clsx(
+                      "text-22 font-primary text-white font-semibold uppercase ",
+                      services && index === 0 ? "lg:inline" : ""
+                    )}
+                  >
+                    {node}
+                  </h4>
+                ))}
+              </div>
               <Button variant="secondary" className="uppercase">
                 {buttonLabel}
               </Button>

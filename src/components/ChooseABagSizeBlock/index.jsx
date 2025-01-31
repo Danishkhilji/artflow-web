@@ -16,11 +16,11 @@ const ChooseABagSizeBlock = ({ heading, description, sizes }) => {
         {sizes?.map((node, index) => (
           <div
             key={index}
-            className="cursor-pointer h-[123px] p-2.5 border !border-text-color text-center group hover:!border-primary-color transition-global place-content-center rounded-2xl"
+            className="h-[123px] p-2.5 border !border-text-color text-center group hover:!border-primary-color transition-global place-content-center rounded-2xl"
           >
             <p
               className={clsx(
-                "text-[22px] group-hover:text-primary-color text-text-color font-primary font-medium transition-global" ,
+                "text-[22px] group-hover:text-primary-color text-text-color font-primary font-medium transition-global cursor-default" ,
                 index === sizes.length - 1 &&
                   "flex sm:gap-1  sm:flex-row flex-col items-center flex-wrap justify-center text-lg lg:text-[22px]"
               )}

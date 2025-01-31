@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 :root {
   --primary-color: #264eab;
   --blue-color: #7ba0d0;
@@ -273,8 +273,8 @@ button:focus-visible {
   transition: all 0.3s;
 }
 
-@media (min-width: 768px) {
-  .drig-bag-offer-title {
+.drig-bag-offer-title {
+  @media (min-width: 768px) {
     transform: rotate(180deg);
     writing-mode: vertical-rl;
   }

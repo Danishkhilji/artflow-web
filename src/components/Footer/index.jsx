@@ -6,13 +6,14 @@ import CommonContainer from "../CommonContainer";
 import moment from "moment-timezone";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
   const currentYear = moment().tz("Etc/GMT-1").format("YYYY");
   const [activeProduct, setActiveProduct] = useState(
     localStorage.getItem("activeProduct")
   );
   const pathname = useLocation()?.pathname;
+  const navigate = useNavigate();
 
   const handleProductClick = (selectedProduct) => {
     setActiveProduct(selectedProduct);
@@ -63,7 +64,7 @@ const Footer = () => {
                   to="/products"
                   onClick={() => handleProductClick("Flat Bottom Bags")}
                   className={clsx(
-                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color",
                     pathname === "/products" &&
                       activeProduct === "Flat Bottom Bags"
                       ? "text-primary-color"
@@ -72,23 +73,29 @@ const Footer = () => {
                 >
                   Flat Bottom Bags
                 </Link>
-                <Link
-                  to="/products"
-                  onClick={() => handleProductClick("Carton Boxes")}
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Carton Boxes");
+                    navigate("/products");
+                  }}
                   className={clsx(
-                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
                     pathname === "/products" && activeProduct === "Carton Boxes"
                       ? "text-primary-color"
                       : ""
                   )}
                 >
                   Carton Boxes
-                </Link>
-                <Link
-                  to="/products"
-                  onClick={() => handleProductClick("Side GusSet Bags")}
+                </button>
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Side GusSet Bags");
+                    navigate("/products");
+                  }}
                   className={clsx(
-                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
                     pathname === "/products" &&
                       activeProduct === "Side GusSet Bags"
                       ? "text-primary-color"
@@ -96,19 +103,22 @@ const Footer = () => {
                   )}
                 >
                   Side Gusset Bags
-                </Link>
-                <Link
-                  to="/products"
-                  onClick={() => handleProductClick("Standup Bags")}
+                </button>
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Standup Bags");
+                    navigate("/products");
+                  }}
                   className={clsx(
-                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap",
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
                     pathname === "/products" && activeProduct === "Standup Bags"
                       ? "text-primary-color"
                       : ""
                   )}
                 >
                   Standup Bags
-                </Link>
+                </button>
               </div>
             </div>
           </div>

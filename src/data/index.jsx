@@ -78,7 +78,7 @@ const reviewsData = [
     name: "Doris Erne",
     short: "Wheycation",
     description:
-      "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
+      "Öye is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },
   {
     id: "2",
@@ -89,7 +89,7 @@ const reviewsData = [
     logo: company2,
     short: "Wheycation",
     description:
-      "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
+      "Öye is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },
   {
     id: "3",
@@ -100,7 +100,7 @@ const reviewsData = [
     name: "Doris Erne",
     short: "Wheycation",
     description:
-      "Packiro is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
+      "Öye is a perfect fit for us: high quality products, sustainable and uncomplicated, and excellent customer service 👌",
   },
 ];
 
@@ -138,6 +138,7 @@ const ourFeatures = [
     title: "Full customization",
     description: "create any size and add effects",
     mainTitle: "Craft your perfect packaging",
+    fullTitle: "Full customization",
     fullDescription:
       "Get ready to bring your ideas to life with our various customization options. Choose from various customized sizes, or pick from our selection of standard sizes! Using our easy-to-use configurator, you can add your print design on every side of your packaging, making it even more special with different textures and finishes. Enjoy creating something unique!",
   },

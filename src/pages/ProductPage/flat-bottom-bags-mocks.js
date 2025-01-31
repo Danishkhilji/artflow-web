@@ -144,27 +144,27 @@ export const flatBottomBagsMocks = {
       heading: "Features",
       cards: [
         {
-          image:topOpeningImage,
+          image: topOpeningImage,
           label: "Top-opening zipper",
         },
         {
-          image:frontZipperImage,
+          image: frontZipperImage,
           label: "Front zipper",
         },
         {
-          image:tearNotchImage,
+          image: tearNotchImage,
           label: "Tear Notch",
         },
         {
-          image:coffeeValveImage,
+          image: coffeeValveImage,
           label: "Coffee Valve",
         },
         {
-          image:hangerWithFrontZipperImage,
+          image: hangerWithFrontZipperImage,
           label: "Hanger with front zipper",
         },
         {
-          image:cartonBoxImage,
+          image: cartonBoxImage,
           label: "Carton box",
         },
       ],
@@ -208,12 +208,12 @@ export const flatBottomBagsMocks = {
       cards: [
         {
           backgroundImage: twoCtaCardOne,
-          title: "Still have questions?",
+          title: ["Still have questions?"],
           buttonLabel: "Book a call",
         },
         {
           backgroundImage: twoCtaCardTwo,
-          title: "enjoy the packaging",
+          title: ["enjoy the packaging"],
           buttonLabel: "configure packagING ",
         },
       ],

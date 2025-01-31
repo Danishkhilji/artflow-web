@@ -23,7 +23,7 @@ const MaterialsBlock = ({ heading, cards }) => {
               <h4 className="text-text-color font-primary font-medium text-lg uppercase">
                 {heading}
               </h4>
-              <ul className="mt-1 list-disc list-inside">
+              <ul className="mt-1 list-disc pl-6 lg:pl-0">
                 {list?.map((node, index) => (
                   <li
                     className="text-text-color font-primary text-sm"

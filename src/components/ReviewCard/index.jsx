@@ -15,7 +15,7 @@ const ReviewCard = ({ data }) => {
       <div className={classes.content}>
         <div>
           <p>
-            &quot;Packiro is a perfect fit for us: high quality products,
+            &quot;Öye is a perfect fit for us: high quality products,
             sustainable and uncomplicated, and excellent customer service 👌
             &quot;
           </p>

@@ -8,7 +8,7 @@ const BestCoffeeBarrier = ({
 }) => {
   return (
     <div className="px-2.5 pb-2.5 !pt-5 lg:!p-5 rounded-3xl bg-bg-card !mt-5 md:mt-2.5">
-      <h3 className="text-22 font-primary text-text-color uppercase font-medium">{heading}</h3>
+      <h3 className="text-22 font-primary text-text-color uppercase font-medium sm:pr-0 pr-6">{heading}</h3>
       <div className="flex flex-col md:flex-row gap-2.5 md:!gap-5 !mt-5 md:mt-2.5">
         <div className="w-full md:w-[45%] flex flex-col gap-2.5">
           {details?.map(({ icon, title, description }, index) => (

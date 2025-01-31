@@ -190,12 +190,13 @@ export const servicesMocks = {
     cards: [
       {
         backgroundImage: servicesCtaImage,
-        title: "Send us 1 kg of your coffee",
+
+        title: ["Send us 1 kg", " of your coffee"],
         buttonLabel: "Request a test",
       },
       {
         backgroundImage: twoCtaCardTwo,
-        title: "Configure packaging for your coffee",
+        title: ["Configure packaging", " for your coffee"],
         buttonLabel: "configure packagING",
       },
     ],

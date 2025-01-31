@@ -89,7 +89,6 @@ const ProductPage = () => {
     window.dispatchEvent(new Event("localProductChange"));
   };
 
-
   return (
     <main>
       <Header />
@@ -99,6 +98,7 @@ const ProductPage = () => {
             <button
               onClick={() => updateActiveProduct(label)}
               key={index}
+              disabled={index !== 0}
               className={clsx(
                 "flex items-center !gap-4 !py-[18.5px] px-6 w-full text-lg transition-global rounded-xl uppercase disabled:cursor-not-allowed",
                 activeProduct === label
