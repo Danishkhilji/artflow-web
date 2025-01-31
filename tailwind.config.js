@@ -7,6 +7,7 @@ export default {
         primary: "'Inter', serif",
       },
       screens: {
+        "custom-sm": "575px",
         "custom-md": "895px",
         "custom-xl": "1370px",
       },

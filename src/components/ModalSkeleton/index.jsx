@@ -22,6 +22,7 @@ const ModalSkeleton = ({
       <style>{`
       .modal{
       z-index:9999 !important;
+      backdrop-filter: blur(10px) !important;
       }
       .modal-backdrop{
       z-index:1500 !important;

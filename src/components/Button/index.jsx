@@ -6,12 +6,17 @@ const Button = ({ label, className, variant, children, isHover, ...rest }) => {
   return (
     <BootstrapButton
       {...rest}
-      className={clsx(className, classes.btn, {
-        [classes.isHover]: isHover,
-        [classes.primary]: variant === "primary",
-        [classes.secondary]: variant === "secondary",
-        [classes.bgPrimary]: variant === "bgPrimary",
-      })}
+      className={clsx(
+        className,
+        classes.btn,
+        {
+          [classes.isHover]: isHover,
+          [classes.primary]: variant === "primary",
+          [classes.secondary]: variant === "secondary",
+          [classes.bgPrimary]: variant === "bgPrimary",
+        },
+        variant === "secondary" && "hover:!bg-white hover:text-text-color"
+      )}
     >
       {label || children}
     </BootstrapButton>

@@ -5,25 +5,48 @@ import { socialMediaIcon } from "../../data";
 import CommonContainer from "../CommonContainer";
 import moment from "moment-timezone";
 import { Row, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
   const currentYear = moment().tz("Etc/GMT-1").format("YYYY");
+  const [activeProduct, setActiveProduct] = useState(
+    localStorage.getItem("activeProduct")
+  );
+  const pathname = useLocation()?.pathname;
+  const navigate = useNavigate();
+
+  const handleProductClick = (selectedProduct) => {
+    setActiveProduct(selectedProduct);
+    localStorage.setItem("activeProduct", selectedProduct);
+    window.dispatchEvent(new Event("localProductChange"));
+  };
+  useEffect(() => {
+    const handleLocalChange = () => {
+      setActiveProduct(localStorage.getItem("activeProduct"));
+    };
+    window.addEventListener("localProductChange", handleLocalChange);
+    return () =>
+      window.removeEventListener("localProductChange", handleLocalChange);
+  }, []);
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "activeProduct") {
+        setActiveProduct(event.newValue);
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   return (
     <CommonContainer>
       <footer>
         <div className={classes.row}>
           <div lg={4} xs={12} sm={12}>
             <div className={clsx(classes.logoWrapper, classes.pe30)}>
-              <span
-                onClick={() => {
-                  window.open(
-                    "https://oyepackaging.com",
-                    "_blank",
-                    "noopener,noreferrer"
-                  );
-                }}
-              >
+              <Link to="/">
                 <Logo className={"img-fluid"} />
-              </span>
+              </Link>
               <p className={classes.content}>
                 Say farewell to ordinary packaging and delays - we&apos;ve got
                 your back. Explore our diverse services and join us on an
@@ -36,31 +59,89 @@ const Footer = () => {
             <div className={clsx(classes.contentWrapper, classes.pl50)}>
               <h2>PACKAGING</h2>
 
-              <div>
-                <p className={"disabled"}>Flat Bottom Bags</p>
-                <p className={"disabled"}>Carton Boxes</p>
-                <p className={"disabled"}>Side Gusset Bags</p>
-                <p className={"disabled"}>Standup Bags</p>
+              <div className="flex flex-col">
+                <Link
+                  to="/products"
+                  onClick={() => handleProductClick("Flat Bottom Bags")}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color",
+                    pathname === "/products" &&
+                      activeProduct === "Flat Bottom Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Flat Bottom Bags
+                </Link>
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Carton Boxes");
+                    navigate("/products");
+                  }}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
+                    pathname === "/products" && activeProduct === "Carton Boxes"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Carton Boxes
+                </button>
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Side GusSet Bags");
+                    navigate("/products");
+                  }}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
+                    pathname === "/products" &&
+                      activeProduct === "Side GusSet Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Side Gusset Bags
+                </button>
+                <button
+                  disabled
+                  onClick={() => {
+                    handleProductClick("Standup Bags");
+                    navigate("/products");
+                  }}
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color whitespace-nowrap text-left disabled:cursor-not-allowed disabled:hover:text-text-color disabled",
+                    pathname === "/products" && activeProduct === "Standup Bags"
+                      ? "text-primary-color"
+                      : ""
+                  )}
+                >
+                  Standup Bags
+                </button>
               </div>
             </div>
           </div>
 
-          <div lg={2} sm={3} xs={6} className={clsx(classes.fixInMob)}>
+          <div
+            lg={2}
+            sm={3}
+            xs={6}
+            className={clsx(classes.fixInMob, "pr-8 custom-sm:pr-0")}
+          >
             <div className={classes.contentWrapper}>
               <h2>SERVICES</h2>
 
               <div>
-                <p
-                  onClick={() => {
-                    window.open(
-                      "https://oyepackaging.com/dripBag",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  }}
+                <Link
+                  className={clsx(
+                    "text-sm font-primary font-normal leading-6 hover:text-primary-color",
+                    pathname === "/services" ? "text-primary-color" : ""
+                  )}
+                  to="/services"
                 >
                   Drip Bags
-                </p>
+                </Link>
                 <p className={clsx(classes.dull, "disabled")}>Brew Bags</p>
                 <p className={clsx(classes.dull, "disabled")}>Capsules</p>
               </div>
@@ -119,7 +200,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div lg={2} sm={3} xs={6} className={clsx(classes.mlAuto)}>
+          <div
+            lg={2}
+            sm={3}
+            xs={6}
+            className={clsx(classes.mlAuto, "pr-8 custom-sm:pr-0")}
+          >
             <div className={classes.contentWrapper}>
               <h2>ABOUT US</h2>
 

@@ -31,7 +31,7 @@ const ServicesHero = ({
           <h1 className="md:block hidden text-3xl text-text-color font-semibold leading-10 uppercase mb-1 font-primary">
             {title}
           </h1>
-          <p className="text-lg text-text-color font-primary font-normal pr-2">{description}</p>
+          <p className="text-lg text-text-color font-primary font-normal lg:pr-2">{description}</p>
           <div className="!mt-5 mb-8 md:mb-10 flex flex-col sm:flex-row sm:flex-wrap justify-start !gap-5 md:!gap-y-2 md:gap-x-8 max-w-720">
             {details?.map(({ label, icon }, index) => (
               <p
@@ -64,7 +64,7 @@ const ServicesHero = ({
               </svg>
             </Button>
             <Button variant="primary" className="uppercase">
-              order sample kit
+            Test your coffee
             </Button>
           </div>
         </div>

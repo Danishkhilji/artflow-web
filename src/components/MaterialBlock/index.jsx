@@ -2,7 +2,7 @@ import React from "react";
 
 const MaterialsBlock = ({ heading, cards }) => {
   return (
-    <div className="px-2.5 !py-5 md:!p-5 rounded-3xl border !border-text-color/30 mt-2.5">
+    <div className="px-2.5 pb-2.5 !pt-5 md:!p-5 rounded-3xl border !border-text-color/30 mt-2.5">
       <h3 className="text-22 font-primary text-text-color uppercase font-medium">
         {heading}
       </h3>
@@ -10,7 +10,7 @@ const MaterialsBlock = ({ heading, cards }) => {
         {cards?.map(({ heading, image, list }, index) => (
           <div
             key={index}
-            className="bg-bg-card rounded-2xl px-2.5 !py-5 md:!p-5 md:!pb-7"
+            className="bg-bg-card rounded-2xl px-2.5 py-2.5 md:!p-5 md:!pb-7"
           >
             <div className="overflow-hidden rounded-3xl mb-2.5">
               <img
@@ -23,7 +23,7 @@ const MaterialsBlock = ({ heading, cards }) => {
               <h4 className="text-text-color font-primary font-medium text-lg uppercase">
                 {heading}
               </h4>
-              <ul className="mt-1 list-disc list-inside">
+              <ul className="mt-1 list-disc pl-6 lg:pl-0">
                 {list?.map((node, index) => (
                   <li
                     className="text-text-color font-primary text-sm"

@@ -12,11 +12,11 @@ const ProductPresentationBlock = ({
   return (
     <div>
       <div className=" md:flex-row flex-col flex items-start !gap-5">
-        <div className="w-full md:w-2/5 xl:h-[380px] md:min-w-[350px] xl:min-w-[400px]">
+        <div className="w-full md:w-2/5 xl:h-[380px] md:min-w-[350px] xl:min-w-[400px] relative">
           <h1 className="md:hidden text-3xl text-text-color font-semibold leading-10 uppercase !mb-5 font-primary">
             {title}
           </h1>
-          <div className="w-full relative h-full bg-tertiary-color rounded-2xl flex items-center justify-center">
+          <div className="h-[380px] w-full relative bg-tertiary-color rounded-2xl flex items-center justify-center ">
             <img src={frame} alt={title} className="w-auto object-scale-down" />
             <p className="text-lg !px-3 py-0.5 font-primary font-normal rounded-full bg-white border border-[#EEEEEA] absolute top-3 right-3 flex items-center gap-1">
               <img
@@ -35,7 +35,7 @@ const ProductPresentationBlock = ({
           <p className="text-lg text-text-color font-primary font-normal">
             {description}
           </p>
-          <div className="!mt-5 mb-8 md:mb-10 flex flex-wrap justify-start !gap-5 md:!gap-y-2.5 md:!gap-x-8 md:pl-1">
+          <div className="!mt-5 mb-8 md:mb-10 flex flex-col sm:flex-row sm:flex-wrap justify-start !gap-5 md:!gap-y-2.5 md:!gap-x-8 md:pl-1">
             {details?.map(({ label, icon }, index) => (
               <p
                 key={index}

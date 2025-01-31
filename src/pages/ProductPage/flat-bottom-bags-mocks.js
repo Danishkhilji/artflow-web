@@ -1,6 +1,10 @@
 import {
+  cartonBoxImage,
+  coffeeValveImage,
   customizeComputer,
   europeanUnionSmall,
+  frontZipperImage,
+  hangerWithFrontZipperImage,
   humidityIcon,
   materialCardImageOne,
   materialCardImageTwo,
@@ -17,6 +21,8 @@ import {
   sandyTouchIcon,
   shieldCheckIcon,
   softTouchIcon,
+  tearNotchImage,
+  topOpeningImage,
   twoCtaCardOne,
   twoCtaCardTwo,
   uvLightIcon,
@@ -138,21 +144,27 @@ export const flatBottomBagsMocks = {
       heading: "Features",
       cards: [
         {
+          image: topOpeningImage,
           label: "Top-opening zipper",
         },
         {
+          image: frontZipperImage,
           label: "Front zipper",
         },
         {
+          image: tearNotchImage,
           label: "Tear Notch",
         },
         {
+          image: coffeeValveImage,
           label: "Coffee Valve",
         },
         {
+          image: hangerWithFrontZipperImage,
           label: "Hanger with front zipper",
         },
         {
+          image: cartonBoxImage,
           label: "Carton box",
         },
       ],
@@ -196,12 +208,12 @@ export const flatBottomBagsMocks = {
       cards: [
         {
           backgroundImage: twoCtaCardOne,
-          title: "Still have questions?",
+          title: ["Still have questions?"],
           buttonLabel: "Book a call",
         },
         {
           backgroundImage: twoCtaCardTwo,
-          title: "enjoy the packaging",
+          title: ["enjoy the packaging"],
           buttonLabel: "configure packagING ",
         },
       ],

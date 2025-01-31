@@ -19,7 +19,7 @@ const PrintCustomizationBlock = ({ heading, description, cards }) => {
   const [color, setColor] = useState(COLORS[0]?.color);
 
   return (
-    <div className="px-2.5 !py-5 lg:!p-5 rounded-3xl border !border-text-color/30 !mt-5 md:mt-2.5">
+    <div className="px-2.5 pb-2.5 !pt-5 lg:!p-5 rounded-3xl border !border-text-color/30 !mt-5 md:mt-2.5">
       <h3 className="text-22 font-primary text-text-color uppercase font-medium">
         {heading}
       </h3>

@@ -58,13 +58,13 @@ const Home = () => {
         <div className={classes.innerWrapper}>
           <CommonContainer
             id="hero-section-container"
-            className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10 !mb-10 md:!mb-16"
+            className="pt-10 flex flex-col md:flex-row items-center md:gap-0 gap-10  md:!mb-16"
           >
-            <div className="w-full md:w-2/4 relative z-10 pr-10">
-              <h1 className="uppercase mb-1 font-medium text-[28px] md:text-[34px] custom-md:text-[44px] text-text-color font-primary">
+            <div className="w-full md:w-2/4 relative z-10 md:pr-10">
+              <h1 className="uppercase mb-1 font-medium text-[28px] md:text-[34px] custom-md:text-[44px] custom-md:leading-[49px] text-text-color font-primary">
                 We are ÖYE!
               </h1>
-              <h2 className="text-[50px] md:text-[48px] custom-md:text-[65px] lg:text-[80px] font-primary  custom-xl:text-[100px] font-semibold uppercase text-text-color">
+              <h2 className="text-[50px] md:text-[48px] custom-md:text-[65px] lg:text-[80px] font-primary  custom-xl:text-[100px] custom-xl:leading-[99px] font-semibold uppercase text-text-color">
                 packaging
               </h2>
               <p className={clsx("text-[22px] font-primary font-normal text-text-color !pt-5")}>
@@ -93,7 +93,7 @@ const Home = () => {
                   delay: 3,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:pl-10 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color  absolute right-10 xl:right-20 top-4 w-[290px] xl:w-[403px]"
+                className="px-4 xl:!pl-8 xl:!pr-20 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color  absolute right-10 xl:right-20 top-4 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -193,7 +193,7 @@ const Home = () => {
                   duration: 2,
                   ease: "easeInOut",
                 }}
-                className="px-4 xl:px-10 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color absolute right-20 xl:right-[120px] -bottom-11 w-[290px] xl:w-[403px]"
+                className="px-4 xl:!px-8 py-4 xl:py-6 border border-white rounded-3xl bg-primary-color absolute right-20 xl:right-[120px] -bottom-11 w-[290px] xl:w-[403px]"
               >
                 <motion.p
                   initial={{
@@ -261,7 +261,7 @@ const Home = () => {
             </div>
           </CommonContainer>
           <CommonContainer className={classes.quickCardsWrapper}>
-            <Row>
+            <Row className="mt-0">
               {/* Side-by-side on medium (md) and larger, stacked on smaller screens */}
               <Col md={6} xs={12}>
                 <QuickCard
